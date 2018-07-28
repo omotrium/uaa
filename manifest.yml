@@ -1,0 +1,16 @@
+---
+applications:
+- name: ecobank-uaa
+  instances: 1
+  memory: 1G
+  buildpack: staticfile_buildpack
+  path: dist
+
+# ---
+# applications:
+# - name: ecobank-uaa
+#   instances: 1
+#   memory: 2G
+#   buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+#   env:
+#     SPRING_PROFILES_ACTIVE: uat

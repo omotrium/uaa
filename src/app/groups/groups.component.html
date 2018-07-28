@@ -1,0 +1,214 @@
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div> -->
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <!-- <b>
+                                <img src="images/logo.png" alt="homepage" class="dark-logo" />
+                            </b> -->
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <!-- <span>
+                                <img src="images/logo-text.png" alt="homepage" class="dark-logo" />
+                            </span> -->
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
+                                <i class="mdi mdi-menu"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-l-10">
+                            <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)">
+                                <i class="ti-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="http://robohash.org/503483?set=set2&bgset=bg2&size=70x70" alt="user" class="profile-pic" />
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-lock"></i> Change email</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-lock"></i> Change password</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-power-off"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li>
+                            <a class="sidebar-nav-link" routerLink="/dashboard" aria-expanded="false">
+                                <i class="far fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-nav-link" routerLink="/users" aria-expanded="false">
+                                <i class="fa fa-envelope"></i>
+                                <span class="hide-menu">Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-nav-link" routerLink="/clients" aria-expanded="false">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="hide-menu">Client</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-nav-link" routerLink="/groups" aria-expanded="false">
+                                <i class="fa fa-suitcase"></i>
+                                <span class="hide-menu">Group</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-nav-link" routerLink="/add-role" aria-expanded="false">
+                                <i class="fa fa-suitcase"></i>
+                                <span class="hide-menu">Roles</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row justify-content-center">
+                    <div class="col-6 d-flex justify-content-center">
+                        <div class="empty-ui text-center">
+                            <h1>Group</h1>
+                            
+                            <i class="far fa-building f-s-40 color-warning"></i>
+                            <p>No groups have bee added to your connections</p>
+                            <!-- <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100" (click)="open(content)" data-toggle="modal" data-target="#add_new_user_modal"><i class="fas fa-plus"></i>Create user</button>
+                            <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Create Client</button> -->
+                                       
+                                       <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100" (click)="open(content)"><i class="fas fa-plus"></i>Create Group</button>
+                                        <!-- <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100">View users</button>
+                                         -->
+                                         <a routerLink="/view-groups" class="btn btn-primary btn-flat btn-addon btn-lg w-100">VIEW GROUPS</a>
+                                      </div>
+                            
+
+                                      
+                            
+                                      
+                                                                                
+                                          
+                                      
+                                    
+                                    <!--End of  div for container class  --> 
+                                  
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+        </div>
+        <!-- End Page wrapper  -->
+        <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Create Group</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                            
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="client_id" autocomplete="off" [(ngModel)]="client_id" name="client_id" >
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                          <input type="text" class="form-control" placeholder="name" [(ngModel)]="name" name="name">
+                          <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="client_secret" [(ngModel)]="client_secret" name="client_secret">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    
+                    <div class="row" style="margin-bottom:50px;">
+                            <div class="col-md-2">
+                                &nbsp;
+                            </div>
+                           <div class="col-md-4">
+                                <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                                <button type="button" class="btn btn-success" (click)="loadClient()">Create</button>
+                                
+                            </div>
+                            <div class="col-md-4">
+                              <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                              <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                    
+                          </div>
+                          <div class="col-md-2">
+                                &nbsp;
+                            </div>
+                          
+                    </div>
+                </form> 
+        
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+            </div> -->
+        </ng-template>
+
+    </div>
+
+    
+
+    
