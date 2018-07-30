@@ -1,0 +1,73 @@
+/* Sidebar */
+#sidebar-wrapper {
+    z-index: 1;
+    position: absolute;
+    width: 10%;
+    height: 50%;
+    overflow-y: hidden;
+    background: white;
+    border: 2px solid white;
+    opacity: 0.9;
+}
+
+
+
+.card {
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4); */
+    box-shadow: 0 4px 8px 0 white(0, 0, 0, 0.4);
+    transition: 0.3s;
+    margin:6%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 white(0,0,0,0.8);
+}
+
+.card-body {
+    padding:8px;
+    background-color: white;
+    
+    
+}
+
+/* Always take up entire screen */
+/* #page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    border: 5px solid blue;
+} */
+
+
+/* Change with of sidebar from 0 to 250px */
+/* #wrapper.menuDisplayed #sidebar-wrapper {
+    width: 250px;
+} */
+
+/* Since we added left padding, we need to shrink the width by 250px */
+/* #wrapper.menuDisplayed #page-content-wrapper {
+    padding-left: 250px;
+} */
+
+
+/* Sidebar styling - the entire ul list */
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    /* color: #ddd; */
+    color: black;
+}
+
+.sidebar-nav li a:hover {
+    background: darkblue;
+}

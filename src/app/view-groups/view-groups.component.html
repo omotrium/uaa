@@ -1,0 +1,98 @@
+
+  <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>displayName</th>
+                <th>description</th>
+                <th>zoneId</th> 
+                 <th>members</th> 
+                <th>Action</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+    
+                <tr *ngFor="let Groups of Groups">
+                                                
+                        <td style="word-wrap:break-word; max-width: 130px;">{{Groups.id}}</td>
+                        <td style="max-width: 30px; word-wrap: break-word;">{{Groups.displayName }}</td>
+                        <td style="word-wrap: break-word;max-width:10px;">{{ Groups.description }}</td>
+                        <td style="word-wrap: break-word;max-width:10px;">{{ Groups.zoneId }}</td>  
+                        <td style="word-wrap: break-word;max-width:30px;"><p *ngFor="let member of  Groups.members"> <!--I want to list the colors of the person here-->
+                            {{member.origin}}, {{member.type}}, {{member.value}}
+                         </p></td>
+
+                        <td>
+                            <input type="text" class="form-control" value="{{id}}" #client_id style="display:none;">
+                            
+                            <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(groupId)" style="margin-right: 30px" /> 
+                            
+                            <!-- <input type="submit" #id class="btn btn-info btn-xs" value="Update" (click)="funcUpdateT(client.client_id)" />  -->
+                            <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" ng-click="loadClientsById(client.client_id)">Update</button>  -->
+                            <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content)" ng-click="loadGroupsById(Groups.id)">Update</button> -->
+                            <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,Groups.id)">Update</button>
+                              <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,Groups.id)">Update</button>
+                                  -->
+                        </td>
+                    </tr>
+                    
+        </tbody>
+
+         <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">Create</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                                
+                        <div class="form-group has-feedback">
+                                <label>display Name</label>
+                            <input type="text" class="form-control" placeholder="client_id" autocomplete="off"  name="client_id" [(ngModel)]="get.displayName">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group has-feedback">
+                            <label>description</label>
+                              <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.description">
+                              <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                                <label>ZoneId</label>
+                                  <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.zoneId">
+                                  <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                                <div class="row" style="margin-bottom:50px;">
+                                <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                               <div class="col-md-4">
+                                    <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                                    <button type="button" class="btn btn-success" (click)="loadClient()">Create</button>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                  <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                        
+                              </div>
+                              <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                              
+                        </div>
+                    </form> 
+            
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div> -->
+            </ng-template>
+    
+    </table>
+    

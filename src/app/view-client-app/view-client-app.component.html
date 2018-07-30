@@ -1,0 +1,114 @@
+
+                                       
+  <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <!-- <th>user_id</th> -->
+                <th>client_id</th>
+                <th>Name</th>
+                <th>client_scope</th>
+                <th>authorized_grant_types</th>
+                <th>autoapprove</th>
+                
+                <!-- <th>Password</th> -->
+                <th>Action</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+    
+                <tr *ngFor="let client of clients">
+                                    
+                        <!-- <td>{{user.id}}</td> -->
+                        
+                    <td style="word-wrap:break-word;max-width:10px;border-collapse: collapse;">{{client.client_id}}</td>
+                    <td style="max-width: 15px;">{{client.name }}</td>
+                    <td style="word-wrap: break-word;max-width:10px;">{{ client.scope }}</td>
+                    <td style="word-wrap: break-word;max-width:10px;">{{ client.authorized_grant_types }}</td>
+                    <td style="word-wrap: break-word;max-width:10px;">{{ client.autoapprove }}</td>
+                    <!-- <td>{{user.password}}</td> -->
+                        <td>
+                                <input type="text" class="form-control" value="{{ client_id}}" #client_id style="display:none;">
+                        
+                                <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(client.client_id)" style="margin-right: 30px" />    
+                            <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,client_id)">Update</button>
+                                
+                          
+                        </td>
+                    </tr>
+            
+        </tbody>
+
+        <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">Create</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                                
+                        <div class="form-group has-feedback">
+                                <label>client_id</label>
+                            <input type="text" class="form-control" placeholder="client_id" autocomplete="off"  name="client_id" [(ngModel)]="get.client_id">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group has-feedback">
+                            <label>Name</label>
+                              <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.name">
+                              <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                                <label>client_scope</label>
+                                  <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.scope">
+                                  <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                    <label>authorized_grant_types</label>
+                                      <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.authorized_grant_types">
+                                      <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+
+                                <div class="form-group has-feedback">
+                                        <label>autoapprove</label>
+                                          <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.autoapprove">
+                                          <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                    </div>
+                                
+                            
+                        <div class="row" style="margin-bottom:50px;">
+                                <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                               <div class="col-md-4">
+                                    <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                                    <button type="button" class="btn btn-success" (click)="loadClient()">Create</button>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                  <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                        
+                              </div>
+                              <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                              
+                        </div>
+                    </form> 
+            
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div> -->
+            </ng-template>
+    
+    </table>
+    
+    

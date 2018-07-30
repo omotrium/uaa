@@ -1,0 +1,111 @@
+
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                                    
+  <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <!-- <th>user_id</th> -->
+                
+                <th>username</th>
+                <th>emails</th>
+                <th>origin</th>
+                
+                <th>zoneId</th>
+                <th>groups</th>
+                
+                <!-- <th>Password</th> -->
+                <th>Action</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+    
+                <tr *ngFor="let user of Users">
+                                    
+                        <!-- <td>{{user.id}}</td> -->
+                        
+                        <!-- <td>{{user.groups[0].value}}</td> -->
+                        <td style="word-wrap: break-word;max-width:30px;">{{ user.userName }}</td>
+                        <td>{{ user.emails[0].value }}</td>
+                        <td>{{user.origin}}</td>
+                         <td>{{user.zoneId}}</td> 
+                         <td><p *ngFor="let groups of  user.groups"> <!--I want to list the colors of the person here-->
+                            {{groups.value}}, {{groups.display}}, {{groups.type}}
+                         </p></td>
+
+                        <!-- <td>{{user.password}}</td> -->
+                        <td>
+                                <input type="text" class="form-control" value="{{ user_id}}" #user_id style="display:none;">
+                                <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(user.id)" style="margin-right: 10px" /> 
+                                <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,user.id)">Update</button>
+                                
+                          
+                        </td>
+                    </tr>
+            
+        </tbody>
+
+        <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">Create</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                                
+                        <div class="form-group has-feedback">
+                                <label>User Name</label>
+                            <input type="text" class="form-control" placeholder="client_id" autocomplete="off"  name="client_id" [(ngModel)]="get.username">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group has-feedback">
+                            <label>Family Name</label>
+                              <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.familyName">
+                              <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                                <label>Given Name</label>
+                                  <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.givenName">
+                                  <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                        <div class="form-group has-feedback">
+                                <label>Email</label>
+                            <input type="text" class="form-control" placeholder="client_secret" [(ngModel)]="get.emails[0].value" name="client_secret">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="row" style="margin-bottom:50px;">
+                                <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                               <div class="col-md-4">
+                                    <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                                    <button type="button" class="btn btn-success" (click)="updClient(get.user_id)">Update</button>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                  <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                        
+                              </div>
+                              <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                              
+                        </div>
+                    </form> 
+            
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div> -->
+            </ng-template>
+    
+    </table>
+    
+    
