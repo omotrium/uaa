@@ -103,7 +103,7 @@
                         <li>
                             <a class="sidebar-nav-link" routerLink="/groups" aria-expanded="false">
                                 <i class="fa fa-suitcase"></i>
-                                <span class="hide-menu">Role</span>
+                                <span class="hide-menu">Group</span>
                             </a>
                         </li>
                         <!-- <li>
@@ -167,12 +167,12 @@
                                     <td style="word-wrap: break-word;max-width:10px;">{{ client.autoapprove }}</td> -->
                                 <!-- <td>{{user.password}}</td> -->
                                 <td>
-                                    <input type="text" class="form-control" value="{{ client_id}}" #client_id style="display:none;">
+                                    <!-- <input type="text" class="form-control" value="{{client_id}}" #client_id style="display:none;"> -->
 
                                     <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(client.client_id)" style="margin-right: 30px"
                                     />
-                                    <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,client_id)">Update</button>
-
+                                    <!-- <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,client_id)">Update</button> -->
+                                    <button class="btn btn-success" (click)="goToApp(client.client_id)">View</button>
 
                                 </td>
                             </tr>
@@ -187,7 +187,7 @@
         <!-- End Page wrapper  -->
         <ng-template #content let-c="close" let-d="dismiss">
             <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Create Group</h4>
+                <h4 class="modal-title" id="modal-basic-title">Create App</h4>
                 <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -196,19 +196,55 @@
                 <form>
 
                     <div class="form-group has-feedback">
+                            <label>Application Id</label>
                         <input type="text" class="form-control" placeholder="client_id" autocomplete="off" [(ngModel)]="client_id" name="client_id">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
+                            <label>Name</label>
                         <input type="text" class="form-control" placeholder="name" [(ngModel)]="name" name="name">
                         <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
+                            <label>Application Secret</label>
                         <input type="password" class="form-control" placeholder="client_secret" [(ngModel)]="client_secret" name="client_secret">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
+                    <div class="form-group has-feedback">
+                            <label>Scope</label>
+                            <input type="text" class="form-control" placeholder="scope" autocomplete="off" [(ngModel)]="scope" name="scope">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
 
+                    <div class="form-group has-feedback">
+                            <label>Required Ids</label>
+                                <input type="text" class="form-control" placeholder="require_ids" autocomplete="off" [(ngModel)]="require_ids" name="require_ids">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                            <label>Authorized Grant Types</label>
+                            <input type="text" class="form-control" placeholder="authorized_grant_types" autocomplete="off" [(ngModel)]="authorized_grant_types" name="authorized_grant_types">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                            <label>Redirect_Uri</label>
+                                <input type="text" class="form-control" placeholder="redirect_uri" autocomplete="off" [(ngModel)]="redirect_uri" name="redirect_uri">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                            <label>Authorities</label>
+                            <input type="text" class="form-control" placeholder="authorities" autocomplete="off" [(ngModel)]="authorities" name="authorities">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                        <label>Autoapprove</label>
+                          <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="autoapprove">
+                          <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                 </div>
                     <div class="row" style="margin-bottom:50px;">
                         <div class="col-md-2">
                             &nbsp;

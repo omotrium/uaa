@@ -1,3 +1,89 @@
 [nz-form] {
+  max-width: 100% !important;
+}
+.login-form {
+  max-width: 100%;
+}
+
+.save-settings-button {
+  float: right;
+}
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+[nz-form] {
   max-width: 600px;
+}
+
+.form-element-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.form-element.name {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 24px;
+  max-width: 300px;
+  width: 250px;
+}
+
+.form-element label {
+  margin: 0;
+  margin-right: 16px;
+}
+
+.form-element input {
+  width: 100%;
+}
+
+.form-element.description {
+  display: flex;
+  margin-right: 24px;
+  align-items: center;
+  flex: 2;
+  max-width: 470px;
+}
+
+.add-button {
+  max-width: 350px;
+  width: 200px;
+}
+
+.create-role-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.modal-guts {
+
+  /* other stuff we already covered */
+
+  /* cover the modal */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* spacing as needed */
+  padding: 20px 50px 20px 20px;
+
+  /* let it scroll */
+  overflow: auto;
+  
 }

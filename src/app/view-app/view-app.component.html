@@ -1,112 +1,496 @@
-<div>
-  <div>
-    <h1>Default App</h1>
-    <p>Generic application</p>
-  </div>
-  <nz-tabset>
-    <nz-tab nzTitle="Tab 1">
+<div nz-row nzType="flex" nzJustify="center">
+  <div nz-col nzSpan="16">
+    <div>
+      <div>
+        <h1>{{groupInfoObjects.name}} APP</h1>
+        <h2></h2>
 
-      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input formControlName="name" id="name">
-            <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input your name</nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="domain" nzRequired>Domain</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="domain" id="domain" formControlName="domain" (ngModelChange)="updateConfirmValidator()">
-            <nz-form-explain *ngIf="validateForm.get('domain').dirty && validateForm.get('domain').errors">Please input your domain!</nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="clientId" nzRequired>Client ID</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="clientID" formControlName="checkPassword" id="checkPassword">
-            <nz-form-explain *ngIf="validateForm.get('checkPassword').dirty && validateForm.get('checkPassword').errors">
-              <ng-container *ngIf="validateForm.get('checkPassword').hasError('required')">
-                Please confirm your password!
-              </ng-container>
-              <ng-container *ngIf="validateForm.get('checkPassword').hasError('confirm')">
-                Two passwords that you enter is inconsistent!
-              </ng-container>
-            </nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired>
-            <span>
-              Nickname
-              <nz-tooltip nzTitle="What do you want other to call you">
-                <i nz-tooltip class="anticon anticon-question-circle-o"></i>
-              </nz-tooltip>
-            </span>
-          </nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input id="nickname" formControlName="nickname">
-            <nz-form-explain *ngIf="validateForm.get('nickname').dirty && validateForm.get('nickname').errors">Please input your nickname!</nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']">
-            <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-              <ng-template #addOnBeforeTemplate>
-                <nz-select formControlName="phoneNumberPrefix" style="width: 70px;">
-                  <nz-option nzLabel="+86" nzValue="+86"></nz-option>
-                  <nz-option nzLabel="+87" nzValue="+87"></nz-option>
-                </nz-select>
-              </ng-template>
-              <input formControlName="phoneNumber" id="'phoneNumber'" nz-input>
-            </nz-input-group>
-            <nz-form-explain *ngIf="validateForm.get('phoneNumber').dirty && validateForm.get('phoneNumber').errors">Please input your phone number!</nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="website" nzRequired>Website</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input id="website" formControlName="website" placeholder="website">
-            <nz-form-explain *ngIf="validateForm.get('website').dirty && validateForm.get('website').errors">Please input website!</nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="captcha" nzRequired>Captcha</nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24">
-            <div nz-row [nzGutter]="8">
-              <div nz-col [nzSpan]="12">
-                <input nz-input formControlName="captcha" id="captcha">
-              </div>
-              <div nz-col [nzSpan]="12">
-                <button nz-button (click)="getCaptcha($event)">Get captcha</button>
-              </div>
+        <p>Generic application</p>
+      </div>
+      <nz-tabset>
+        <nz-tab nzTitle="Settings">
+          <div nz-row nzType="flex" nzJustify="center">
+            <div nz-col nzSpan="24">
+              <form nz-form [formGroup]="settingsForm" class="login-form" (ngSubmit)="settingsFormSubmit()">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name">Application name</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="name" placeholder="name" value="{{groupInfoObjects.name}}">
+
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.name.dirty && f.name.errors">Please input the application name</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="redirect_uri">Redirect URI</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="redirect_uri" placeholder="Redirect URI" value="{{groupInfoObjects.redirect_uri}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.redirect_uri.dirty && f.redirect_uri.errors">Please input your redirect uri</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="client_id">Client IDs</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="client_id" placeholder="Client IDs" value="{{groupInfoObjects.client_id}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.client_id.dirty && f.client_id.errors">Please input your client id</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="client_secret">Client secret</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="client_secret" placeholder="Client secret" value="{{groupInfoObjects.client_secret}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.client_secret.dirty && f.client_secret.errors">Please input your client secret</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="scope">Scope</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="scope" placeholder="Scope" value="{{groupInfoObjects.scope}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.scope.dirty && f.scope.errors">Please specify the appliation scope</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="authorities">Authorities</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="authorities" placeholder="Authorities" value="{{groupInfoObjects.authorities}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.authorities.dirty && f.authorities.errors">Please specify the appliation authorities</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="resource_ids">Resource IDs</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="resource_ids" placeholder="Resource IDs" value="{{groupInfoObjects.resource_ids}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.resource_ids.dirty && f.resource_ids.errors">Please specify the resource ids</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="authorized_grant_types">Grant types</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="authorized_grant_types" placeholder="Authorization grant types" value="{{groupInfoObjects.authorized_grant_types}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.authorized_grant_types.dirty && f.authorized_grant_types.errors">Please specify the authorization grant types</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="token_salt">Token salt</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-input-group>
+                      <input type="text" nz-input formControlName="token_salt" placeholder="Token salt" value="{{groupInfoObjects.token_salt}}">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="f.token_salt.dirty && f.token_salt.errors">Please specify the token salt</nz-form-explain>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="autoapprove">Auto approve</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <nz-switch [(ngModel)]="switchValue" [ngModelOptions]="{standalone: true}"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                  <nz-form-control>
+                    <button nz-button [nzType]="'primary'" class="save-settings-button">Save changes</button>
+
+                  </nz-form-control>
+                </nz-form-item>
+              </form>
             </div>
-            <nz-form-explain *ngIf="validateForm.get('captcha').dirty && validateForm.get('captcha').errors">Please input the captcha you got!</nz-form-explain>
-            <nz-form-extra>We must make sure that your are a human.</nz-form-extra>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item nz-row style="margin-bottom:8px;">
-          <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <label nz-checkbox formControlName="agree">
-              <span>I have read the
-                <a>agreement</a>
-              </span>
-            </label>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item nz-row style="margin-bottom:8px;">
-          <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <button nz-button nzType="primary">Register</button>
-          </nz-form-control>
-        </nz-form-item>
+          </div>
+        </nz-tab>
+
+
+        <!-- Permissions tab -->
+        <nz-tab nzTitle="Permissions">
+          <div nz-row nzType="flex" nzJustify="center">
+            <div nz-col nzSpan="24">
+              <p>Define Permissions for your application.</p>
+            </div>
+          </div>
+          <div class="create-role-btn-wrapper">
+            <button nz-button nzType="primary" (click)="open(content2)">Create Permission</button>
+            <!-- <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100" (click)="open(content)"><i class="fas fa-plus"></i>Create Role</button> -->
+
+          </div>
+          <nz-table #basicTable>
+            <thead>
+              <tr>
+
+                <th>displayName</th>
+                <th>description</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr *ngFor="let Groups of permissions.resources">
+
+                <td style="max-width: 30px; word-wrap: break-word;">{{Groups.displayName }}</td>
+                <td style="word-wrap: break-word;max-width:10px;">{{ Groups.description }}</td>
+
+                <td>
+                  <input type="text" class="form-control" value="{{id}}" #client_id style="display:none;">
+
+                  <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(groupId)" style="margin-right: 30px"
+                  />
+
+
+                </td>
+              </tr>
+
+            </tbody>
+
+          </nz-table>
+          <ng-template #content2 let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic">Create Permission</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+
+                <div class="form-group has-feedback">
+                  <label>display Name</label>
+                  <input type="text" class="form-control" placeholder="client_id" autocomplete="off" name="client_id" [(ngModel)]="get.displayName">
+                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label>description</label>
+                  <input type="text" class="form-control" placeholder="name" name="name" [(ngModel)]="get.description">
+                  <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="row" style="margin-bottom:50px;">
+                  <div class="col-md-2">
+                    &nbsp;
+                  </div>
+                  <div class="col-md-4">
+                    <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                    <button type="button" class="btn btn-success" (click)="loadPermission()">Create</button>
+
+                  </div>
+                  <div class="col-md-4">
+                    <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+
+                  </div>
+                  <div class="col-md-2">
+                    &nbsp;
+                  </div>
+
+                </div>
+              </form>
+
+
+            </div>
+            <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div> -->
+          </ng-template>
+
+
+        </nz-tab>
+
+
+        <!-- Roles tab -->
+        <nz-tab nzTitle="Roles">
+          <div nz-row nzType="flex" nzJustify="center">
+            <div nz-col nzSpan="24" style="margin-bottom: 3rem">
+              <p>Roles allow you to define the data that will be accessed through the applications to your API. Set a name for
+                them and its description for better understanding.</p>
+            </div>
+          </div>
+          <div class="create-role-btn-wrapper">
+            <button nz-button nzType="primary" (click)="open(content5)">Create role</button>
+            <!-- <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100" (click)="open(content)"><i class="fas fa-plus"></i>Create Role</button> -->
+
+          </div>
+          <nz-table #basicTable>
+            <thead>
+              <tr>
+
+                <th>displayName</th>
+                <th>description</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <!-- <tr *ngFor="let Groups of groups.resources">  -->
+              <tr *ngFor="let group of Roles">
+
+
+                <td style="max-width: 30px; word-wrap: break-word;">{{group.displayName }}</td>
+                <td style="word-wrap: break-word;max-width:10px;">{{ group.description }}</td>
+
+                <td>
+                  <input type="text" class="form-control" value="{{id}}" #client_id style="display:none;">
+
+                  <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(groupId)" style="margin-right: 30px"
+                  />
+                  <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open4(content,group.id)">Assign</button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+
+          </nz-table>
+          <ng-template #content5 let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal">Create Role</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form>
+                <div class="form-group has-feedback col-sm-12">
+                  <label for="" class="col-sm-3">Display Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="client_id" autocomplete="off" [(ngModel)]="displayName" name="displayName">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                  </div>
+                </div>
+                <div class="form-group has-feedback col-sm-12">
+                  <label for="" class="col-sm-3">Description</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="name" [(ngModel)]="description" name="description">
+                    <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                  </div>
+                </div>
+
+                <!-- <div class="col-sm-12">
+                  <label for="" class="col-sm-3">Permissions</label>
+                  <div class="col-sm-9" *ngFor="let Groups of permissions.resources">
+                    <button class="btn btn-default" style="margin:10px 10px 10px 10px; width:50%;
+                    text-align: left;">
+                      <input type="checkbox">{{Groups.displayName}}
+                    </button> &nbsp;
+                  </div>
+                </div> -->
+
+
+
+                <div class="row" style="margin-bottom:50px;">
+                  <div class="col-md-2">
+                    &nbsp;
+                  </div>
+                  <div class="col-md-4">
+                    <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                    <button type="button" class="btn btn-success" (click)="loadPermission()">Create</button>
+                  </div>
+                  <div class="col-md-4">
+                    <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                  </div>
+                  <div class="col-md-2">
+                    &nbsp;
+                  </div>
+                </div>
+              </form>
+
+            </div>
+            <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div> -->
+          </ng-template>
+
+          <!-- members tab -->
+        </nz-tab>
+
+        <!-- Members tab -->
+        <nz-tab nzTitle="Members">
+          <div nz-row nzType="flex" nzJustify="center">
+            <div nz-col nzSpan="24" style="margin-bottom: 3rem">
+              <p>Assign Users to role</p>
+            </div>
+          </div>
+
+
+          <nz-table #basicTable>
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>givenName</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let Groups of Members">
+                <td style="max-width: 30px; word-wrap: break-word;">{{Groups.entity.userName}}</td>
+                <td>{{ Groups.entity.emails[0].value}}</td>
+                <td style="word-wrap: break-word;max-width:10px;">{{Groups.entity.name.givenName }}</td>
+                <td>
+                  <input type="text" class="form-control" value='{{Groups.entity.id}}' #userid style="display:none;" />
+                  <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="funcDeleteT(groupId)" style="margin-right: 30px"
+                  />
+                  <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open7(content7, Groups.entity.id)">Assign</button>
+
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+
+          <ng-template #content7 let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Assign Role To User</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+            </div> -->
+
+          </ng-template>
+
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </div>
+
+  <!-- assign permission to role -->
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-ti">Assign</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div class="modal-body">
+      <form>
+
+        <div class="form-group has-feedback">
+          <label>DisplayName</label>
+          <input type="text" class="form-control" placeholder="displayName" autocomplete="off" name="displayName" [(ngModel)]="get.displayName">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+
+        <div class="col-sm-12">
+          <label for="" class="col-sm-3">Permissions</label>
+          <div class="col-sm-9" *ngFor="let Groups of permissions.resources; let i = index;">
+            <button class="btn btn-default" style="margin:10px 10px 10px 10px; width:50%;
+            text-align: center; padding: 3px 6px; font-size: 12px;">
+              <input type="checkbox" [id]="Groups.id" (change)="onChange($event, i, Groups)">{{Groups.displayName}}
+            </button> &nbsp;
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom:50px;">
+          <div class="col-md-2">
+            &nbsp;
+          </div>
+          <div class="col-md-4">
+            <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+            <button type="button" class="btn btn-success" (click)="d('Cross click')">Done</button>
+
+          </div>
+          <div class="col-md-4">
+            <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+
+          </div>
+          <div class="col-md-2">
+            &nbsp;
+          </div>
+
+        </div>
       </form>
-    </nz-tab>
-    <nz-tab nzTitle="Tab 2">
-      Content of Tab Pane 2
-    </nz-tab>
-    <nz-tab nzTitle="Tab 3">
-      Content of Tab Pane 3
-    </nz-tab>
-  </nz-tabset>
+
+    </div>
+    <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+              </div> -->
+  </ng-template>
+
+  <!-- assign role to users -->
+  
+
+  
+  <ng-template #content7 let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-ti">Assign to User</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+        <div class="modal-body" style="width: 100%; height: auto;">
+            <form>
+      
+              <div class="form-group has-feedback">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="userName" autocomplete="off" name="userName" [(ngModel)]="get.username">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+      
+              <div class="col-sm-12">
+                <label for="" class="col-sm-3">Roles</label>
+                <div class="col-sm-9" *ngFor="let group of Roles; let i = index;">
+                  <button class="btn btn-default" style="margin:3px 3px 3px 3px; width:70%; height: auto;
+                              text-align: center; padding: 3px 6px; font-size: 12px; ">
+                    <input type="checkbox" [id]="group.id" (change)="change($event, i, group)">{{group.displayName}}
+                  </button> &nbsp;
+                </div>
+              </div>
+      
+              <div class="row" style="margin-bottom:50px;">
+                <div class="col-md-2">
+                  &nbsp;
+                </div>
+                <div class="col-md-4">
+                  <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
+                  <button type="button" class="btn btn-success" (click)="d('Cross click')">Done</button>
+      
+                </div>
+                <div class="col-md-4">
+                  <!-- <a routerLink="/user" class="btn btn-default btn-block btn-flat">Cancel</a> -->
+                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+      
+                </div>
+                <div class="col-md-2">
+                  &nbsp;
+                </div>
+      
+              </div>
+            </form>
+      
+          </div>
+    
+    
+    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                  </div> -->
+  </ng-template>
+
+
+
 </div>

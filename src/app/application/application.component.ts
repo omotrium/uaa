@@ -3,6 +3,7 @@ import axios from "axios";
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { RouterModule, Routes, Router, ActivatedRoute } from "@angular/router";
 import { Http, Headers, RequestOptions } from "@angular/http";
+import { DataService } from "../dataservice/dataservice";
 
 @Component({
   selector: "app-application",
@@ -20,7 +21,8 @@ export class ApplicationComponent {
     public http: Http,
     private route: ActivatedRoute,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    public dataservice: DataService
   ) {}
 
   ngOnInit() {
@@ -29,14 +31,12 @@ export class ApplicationComponent {
 
   loadClients() {
     let Header = new Headers({
-      Authorization:
-        "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
       Accept: "application/json"
     });
     let myHeaders = new Headers();
     const head = {
-      Authorization:
-        "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
       Accept: "application/json"
     };
     // myHeaders.append("Content-Type", "application/json");
@@ -86,8 +86,7 @@ export class ApplicationComponent {
     console.log(this.name);
 
     let Header = new Headers({
-      Authorization:
-        "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
@@ -120,7 +119,8 @@ export class ApplicationComponent {
   funcDeleteT(client_id) {
     if (confirm("Are you sure you want to delete?")) {
       //var string = (id);
-      var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+      var link =
+        "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
       link = link.replace("{client_id}", client_id);
       let Header = new Headers({
         Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
@@ -173,5 +173,12 @@ export class ApplicationComponent {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  goToApp(data: string) {
+    // routerLink ='/view-app'
+    console.log("here");
+    this.dataservice.setGroupId(data);
+    this.router.navigate(["view-app"]);
   }
 }

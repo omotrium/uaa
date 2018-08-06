@@ -247,13 +247,9 @@ open(content,data) {
      );
      // this.Users = response.data.resources
 })
-     .catch(error => console.log(error));
-
-
-  
-
- 
+     .catch(error => console.log(error)); 
 }
+
 
 private getDismissReason(reason: any): string {
   if (reason === ModalDismissReasons.ESC) {

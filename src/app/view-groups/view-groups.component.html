@@ -6,7 +6,7 @@
                 <th>displayName</th>
                 <th>description</th>
                 <th>zoneId</th> 
-                 <th>members</th> 
+                 <th>members</th>  
                 <th>Action</th>
             </tr>
         </thead>
@@ -19,9 +19,9 @@
                         <td style="max-width: 30px; word-wrap: break-word;">{{Groups.displayName }}</td>
                         <td style="word-wrap: break-word;max-width:10px;">{{ Groups.description }}</td>
                         <td style="word-wrap: break-word;max-width:10px;">{{ Groups.zoneId }}</td>  
-                        <td style="word-wrap: break-word;max-width:30px;"><p *ngFor="let member of  Groups.members"> <!--I want to list the colors of the person here-->
+                         <td style="word-wrap: break-word;max-width:30px;"><p *ngFor="let member of  Groups.members"> 
                             {{member.origin}}, {{member.type}}, {{member.value}}
-                         </p></td>
+                         </p></td> 
 
                         <td>
                             <input type="text" class="form-control" value="{{id}}" #client_id style="display:none;">
@@ -31,7 +31,7 @@
                             <!-- <input type="submit" #id class="btn btn-info btn-xs" value="Update" (click)="funcUpdateT(client.client_id)" />  -->
                             <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" ng-click="loadClientsById(client.client_id)">Update</button>  -->
                             <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content)" ng-click="loadGroupsById(Groups.id)">Update</button> -->
-                            <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,Groups.id)">Update</button>
+                            <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,Groups.id)">View</button>
                               <!-- <button class="btn btn-info btn-sm"  type="button" data-toggle="modal" data-target="#myModalEdit" (click)="open(content,Groups.id)">Update</button>
                                   -->
                         </td>
@@ -55,25 +55,36 @@
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                         
-                        <div class="form-group has-feedback">
+                        <!-- <div class="form-group has-feedback">
                             <label>description</label>
                               <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.description">
-                              <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                              
                               <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
                                 <label>ZoneId</label>
                                   <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="get.zoneId">
-                                  <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                                  
                                   <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            </div>
+                            </div> -->
+
+                            <div class="col-sm-12">
+                                    <label for="" class="col-sm-3">Users</label>
+                                    <div class="col-sm-9" *ngFor="let user of Users; let i = index;">
+                                      <button class="btn btn-default" style="margin:10px 10px 10px 10px; width:50%;
+                                      text-align: left;">
+                                        <input type="checkbox" [id]="user.id" (change)="onChange($event, i, user)">{{ user.userName }}
+                                      </button> &nbsp;
+                                    </div>
+                                  </div>
+
                                 <div class="row" style="margin-bottom:50px;">
                                 <div class="col-md-2">
                                     &nbsp;
                                 </div>
                                <div class="col-md-4">
                                     <!-- <input type="submit" class="btn btn-primary" value="Create" (click)="funcPostT(userName.value, emails.value, password.value)" /> -->
-                                    <button type="button" class="btn btn-success" (click)="loadClient()">Create</button>
+                                     <button type="button" class="btn btn-success" (click)="c('Save click')">Done</button> 
                                     
                                 </div>
                                 <div class="col-md-4">

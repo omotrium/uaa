@@ -25,6 +25,7 @@ export class GroupsComponent {
 
   ngOnInit() {
     this.loadClients();
+    
   }
 
   loadClients() {

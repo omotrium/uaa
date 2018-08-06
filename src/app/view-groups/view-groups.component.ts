@@ -15,6 +15,11 @@ import { RouterModule, Routes, Router, ActivatedRoute } from '@angular/router';
 export class ViewGroupsComponent implements OnInit {
   public data: any;
   closeResult: string;
+  public user : any;
+  public role_id: any;
+  public Users: any;
+  client_id="";
+  value = "";
   // username= "";
   // email="";
   // password="";
@@ -29,6 +34,7 @@ export class ViewGroupsComponent implements OnInit {
   ngOnInit() {
     
     this.loadGroups();
+    this.loadUsers();
 
     
 
@@ -145,6 +151,9 @@ open(content,data) {
   axios({ method: "GET", url:  url, headers: head })
     .then((response) =>{
      console.log(response.data)
+     //eden
+     console.log("data==> " + data);
+     this.role_id = data;
      this.get.displayName = response.data.displayName;
      this.get.description = response.data.description;
      this.get.zoneId = response.data.zoneId;
@@ -180,6 +189,86 @@ private getDismissReason(reason: any): string {
     return `with: ${reason}`;
   }
 }
+
+loadUsers() {
+  let Header = new Headers({
+    "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
+    "Accept":"application/json"
+  });
+  const head = {
+    "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
+    "Accept":"application/json"
+  };
+  axios({ method: "GET", url:  "https://uaaserver.eu-gb.mybluemix.net/Users", headers: head })
+    .then(response => 
+     //console.log(response.data)
+      this.Users = response.data.resources
+    )
+     .catch(error => console.log(error));
+
+   
+}
+
+// id for role in assign modal
+public userId  : any;
+public userId2  : any;
+// assigning permission to role
+onChange(event, i, user){
+
+  console.log("i am here");
+  this.userId2 = this.role_id;
+  this.userId = user.id;
+  console.log(this.userId2);
+  console.log(this.userId);
+  console.log(this.user);
+
+  ///
+  var link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{userId2}/members";
+  link = link.replace("{userId2}", this.userId2);
+  var data = JSON.stringify({
+    
+  value: this.userId
+  });
+
+  const schema = {
+    "origin":"uaa",
+    "type":"USER",
+    "value":"null"
+  };
+  schema.value = this.userId
+    
+  
+
+  let Header = new Headers({
+    Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+    "Content-Type": "application/json"
+  });
+  let myHeaders = new Headers();
+
+  // myHeaders.append("Content-Type", "application/json");
+  // myHeaders.append("Access-Control-Allow-Origin", "*");
+
+  let Option = new RequestOptions({ headers: Header });
+
+  this.http.post(link, schema, Option).subscribe(
+    res => {
+      console.log(res);
+      console.log(res.status);
+      if (res.status == 201) {
+        
+        alert("User " + this.client_id + " Created Successfully");
+      } else {
+        alert("Failed!");
+      }
+    },
+    error => {
+      alert("Client_id already created");
+      console.log("error object " + JSON.stringify(error.json()));
+    }
+  );
+  
+}
+
   }
 
 

@@ -33,7 +33,7 @@ import { TestComponent } from "./test/test.component";
 import { ApplicationComponent } from "./application/application.component";
 import { NgZorroAntdModule, NZ_I18N, en_US } from "ng-zorro-antd";
 import { ViewAppComponent } from "./view-app/view-app.component";
-import { FormComponent } from "./form/form.component";
+import { DataService } from "./dataservice/dataservice";
 //import { AlertsModule } from 'angular-alert-module';
 
 registerLocaleData(en);
@@ -85,8 +85,7 @@ const routes: Routes = [
     GroupsComponent,
     TestComponent,
     ApplicationComponent,
-    ViewAppComponent,
-    FormComponent
+    ViewAppComponent
   ],
   imports: [
     [HttpModule],
@@ -104,7 +103,7 @@ const routes: Routes = [
     NgZorroAntdModule
   ],
 
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
