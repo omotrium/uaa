@@ -95,7 +95,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-nav-link" routerLink="/clients" aria-expanded="false">
+                            <a class="sidebar-nav-link" routerLink="/application" aria-expanded="false">
                                 <i class="fa fa-bar-chart"></i>
                                 <span class="hide-menu">Application</span>
                             </a>
@@ -196,55 +196,55 @@
                 <form>
 
                     <div class="form-group has-feedback">
-                            <label>Application Id</label>
+                            <!-- <label>Application Id</label> -->
                         <input type="text" class="form-control" placeholder="client_id" autocomplete="off" [(ngModel)]="client_id" name="client_id">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                            <label>Name</label>
+                            <!-- <label>Name</label> -->
                         <input type="text" class="form-control" placeholder="name" [(ngModel)]="name" name="name">
                         <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                            <label>Application Secret</label>
+                            <!-- <label>Application Secret</label> -->
                         <input type="password" class="form-control" placeholder="client_secret" [(ngModel)]="client_secret" name="client_secret">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                            <label>Scope</label>
+                            <!-- <label>Scope</label> -->
                             <input type="text" class="form-control" placeholder="scope" autocomplete="off" [(ngModel)]="scope" name="scope">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
 
-                    <div class="form-group has-feedback">
-                            <label>Required Ids</label>
+                    <!-- <div class="form-group has-feedback">
+                            
                                 <input type="text" class="form-control" placeholder="require_ids" autocomplete="off" [(ngModel)]="require_ids" name="require_ids">
                                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
+                    </div> -->
 
                     <div class="form-group has-feedback">
-                            <label>Authorized Grant Types</label>
+                            <!-- <label>Authorized Grant Types</label> -->
                             <input type="text" class="form-control" placeholder="authorized_grant_types" autocomplete="off" [(ngModel)]="authorized_grant_types" name="authorized_grant_types">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
 
                     <div class="form-group has-feedback">
-                            <label>Redirect_Uri</label>
+                            <!-- <label>Redirect_Uri</label> -->
                                 <input type="text" class="form-control" placeholder="redirect_uri" autocomplete="off" [(ngModel)]="redirect_uri" name="redirect_uri">
                                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                            <label>Authorities</label>
+                            <!-- <label>Authorities</label> -->
                             <input type="text" class="form-control" placeholder="authorities" autocomplete="off" [(ngModel)]="authorities" name="authorities">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-                <div class="form-group has-feedback">
+                <!-- <div class="form-group has-feedback">
                         <label>Autoapprove</label>
                           <input type="text" class="form-control" placeholder="name"  name="name" [(ngModel)]="autoapprove">
-                          <!-- <input type="hidden" class="form-control" placeholder="Primary" #emails value="true"> -->
+                          
                           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                 </div>
+                 </div> -->
                     <div class="row" style="margin-bottom:50px;">
                         <div class="col-md-2">
                             &nbsp;

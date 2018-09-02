@@ -1,0 +1,316 @@
+<body class="fix-header fix-sidebar">
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div> -->
+        <!-- Main wrapper  -->
+        <div id="main-wrapper">
+            <!-- header header  -->
+            <div class="header">
+                <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                    <!-- Logo -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <!-- Logo icon -->
+                            <!-- <b>
+                                    <img src="images/logo.png" alt="homepage" class="dark-logo" />
+                                </b> -->
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <!-- <span>
+                                    <img src="images/logo-text.png" alt="homepage" class="dark-logo" />
+                                </span> -->
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                    <div class="navbar-collapse">
+                        <!-- toggle and nav items -->
+                        <ul class="navbar-nav mr-auto mt-md-0">
+                            <!-- This is  -->
+                            <li class="nav-item">
+                                <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
+                                    <i class="mdi mdi-menu"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item m-l-10">
+                                <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)">
+                                    <i class="ti-menu"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- User profile and search -->
+                        <ul class="navbar-nav my-lg-0">
+                            <!-- Profile -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="http://robohash.org/503483?set=set2&bgset=bg2&size=70x70" alt="user" class="profile-pic" />
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                    <ul class="dropdown-user">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-lock"></i> Change email</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-lock"></i> Change password</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-power-off"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- End header header -->
+            <!-- Left Sidebar  -->
+            <div class="left-sidebar">
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                            <li class="nav-devider"></li>
+                            <li>
+                                <a class="sidebar-nav-link" routerLink="/dashboard" aria-expanded="false">
+                                    <i class="far fa-tachometer"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidebar-nav-link" routerLink="/users" aria-expanded="false">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidebar-nav-link" routerLink="/application" aria-expanded="false">
+                                    <i class="fa fa-bar-chart"></i>
+                                    <span class="hide-menu">Application</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidebar-nav-link" routerLink="/groups" aria-expanded="false">
+                                    <i class="fa fa-suitcase"></i>
+                                    <span class="hide-menu">Group</span>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a class="sidebar-nav-link" routerLink="/" aria-expanded="false">
+                                    <i class="fa fa-suitcase"></i>
+                                    <span class="hide-menu">Roles</span>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </div>
+            <!-- End Left Sidebar  -->
+
+            
+            <!-- Page wrapper  -->
+            <div class="page-wrapper">
+
+                    <div nz-row nzType="flex" nzJustify="center">
+
+                            <div nz-col nzSpan="16">
+
+                    <div>
+                            <h1>{{groupInfoObjects.displayName}} </h1>
+                            
+              
+                            
+                          </div>
+                    <nz-tabset>
+                            <nz-tab nzTitle="Member">
+                                    
+        
+                                    <table class="table table-bordered table-condensed table-striped" datatable [dtTrigger]="dtTrigger">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>userName</th>
+                                                    <th>Email</th>
+                                                    <th>givenName</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        
+                                            
+                                            <tbody>
+                                                    <tr *ngFor="let Groups of Members">
+                                                      <td style="max-width: 30px; word-wrap: break-word;">{{Groups.entity.userName}}</td>
+                                                      <td>{{ Groups.entity.emails[0].value}}</td>
+                                                      <td style="word-wrap: break-word;max-width:10px;">{{Groups.entity.name.givenName }}</td>
+                                                      <td>
+                                                        <input type="text" class="form-control" value='{{Groups.entity.id}}' #userid style="display:none;" />
+                                                        <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="DelMember(user.id)" style="margin-right: 16px"
+                                                        />
+                                                        
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                            
+                                                
+                                                
+                                            
+                                        
+                                        </table>       
+                            </nz-tab>
+                            <nz-tab nzTitle="Add Members">
+                                    <div class="wrapper">
+                                            <div clas="form-wrapper">
+                                                <form>
+                                                    <div class="form-group has-feedback">
+                                                        <label>DISPLAY NAME</label>
+                                                        <input type="text" class="form-control" placeholder="displayName" autocomplete="off" name="displayName" value="{{groupInfoObjects.displayName}}">
+                                                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                                    </div>
+                                        
+                                                    <div class="form-group has-feedback">
+                                                        <label>DESCRIPTION</label>
+                                                        <input type="text" class="form-control" placeholder="description" autocomplete="off" name="description" value="{{groupInfoObjects.description}}">
+                                                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="users-body">
+                                                        <p>Users</p>
+                                                        <div class="user-container" style="margin-bottom: 16px;">
+                                                            <button class="btn btn-pr" style="margin:8px; width:auto;
+                                                            text-align: left; padding: 3px 6px; font-size: 14px;" *ngFor="let user of Users; let i = index;">
+                                                                <input type="checkbox" [id]="user.id" (change)="change($event, i, user)">{{user.userName }}
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn-wrapper">
+                                                            <button type="button" class="btn btn-success" (onclick)="myFunction()" style="margin-right: 16px">Done</button>
+                                                            
+                                                            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        
+                                            </div>
+                                        </div>
+                            </nz-tab>
+                            <nz-tab nzTitle="Nested Groups">
+                              <p>Add nested groups (children) to this group.
+                                  All members of these nested groups will automatically <br> 
+                                  become members of this group (and receive any roles or permissions that apply to this group).
+
+                                </p>
+                                <div class="col-12 d-flex justify-content-end p-0">
+                                        <div class="empty-ui text-center">
+                
+                                            
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <!-- <button type="button" class="btn btn-primary btn-flat btn-addon btn-lg w-100" (click)="open(content5)"> -->
+                                                <button nz-button nzType="primary" (click)="open4(content,groupId3)">
+                                                        <i class="fas fa-plus"></i>ADD NESTED GROUP</button>
+                                                        
+                                                    
+                                                    
+                                                
+                                            </div>
+                                            <!--End of  div for container class  -->
+                                            
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-condensed table-striped" datatable [dtTrigger]="dtTrigger">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>userName</th>
+                                                    <th>Email</th>
+                                                    <th>givenName</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        
+                                            
+                                            <tbody>
+                                                    <tr *ngFor="let Groups of Members">
+                                                      <td style="max-width: 30px; word-wrap: break-word;">{{Groups.entity.userName}}</td>
+                                                      <td>{{ Groups.entity.emails[0].value}}</td>
+                                                      <td style="word-wrap: break-word;max-width:10px;">{{Groups.entity.name.givenName }}</td>
+                                                      <td>
+                                                        <input type="text" class="form-control" value='{{Groups.entity.id}}' #userid style="display:none;" />
+                                                        <input type="submit" #id class="btn btn-danger btn-xs" value="Delete" (click)="DelMember(user.id)" style="margin-right: 16px"
+                                                        />
+                                                        
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                            
+                                                
+                                                
+                                            
+                                        
+                                        </table>  
+                                    
+                            </nz-tab>
+                            <nz-tab nzTitle="Group Mappings">
+                                    Content of Tab Pane 3
+                                  </nz-tab>
+                          </nz-tabset>
+                
+                 </div>
+                 </div>   
+                        
+            </div>
+            <!-- End Page wrapper  -->
+
+            <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-basic-ti">Assign</h4>
+                      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+          
+                    <div class="modal-body">
+                      <form>
+          
+                        <div class="form-group has-feedback">
+                          <label>DisplayName</label>
+                          <input type="text" class="form-control" placeholder="displayName" autocomplete="off" name="displayName" [(ngModel)]="get.displayName">
+                          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+          
+                        <div class="permission-body">
+                          <p>GROUPS</p>
+                          <div class="roles-container" style="margin-bottom: 16px;">
+                            <button class="btn btn-default" style="margin:10px; width:auto;
+                            text-align: left; padding: 3px 6px; font-size: 14px;" *ngFor="let Groups of Groups; let i = index;">
+                              <input type="checkbox" [id]="Groups.id" (change)="onChange($event, i, Groups)">{{Groups.displayName}}
+                            </button>
+                          </div>
+                          <div class="btn-wrapper">
+                            <button type="button" class="btn btn-success" (click)="d('Cross click')" style="margin-right: 16px">Done</button>
+                            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+                          </div>
+                        </div> 
+          
+                      </form>
+          
+                    </div>
+                    <!-- <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                          </div> -->
+                  </ng-template>
+            
+            
+
+            
+    
+        </div>
+    
+        
+    
+        

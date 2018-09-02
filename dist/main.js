@@ -232,6 +232,83 @@ var AdminComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/angular-way/angular-way.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/angular-way/angular-way.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/angular-way/angular-way.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/angular-way/angular-way.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<table datatable [dtOptions]=\"dtOptions\" class=\"row-border hover\">\n  <thead>\n    <tr>\n      <th>ID</th>\n      <th>First name</th>\n      <th>Last name</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let person of persons\">\n      <td>{{ person.id }}</td>\n      <td>{{ person.firstName }}</td>\n      <td>{{ person.lastName }}</td>\n    </tr>\n  </tbody>\n</table>"
+
+/***/ }),
+
+/***/ "./src/app/angular-way/angular-way.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/angular-way/angular-way.component.ts ***!
+  \******************************************************/
+/*! exports provided: AngularWayComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AngularWayComponent", function() { return AngularWayComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AngularWayComponent = /** @class */ (function () {
+    function AngularWayComponent() {
+        this.dtOptions = {};
+    }
+    AngularWayComponent.prototype.ngOnInit = function () {
+        this.dtOptions = {
+            ajax: "data/data.json",
+            columns: [
+                {
+                    title: "ID",
+                    data: "id"
+                },
+                {
+                    title: "First name",
+                    data: "firstName"
+                },
+                {
+                    title: "Last name",
+                    data: "lastName"
+                }
+            ]
+        };
+    };
+    AngularWayComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-angular-way",
+            template: __webpack_require__(/*! ./angular-way.component.html */ "./src/app/angular-way/angular-way.component.html"),
+            styles: [__webpack_require__(/*! ./angular-way.component.css */ "./src/app/angular-way/angular-way.component.css")]
+        })
+    ], AngularWayComponent);
+    return AngularWayComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -335,10 +412,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clients_clients_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./clients/clients.component */ "./src/app/clients/clients.component.ts");
 /* harmony import */ var _groups_groups_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./groups/groups.component */ "./src/app/groups/groups.component.ts");
 /* harmony import */ var _test_test_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./test/test.component */ "./src/app/test/test.component.ts");
-/* harmony import */ var _application_application_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./application/application.component */ "./src/app/application/application.component.ts");
-/* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/esm5/antd.js");
-/* harmony import */ var _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./view-app/view-app.component */ "./src/app/view-app/view-app.component.ts");
-/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! angular-datatables */ "./node_modules/angular-datatables/index.js");
+/* harmony import */ var _application_application_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./application/application.component */ "./src/app/application/application.component.ts");
+/* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/esm5/antd.js");
+/* harmony import */ var _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./view-app/view-app.component */ "./src/app/view-app/view-app.component.ts");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+/* harmony import */ var _angular_way_angular_way_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./angular-way/angular-way.component */ "./src/app/angular-way/angular-way.component.ts");
+/* harmony import */ var _view_group_page_view_group_page_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./view-group-page/view-group-page.component */ "./src/app/view-group-page/view-group-page.component.ts");
+/* harmony import */ var _staff_staff_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./staff/staff.component */ "./src/app/staff/staff.component.ts");
+/* harmony import */ var _applications_applications_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./applications/applications.component */ "./src/app/applications/applications.component.ts");
+/* harmony import */ var _department_department_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./department/department.component */ "./src/app/department/department.component.ts");
+/* harmony import */ var _organisation_organisation_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./organisation/organisation.component */ "./src/app/organisation/organisation.component.ts");
+/* harmony import */ var _user_type_user_type_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./user-type/user-type.component */ "./src/app/user-type/user-type.component.ts");
+/* harmony import */ var _permission_permission_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./permission/permission.component */ "./src/app/permission/permission.component.ts");
+/* harmony import */ var _role_role_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./role/role.component */ "./src/app/role/role.component.ts");
+/* harmony import */ var _application_client_application_client_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./application-client/application-client.component */ "./src/app/application-client/application-client.component.ts");
+/* harmony import */ var _application_user_application_user_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./application-user/application-user.component */ "./src/app/application-user/application-user.component.ts");
+/* harmony import */ var _role_permission_role_permission_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./role-permission/role-permission.component */ "./src/app/role-permission/role-permission.component.ts");
+/* harmony import */ var _authentication_type_authentication_type_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./authentication-type/authentication-type.component */ "./src/app/authentication-type/authentication-type.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -380,12 +471,39 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //import { AlertsModule } from 'angular-alert-module';
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["registerLocaleData"])(_angular_common_locales_en__WEBPACK_IMPORTED_MODULE_5___default.a);
 var routes = [
     { path: "login", component: _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"] },
+    { path: "staff", component: _staff_staff_component__WEBPACK_IMPORTED_MODULE_38__["StaffComponent"] },
+    { path: "application-user", component: _application_user_application_user_component__WEBPACK_IMPORTED_MODULE_46__["ApplicationUserComponent"] },
+    { path: "applications", component: _applications_applications_component__WEBPACK_IMPORTED_MODULE_39__["ApplicationsComponent"] },
+    { path: "role-permision", component: _role_permission_role_permission_component__WEBPACK_IMPORTED_MODULE_47__["RolePermissionComponent"] },
+    { path: "authentication-type", component: _authentication_type_authentication_type_component__WEBPACK_IMPORTED_MODULE_48__["AuthenticationTypeComponent"] },
+    { path: "department", component: _department_department_component__WEBPACK_IMPORTED_MODULE_40__["DepartmentComponent"] },
+    { path: "organisation", component: _organisation_organisation_component__WEBPACK_IMPORTED_MODULE_41__["OrganisationComponent"] },
+    { path: "user-type", component: _user_type_user_type_component__WEBPACK_IMPORTED_MODULE_42__["UserTypeComponent"] },
+    { path: "permission", component: _permission_permission_component__WEBPACK_IMPORTED_MODULE_43__["PermissionComponent"] },
+    { path: "role", component: _role_role_component__WEBPACK_IMPORTED_MODULE_44__["RoleComponent"] },
+    { path: "application-client", component: _application_client_application_client_component__WEBPACK_IMPORTED_MODULE_45__["ApplicationClientComponent"] },
+    { path: "view-group-page", component: _view_group_page_view_group_page_component__WEBPACK_IMPORTED_MODULE_37__["ViewGroupPageComponent"] },
+    { path: "angular-way", component: _angular_way_angular_way_component__WEBPACK_IMPORTED_MODULE_36__["AngularWayComponent"] },
     { path: "test", component: _test_test_component__WEBPACK_IMPORTED_MODULE_30__["TestComponent"] },
-    { path: "application", component: _application_application_component__WEBPACK_IMPORTED_MODULE_31__["ApplicationComponent"] },
+    { path: "application", component: _application_application_component__WEBPACK_IMPORTED_MODULE_32__["ApplicationComponent"] },
     { path: "change-password", component: _change_password_change_password_component__WEBPACK_IMPORTED_MODULE_10__["ChangePasswordComponent"] },
     { path: "groups", component: _groups_groups_component__WEBPACK_IMPORTED_MODULE_29__["GroupsComponent"] },
     { path: "create-user", component: _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_11__["CreateUserComponent"] },
@@ -403,7 +521,7 @@ var routes = [
     { path: "dashboard", component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_26__["DashboardComponent"] },
     { path: "users", component: _users_users_component__WEBPACK_IMPORTED_MODULE_27__["UsersComponent"] },
     { path: "clients", component: _clients_clients_component__WEBPACK_IMPORTED_MODULE_28__["ClientsComponent"] },
-    { path: "view-app", component: _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_33__["ViewAppComponent"] },
+    { path: "view-app", component: _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_34__["ViewAppComponent"] },
     { path: "", redirectTo: "/login", pathMatch: "full" }
 ];
 var AppModule = /** @class */ (function () {
@@ -432,27 +550,385 @@ var AppModule = /** @class */ (function () {
                 _clients_clients_component__WEBPACK_IMPORTED_MODULE_28__["ClientsComponent"],
                 _groups_groups_component__WEBPACK_IMPORTED_MODULE_29__["GroupsComponent"],
                 _test_test_component__WEBPACK_IMPORTED_MODULE_30__["TestComponent"],
-                _application_application_component__WEBPACK_IMPORTED_MODULE_31__["ApplicationComponent"],
-                _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_33__["ViewAppComponent"]
+                _application_application_component__WEBPACK_IMPORTED_MODULE_32__["ApplicationComponent"],
+                _view_app_view_app_component__WEBPACK_IMPORTED_MODULE_34__["ViewAppComponent"],
+                _angular_way_angular_way_component__WEBPACK_IMPORTED_MODULE_36__["AngularWayComponent"],
+                _view_group_page_view_group_page_component__WEBPACK_IMPORTED_MODULE_37__["ViewGroupPageComponent"],
+                _staff_staff_component__WEBPACK_IMPORTED_MODULE_38__["StaffComponent"],
+                _applications_applications_component__WEBPACK_IMPORTED_MODULE_39__["ApplicationsComponent"],
+                _department_department_component__WEBPACK_IMPORTED_MODULE_40__["DepartmentComponent"],
+                _organisation_organisation_component__WEBPACK_IMPORTED_MODULE_41__["OrganisationComponent"],
+                _user_type_user_type_component__WEBPACK_IMPORTED_MODULE_42__["UserTypeComponent"],
+                _permission_permission_component__WEBPACK_IMPORTED_MODULE_43__["PermissionComponent"],
+                _role_role_component__WEBPACK_IMPORTED_MODULE_44__["RoleComponent"],
+                _application_client_application_client_component__WEBPACK_IMPORTED_MODULE_45__["ApplicationClientComponent"],
+                _application_user_application_user_component__WEBPACK_IMPORTED_MODULE_46__["ApplicationUserComponent"],
+                _role_permission_role_permission_component__WEBPACK_IMPORTED_MODULE_47__["RolePermissionComponent"],
+                _authentication_type_authentication_type_component__WEBPACK_IMPORTED_MODULE_48__["AuthenticationTypeComponent"]
             ],
             imports: [
                 [_angular_http__WEBPACK_IMPORTED_MODULE_18__["HttpModule"]],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                angular_datatables__WEBPACK_IMPORTED_MODULE_31__["DataTablesModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_19__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_19__["ReactiveFormsModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_7__["NgbModule"].forRoot(),
                 _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"].forRoot(routes, { enableTracing: false } // <-- debugging purposes only
                 ),
-                ng_zorro_antd__WEBPACK_IMPORTED_MODULE_32__["NgZorroAntdModule"]
+                ng_zorro_antd__WEBPACK_IMPORTED_MODULE_33__["NgZorroAntdModule"]
             ],
-            providers: [{ provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_32__["NZ_I18N"], useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_32__["en_US"] }, _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_34__["DataService"]],
+            providers: [{ provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_33__["NZ_I18N"], useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_33__["en_US"] }, _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_35__["DataService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/application-client/application-client.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/application-client/application-client.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/application-client/application-client.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/application-client/application-client.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                <!-- <th>Description</th> -->\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let applicationClient of AppClient ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/application-client', applicationClient.id, 'view' ]\">{{applicationClient.id}}</a></td>\n                                <td>{{applicationClient.name}}</td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/application-client', applicationClient.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/application-client', applicationClient.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'application-client/'+ applicationClient.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/application-client/application-client.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/application-client/application-client.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ApplicationClientComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationClientComponent", function() { return ApplicationClientComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var ApplicationClientComponent = /** @class */ (function () {
+    function ApplicationClientComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    ApplicationClientComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadAppClient()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationClientComponent.prototype.loadAppClient = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/application-clients",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.AppClient = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationClientComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-application-client",
+            template: __webpack_require__(/*! ./application-client.component.html */ "./src/app/application-client/application-client.component.html"),
+            styles: [__webpack_require__(/*! ./application-client.component.css */ "./src/app/application-client/application-client.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], ApplicationClientComponent);
+    return ApplicationClientComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/application-user/application-user.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/application-user/application-user.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/application-user/application-user.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/application-user/application-user.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Staffs</th>\n                                <th>Applications</th> \n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let applicationUser of applicationUsers ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/application-user', applicationUser.id, 'view' ]\">{{applicationUser.id}}</a></td>\n                                <td>\n                                    <div *ngIf=\"applicationUser.staffs\">\n                                        <a [routerLink]=\"['../staff', applicationUser.staffs?.id, 'view' ]\" >{{applicationUser.staffs?.name}}</a>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div *ngIf=\"applicationUser.applications\">\n                                        <a [routerLink]=\"['../application', applicationUser.applications?.id, 'view' ]\" >{{applicationUser.applications?.name}}</a>\n                                    </div>\n                                </td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/application-user', applicationUser.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/application-user', applicationUser.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'application-user/'+ applicationUser.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/application-user/application-user.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/application-user/application-user.component.ts ***!
+  \****************************************************************/
+/*! exports provided: ApplicationUserComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationUserComponent", function() { return ApplicationUserComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var ApplicationUserComponent = /** @class */ (function () {
+    function ApplicationUserComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    ApplicationUserComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadAppUser()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationUserComponent.prototype.loadAppUser = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/application-users",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.AppUser = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationUserComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-application-user",
+            template: __webpack_require__(/*! ./application-user.component.html */ "./src/app/application-user/application-user.component.html"),
+            styles: [__webpack_require__(/*! ./application-user.component.css */ "./src/app/application-user/application-user.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], ApplicationUserComponent);
+    return ApplicationUserComponent;
 }());
 
 
@@ -477,7 +953,7 @@ module.exports = ".sidebar-nav .sidebar-nav-link{\r\n  display: flex;\r\n  align
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon \r\n                        <!-- <b>\r\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </b> -->\r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <div>\r\n\r\n        </div>\r\n\r\n\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-envelope\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/clients\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-bar-chart\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Group</span>\r\n                            </a>\r\n                        </li>\r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row justify-content-center tb-row\">\r\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\r\n                        <div class=\"empty-ui text-center\">\r\n\r\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\r\n\r\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\r\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\r\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\r\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\r\n                                         -->\r\n                            </div>\r\n                            <!--End of  div for container class  -->\r\n                        </div>\r\n                    </div>\r\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\r\n                        <thead>\r\n                            <tr>\r\n                                <!-- <th>user_id</th> -->\r\n                                <th>client_id</th>\r\n                                <th>Name</th>\r\n                                <th>client_scope</th>\r\n                                <!-- <th>authorized_grant_types</th>\r\n                                <th>autoapprove</th> -->\r\n\r\n                                <!-- <th>Password</th> -->\r\n                                <th>Action</th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let client of clients\">\r\n\r\n                                <!-- <td>{{user.id}}</td> -->\r\n\r\n                                <td style=\"word-wrap:break-word;max-width:10px;border-collapse: collapse;\">{{client.client_id}}</td>\r\n                                <td style=\"max-width: 15px;\">{{client.name }}</td>\r\n                                <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.scope }}</td>\r\n                                <!-- <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.authorized_grant_types }}</td>\r\n                                    <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.autoapprove }}</td> -->\r\n                                <!-- <td>{{user.password}}</td> -->\r\n                                <td>\r\n                                    <!-- <input type=\"text\" class=\"form-control\" value=\"{{client_id}}\" #client_id style=\"display:none;\"> -->\r\n\r\n                                    <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(client.client_id)\" style=\"margin-right: 30px\"\r\n                                    />\r\n                                    <!-- <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,client_id)\">Update</button> -->\r\n                                    <button class=\"btn btn-success\" (click)=\"goToApp(client.client_id)\">View</button>\r\n\r\n                                </td>\r\n                            </tr>\r\n\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\r\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <form>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Application Id</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Name</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\r\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Application Secret</label>\r\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\r\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Scope</label>\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                        </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Required Ids</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\r\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Authorized Grant Types</label>\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Redirect_Uri</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\r\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <label>Authorities</label>\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                </div>\r\n                <div class=\"form-group has-feedback\">\r\n                        <label>Autoapprove</label>\r\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\r\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\r\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                 </div>\r\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\r\n                        <div class=\"col-md-2\">\r\n                            &nbsp;\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\r\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\r\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-2\">\r\n                            &nbsp;\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n\r\n            </div>\r\n            <!-- <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\r\n            </div> -->\r\n        </ng-template>\r\n\r\n\r\n    </div>"
+module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon \r\n                        <!-- <b>\r\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </b> -->\r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <div>\r\n\r\n        </div>\r\n\r\n\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-envelope\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-bar-chart\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Group</span>\r\n                            </a>\r\n                        </li>\r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row justify-content-center tb-row\">\r\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\r\n                        <div class=\"empty-ui text-center\">\r\n\r\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\r\n\r\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\r\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\r\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\r\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\r\n                                         -->\r\n                            </div>\r\n                            <!--End of  div for container class  -->\r\n                        </div>\r\n                    </div>\r\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\r\n                        <thead>\r\n                            <tr>\r\n                                <!-- <th>user_id</th> -->\r\n                                <th>client_id</th>\r\n                                <th>Name</th>\r\n                                <th>client_scope</th>\r\n                                <!-- <th>authorized_grant_types</th>\r\n                                <th>autoapprove</th> -->\r\n\r\n                                <!-- <th>Password</th> -->\r\n                                <th>Action</th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let client of clients\">\r\n\r\n                                <!-- <td>{{user.id}}</td> -->\r\n\r\n                                <td style=\"word-wrap:break-word;max-width:10px;border-collapse: collapse;\">{{client.client_id}}</td>\r\n                                <td style=\"max-width: 15px;\">{{client.name }}</td>\r\n                                <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.scope }}</td>\r\n                                <!-- <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.authorized_grant_types }}</td>\r\n                                    <td style=\"word-wrap: break-word;max-width:10px;\">{{ client.autoapprove }}</td> -->\r\n                                <!-- <td>{{user.password}}</td> -->\r\n                                <td>\r\n                                    <!-- <input type=\"text\" class=\"form-control\" value=\"{{client_id}}\" #client_id style=\"display:none;\"> -->\r\n\r\n                                    <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(client.client_id)\" style=\"margin-right: 30px\"\r\n                                    />\r\n                                    <!-- <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,client_id)\">Update</button> -->\r\n                                    <button class=\"btn btn-success\" (click)=\"goToApp(client.client_id)\">View</button>\r\n\r\n                                </td>\r\n                            </tr>\r\n\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\r\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <form>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Application Id</label> -->\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Name</label> -->\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\r\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Application Secret</label> -->\r\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\r\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Scope</label> -->\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                        </div>\r\n\r\n                    <!-- <div class=\"form-group has-feedback\">\r\n                            \r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\r\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div> -->\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Authorized Grant Types</label> -->\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Redirect_Uri</label> -->\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\r\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                            <!-- <label>Authorities</label> -->\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\r\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                </div>\r\n                <!-- <div class=\"form-group has-feedback\">\r\n                        <label>Autoapprove</label>\r\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\r\n                          \r\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                 </div> -->\r\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\r\n                        <div class=\"col-md-2\">\r\n                            &nbsp;\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\r\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\r\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-2\">\r\n                            &nbsp;\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n\r\n            </div>\r\n            <!-- <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\r\n            </div> -->\r\n        </ng-template>\r\n\r\n\r\n    </div>"
 
 /***/ }),
 
@@ -523,6 +999,10 @@ var ApplicationComponent = /** @class */ (function () {
         this.client_id = "";
         this.name = "";
         this.client_secret = "";
+        this.scope = "";
+        this.authorized_grant_types = "";
+        this.redirect_uri = "";
+        this.authorities = "";
     }
     ApplicationComponent.prototype.ngOnInit = function () {
         this.loadClients();
@@ -530,12 +1010,12 @@ var ApplicationComponent = /** @class */ (function () {
     ApplicationComponent.prototype.loadClients = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
         var head = {
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
         // myHeaders.append("Content-Type", "application/json");
@@ -543,7 +1023,7 @@ var ApplicationComponent = /** @class */ (function () {
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         axios__WEBPACK_IMPORTED_MODULE_1___default()({
             method: "GET",
-            url: "https://uaaserver.eu-gb.mybluemix.net/oauth/clients",
+            url: "https://ice.ecobank.com/uaa/oauth/clients",
             headers: head
         })
             .then(function (response) {
@@ -554,22 +1034,26 @@ var ApplicationComponent = /** @class */ (function () {
     };
     ApplicationComponent.prototype.loadClient = function () {
         var _this = this;
-        // funcPost(nameVal, passwordVal, passwordVal)
-        //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients";
+        console.log('heloooooooooooooooo');
+        var link = "https://ice.ecobank.com/uaa/oauth/clients";
         var data = JSON.stringify({
             client_id: this.client_id,
             client_secret: this.client_secret,
-            name: this.name
+            name: this.name,
+            scope: this.scope,
+            authorized_grant_types: this.authorized_grant_types,
+            authorities: this.authorities,
+            redirect_uri: this.redirect_uri
         });
+        console.log('amaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
         var schema = {
-            scope: ["clients.read", "clients.write"],
+            scope: [],
             client_id: null,
             client_secret: null,
             resource_ids: [],
-            authorized_grant_types: ["client_credentials"],
-            redirect_uri: ["http://yahoo.com"],
-            authorities: ["clients.read", "clients.write"],
+            authorized_grant_types: [],
+            redirect_uri: [],
+            authorities: [],
             token_salt: "3tjE6d",
             autoapprove: true,
             allowedproviders: ["uaa", "ldap", "my-saml-provider"],
@@ -578,10 +1062,14 @@ var ApplicationComponent = /** @class */ (function () {
         schema.client_id = this.client_id;
         schema.name = this.name;
         schema.client_secret = this.client_secret;
+        schema.redirect_uri[0] = this.redirect_uri;
+        schema.authorized_grant_types[0] = this.authorized_grant_types;
+        schema.authorities[0] = this.authorities;
+        schema.scope[0] = this.scope;
         console.log(this.client_id);
         console.log(this.name);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
@@ -595,13 +1083,18 @@ var ApplicationComponent = /** @class */ (function () {
                 _this.client_id = "";
                 _this.name = "";
                 _this.client_secret = "";
-                alert("User " + _this.client_id + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
+                _this.scope = "";
+                _this.authorized_grant_types = "";
+                _this.authorities = "";
+                _this.redirect_uri = "";
+                alert("Application" + _this.client_id + " Created Successfully");
             }
         }, function (error) {
-            alert("Client_id already created");
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
@@ -609,10 +1102,10 @@ var ApplicationComponent = /** @class */ (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+            var link = "https://ice.ecobank.com/uaa/oauth/clients/{client_id}";
             link = link.replace("{client_id}", client_id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-                Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                 Accept: "application/json"
             });
             var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
@@ -683,6 +1176,178 @@ var ApplicationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/applications/applications.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/applications/applications.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/applications/applications.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/applications/applications.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                <th>Description</th>\n                                <th>Logo</th>\n                                <th>Authentication Types</th>\n                                <th>Application Clients</th> \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                                <tr *ngFor=\"let application of Application ;trackBy: trackId\">\n                                    <td><a [routerLink]=\"['/application', application.id, 'view' ]\">{{application.id}}</a></td>\n                                    <td>{{application.name}}</td>\n                                    <td>{{application.description}}</td>\n                                    <td>{{application.logo}}</td>\n                                    <td>\n                                        <div *ngIf=\"application.authenticationTypes\">\n                                            <a [routerLink]=\"['../authentication-type', application.authenticationTypes?.id, 'view' ]\" >{{application.authenticationTypes?.name}}</a>\n                                        </div>\n                                    </td>\n                                    <td>\n                                        <div *ngIf=\"application.applicationClients\">\n                                            <a [routerLink]=\"['../application-client', application.applicationClients?.id, 'view' ]\" >{{application.applicationClients?.name}}</a>\n                                        </div>\n                                    </td>\n                                    <td class=\"text-right\">\n                                        <div class=\"btn-group flex-btn-group-container\">\n                                            <button type=\"submit\"\n                                                    [routerLink]=\"['/application', application.id, 'view' ]\"\n                                                    class=\"btn btn-info btn-sm\">\n                                                <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                            </button>\n                                            <button type=\"submit\"\n                                                    [routerLink]=\"['/application', application.id, 'edit']\"\n                                                    class=\"btn btn-primary btn-sm\">\n                                                <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                            </button>\n                                            <button type=\"submit\"\n                                                    [routerLink]=\"['/', { outlets: { popup: 'application/'+ application.id + '/delete'} }]\"\n                                                    replaceUrl=\"true\"\n                                                    queryParamsHandling=\"merge\"\n                                                    class=\"btn btn-danger btn-sm\">\n                                                <fa-icon [icon]=\"'times'\"></fa-icon>\n                                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                            </button>\n                                        </div>\n                                    </td>\n                                </tr>\n                                </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/applications/applications.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/applications/applications.component.ts ***!
+  \********************************************************/
+/*! exports provided: ApplicationsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationsComponent", function() { return ApplicationsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var ApplicationsComponent = /** @class */ (function () {
+    function ApplicationsComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    ApplicationsComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadApplication()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationsComponent.prototype.loadApplication = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/applications",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Application = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ApplicationsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-applications",
+            template: __webpack_require__(/*! ./applications.component.html */ "./src/app/applications/applications.component.html"),
+            styles: [__webpack_require__(/*! ./applications.component.css */ "./src/app/applications/applications.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], ApplicationsComponent);
+    return ApplicationsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/assign/assign.component.css":
 /*!*********************************************!*\
   !*** ./src/app/assign/assign.component.css ***!
@@ -740,6 +1405,178 @@ var AssignComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], AssignComponent);
     return AssignComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication-type/authentication-type.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/authentication-type/authentication-type.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/authentication-type/authentication-type.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/authentication-type/authentication-type.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                <th>Token</th> \n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let authenticationType of AuthType ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/authentication-type', authenticationType.id, 'view' ]\">{{authenticationType.id}}</a></td>\n                                <td>{{authenticationType.name}}</td>\n                                <td>{{authenticationType.token}}</td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/authentication-type', authenticationType.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/authentication-type', authenticationType.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'authentication-type/'+ authenticationType.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/authentication-type/authentication-type.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/authentication-type/authentication-type.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: AuthenticationTypeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthenticationTypeComponent", function() { return AuthenticationTypeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var AuthenticationTypeComponent = /** @class */ (function () {
+    function AuthenticationTypeComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    AuthenticationTypeComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadAuthType()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AuthenticationTypeComponent.prototype.loadAuthType = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/authentication-types",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.AuthType = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AuthenticationTypeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-authentication-type",
+            template: __webpack_require__(/*! ./authentication-type.component.html */ "./src/app/authentication-type/authentication-type.component.html"),
+            styles: [__webpack_require__(/*! ./authentication-type.component.css */ "./src/app/authentication-type/authentication-type.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], AuthenticationTypeComponent);
+    return AuthenticationTypeComponent;
 }());
 
 
@@ -1258,7 +2095,7 @@ module.exports = "input[type='submit']:hover {\r\n    background-color: black;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"box box-primary col-md-12\">\n      \n        <div class=\"login-box-body col-md-12\" style=\"margin-top:100px;\">\n            <div class=\"login-logo\" style=\"margin-bottom: 30px;\">\n                <a routerLink=\"/#\"><h3 style=\"color:#fff; text-align: center;\">Ecobank UAA</h3></a>\n            </div>\n\n            <div class=\"col-md-4\"></div>\n            <div class=\"col-md-4\">\n                    <p class=\"login-box-msg\" style=\"color:#fff\"><b>Create User</b></p>\n            \n                    <form>\n                        <!-- <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" #firstname placeholder=\"First name\" autocomplete=\"off\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div> -->\n                        <!-- <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Last name\">\n                            <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                        </div> -->\n                        <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"off\" [(ngModel)]=\"username\" name=\"username\" >\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                              <input type=\"text\" class=\"form-control\" placeholder=\"Email\" [(ngModel)]=\"email\" name=\"email\">\n                              <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                              <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                            <input type=\"password\" class=\"form-control\" placeholder=\"Password\" [(ngModel)]=\"password\" name=\"password\">\n                            <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                                <input type=\"password\" class=\"form-control\" placeholder=\"Confirm\">\n                                <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                            </div>\n                        <div class=\"row\" style=\"margin-bottom:50px;\">\n                                <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                               <div class=\"col-md-4\">\n                                    <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                                    <button type=\"button\" class=\"btn btn-default\" (click)=\"loadUser()\">Create</button>\n                                </div>\n                                <div class=\"col-md-4\">\n                                  <a routerLink=\"/login\" class=\"btn btn-success btn-block btn-flat\">Cancel</a>\n                              </div>\n                              <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                              \n                        </div>\n                    </form>\n\n\n\n\n                    <!-- <table class=\"table col-md-12\">\n                        <thead>\n                            <tr>\n                                <th>\n                                    examplee1\n                                </th>\n                                <th>\n                                    examplee2\n                                </th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let af of hhhhhh\">\n                                <td>{{ af.userName }}</td>\n                                <td>{{ af.userName }}</td>\n                            </tr>\n                        </tbody>\n                    </table> -->\n            </div>\n            <div class=\"col-md-4\"></div>\n            \n\n      </div>\n  \n\n\n</div>\n\n\n\n<!-- /.login-box -->\n<!-- jQuery 2.2.3 -->\n<script src=\"assets/plugins/jQuery/jquery-2.2.3.min.js\"></script>\n<!-- Bootstrap 3.3.7 -->\n<script src=\"assets/dist/bootstrap/js/bootstrap.min.js\"></script>\n<!-- iCheck -->\n<script src=\"assets/plugins/iCheck/icheck.min.js\"></script>\n<script>\n  $(function() {\n      $('input').iCheck({\n          checkboxClass: 'icheckbox_square-blue',\n          radioClass: 'iradio_square-blue',\n          increaseArea: '20%' // optional\n      });\n  });\n</script>\n\n<router-outlet></router-outlet>"
+module.exports = "\n  <div class=\"box box-primary col-md-12\">\n      \n        <div class=\"login-box-body col-md-12\" style=\"margin-top:100px;\">\n            <div class=\"login-logo\" style=\"margin-bottom: 30px;\">\n                <a routerLink=\"/#\"><h3 style=\"color:#fff; text-align: center;\"></h3></a>\n            </div>\n\n            <div class=\"col-md-4\"></div>\n            <div class=\"col-md-4\">\n                    <p class=\"login-box-msg\" style=\"color:#fff\"><b>Create User</b></p>\n            \n                    <form>\n                        <!-- <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" #firstname placeholder=\"First name\" autocomplete=\"off\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div> -->\n                        <!-- <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Last name\">\n                            <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                        </div> -->\n                        <div class=\"form-group has-feedback\">\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"off\" [(ngModel)]=\"username\" name=\"username\" >\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                              <input type=\"text\" class=\"form-control\" placeholder=\"Email\" [(ngModel)]=\"email\" name=\"email\">\n                              <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                              <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                            <input type=\"password\" class=\"form-control\" placeholder=\"Password\" [(ngModel)]=\"password\" name=\"password\">\n                            <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                                <input type=\"password\" class=\"form-control\" placeholder=\"Confirm\">\n                                <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                            </div>\n                        <div class=\"row\" style=\"margin-bottom:50px;\">\n                                <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                               <div class=\"col-md-4\">\n                                    <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                                    <button type=\"button\" class=\"btn btn-default\" (click)=\"loadUser()\">Create</button>\n                                </div>\n                                <div class=\"col-md-4\">\n                                  <a routerLink=\"/login\" class=\"btn btn-success btn-block btn-flat\">Cancel</a>\n                              </div>\n                              <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                              \n                        </div>\n                    </form>\n\n\n\n\n                   \n            </div>\n            <div class=\"col-md-4\"></div>\n            \n\n      </div>\n  \n\n\n</div>\n\n\n\n<!-- /.login-box -->\n<!-- jQuery 2.2.3 -->\n<script src=\"assets/plugins/jQuery/jquery-2.2.3.min.js\"></script>\n<!-- Bootstrap 3.3.7 -->\n<script src=\"assets/dist/bootstrap/js/bootstrap.min.js\"></script>\n<!-- iCheck -->\n<script src=\"assets/plugins/iCheck/icheck.min.js\"></script>\n<script>\n  $(function() {\n      $('input').iCheck({\n          checkboxClass: 'icheckbox_square-blue',\n          radioClass: 'iradio_square-blue',\n          increaseArea: '20%' // optional\n      });\n  });\n</script>\n\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1302,7 +2139,7 @@ var CreateUserComponent = /** @class */ (function () {
         var _this = this;
         // funcPost(nameVal, passwordVal, passwordVal)
         //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "http://localhost:8080/uaa/Users";
+        var link = "https://ice.ecobank.com/uaa/Users";
         var data = JSON.stringify({ userName: this.username, Password: this.password, emails: this.email });
         var schema = {
             "userName": null,
@@ -1441,7 +2278,7 @@ module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon -->\r\n                        <b>\r\n                            <!-- <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" /> -->\r\n                            User Access Management\r\n                        </b> \r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                            <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                        </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a routerLink=\"/change-email\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a routerLink=\"/change-password\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a routerLink=\"/login\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/view-groups\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-building\"></i>\r\n                                <span class=\"hide-menu\">Groups</span>\r\n                            </a>\r\n                        </li> \r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- Bread crumb -->\r\n            <div class=\"row page-titles\">\r\n                <div class=\"col-md-5 align-self-center\">\r\n                    <h3 class=\"section-title\">Overview</h3>\r\n                </div>\r\n            </div>\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                        <a routerLink='/users'>\r\n                                        <i class=\"far fa-user f-s-40 color-primary\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Users</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/application'>\r\n                                        <i class=\"far fa-user f-s-40 color-success\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Application</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/view-group'>\r\n                                        <i class=\"far fa-building f-s-40 color-warning\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                 <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Groups</p>\r\n                                </div> \r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/view-groups'>\r\n                                        <i class=\"far fa-user f-s-40 color-danger\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                  \r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n    </div>"
+module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon -->\r\n                        <b>\r\n                            <!-- <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" /> -->\r\n                            User Access Management\r\n                        </b> \r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                            <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                        </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a routerLink=\"/change-email\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a routerLink=\"/change-password\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a routerLink=\"/login\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-building\"></i>\r\n                                <span class=\"hide-menu\">Groups</span>\r\n                            </a>\r\n                        </li> \r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-user\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- Bread crumb -->\r\n            <div class=\"row page-titles\">\r\n                <div class=\"col-md-5 align-self-center\">\r\n                    <h3 class=\"section-title\">Overview</h3>\r\n                </div>\r\n            </div>\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                        <a routerLink='/users'>\r\n                                        <i class=\"far fa-user f-s-40 color-primary\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Users</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/application'>\r\n                                        <i class=\"far fa-user f-s-40 color-success\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Application</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/groups'>\r\n                                        <i class=\"far fa-building f-s-40 color-warning\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                 <div class=\"media-body media-text-right\">\r\n                                    <h2></h2>\r\n                                    <p class=\"m-b-0\">Groups</p>\r\n                                </div> \r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                     <!-- <div class=\"col-md-3\">\r\n                        <div class=\"card p-30\">\r\n                            <div class=\"media\">\r\n                                <div class=\"media-left meida media-middle\">\r\n                                    <span>\r\n                                            <a routerLink='/view-groups'>\r\n                                        <i class=\"far fa-user f-s-40 color-danger\"></i></a>\r\n                                    </span>\r\n                                </div>\r\n                                  \r\n                            </div>\r\n                        </div>\r\n                    </div>  -->\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n    </div>"
 
 /***/ }),
 
@@ -1517,6 +2354,178 @@ var DataService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
     ], DataService);
     return DataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/department/department.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/department/department.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/department/department.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/department/department.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let department of Department ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/department', department.id, 'view' ]\">{{department.id}}</a></td>\n                                <td>{{department.name}}</td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/department', department.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/department', department.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'department/'+ department.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/department/department.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/department/department.component.ts ***!
+  \****************************************************/
+/*! exports provided: DepartmentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DepartmentComponent", function() { return DepartmentComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var DepartmentComponent = /** @class */ (function () {
+    function DepartmentComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    DepartmentComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadDepartment()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    DepartmentComponent.prototype.loadDepartment = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/departments",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Department = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    DepartmentComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-department",
+            template: __webpack_require__(/*! ./department.component.html */ "./src/app/department/department.component.html"),
+            styles: [__webpack_require__(/*! ./department.component.css */ "./src/app/department/department.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], DepartmentComponent);
+    return DepartmentComponent;
 }());
 
 
@@ -1604,7 +2613,7 @@ module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon -->\n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/clients\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Role</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center\">\n                    <div class=\"col-6 d-flex justify-content-center\">\n                        <div class=\"empty-ui text-center\">\n                            <h1>Group</h1>\n                            \n                            <i class=\"far fa-building f-s-40 color-warning\"></i>\n                            <p>No groups have bee added to your connections</p>\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n                                       \n                                       <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                        <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Group</button>\n                                        <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                                         <a routerLink=\"/view-groups\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">VIEW GROUPS</a>\n                                      </div>\n                            \n\n                                      \n                            \n                                      \n                                                                                \n                                          \n                                      \n                                    \n                                    <!--End of  div for container class  --> \n                                  \n                            \n                        </div>\n                    </div>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create Group</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n                            \n                    <div class=\"form-group has-feedback\">\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\" >\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    \n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                            <div class=\"col-md-2\">\n                                &nbsp;\n                            </div>\n                           <div class=\"col-md-4\">\n                                <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                                <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n                                \n                            </div>\n                            <div class=\"col-md-4\">\n                              <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                              <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                    \n                          </div>\n                          <div class=\"col-md-2\">\n                                &nbsp;\n                            </div>\n                          \n                    </div>\n                </form> \n        \n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n    </div>\n\n    \n\n    \n"
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon -->\n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center\">\n                    <div class=\"col-6 d-flex justify-content-center\">\n                        <div class=\"empty-ui text-center\">\n                            <h1>Group</h1>\n                            \n                            <i class=\"far fa-building f-s-40 color-warning\"></i>\n                            <p>No groups have bee added to your connections</p>\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n                                       \n                                       <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                        <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Group</button>\n                                        <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                                         <!-- <a routerLink=\"/view-groups\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">VIEW GROUPS</a> -->\n                                         <a routerLink=\"/view-groups\"> <button type = \"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\"> View Groups</button></a>\n                                      </div>\n                            \n\n                                      \n                            \n                                      \n                                                                                \n                                          \n                                      \n                                    \n                                    <!--End of  div for container class  --> \n                                  \n                            \n                        </div>\n                    </div>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create Group</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n                            \n                    <div class=\"form-group has-feedback\">\n                        <label>Display Name</label>\n                        <input type=\"text\" class=\"form-control\" placeholder=\"displayName\" autocomplete=\"off\" [(ngModel)]=\"displayName\" name=\"displayName\" >\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                        <label>Description</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"description\" [(ngModel)]=\"description\" name=\"description\">\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                   \n                    \n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                            <div class=\"col-md-2\">\n                                &nbsp;\n                            </div>\n                           <div class=\"col-md-4\">\n                                <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                                <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n                                \n                            </div>\n                            <div class=\"col-md-4\">\n                              <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                              <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                    \n                          </div>\n                          <div class=\"col-md-2\">\n                                &nbsp;\n                            </div>\n                          \n                    </div>\n                </form> \n        \n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n    </div>\n\n    \n\n    \n"
 
 /***/ }),
 
@@ -1644,9 +2653,8 @@ var GroupsComponent = /** @class */ (function () {
         this.route = route;
         this.router = router;
         this.modalService = modalService;
-        this.client_id = "";
-        this.name = "";
-        this.client_secret = "";
+        this.displayName = "";
+        this.description = "";
     }
     GroupsComponent.prototype.ngOnInit = function () {
         this.loadClients();
@@ -1654,12 +2662,12 @@ var GroupsComponent = /** @class */ (function () {
     GroupsComponent.prototype.loadClients = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  d92d088bfc634503b2fd2591813c150d",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
         var head = {
-            Authorization: "Bearer  d92d088bfc634503b2fd2591813c150d",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
         // myHeaders.append("Content-Type", "application/json");
@@ -1667,7 +2675,7 @@ var GroupsComponent = /** @class */ (function () {
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         axios__WEBPACK_IMPORTED_MODULE_1___default()({
             method: "GET",
-            url: "https://uaaserver.eu-gb.mybluemix.net/oauth/clients",
+            url: "https://ice.ecobank.com/uaa/oauth/clients",
             headers: head
         })
             .then(function (response) {
@@ -1680,52 +2688,39 @@ var GroupsComponent = /** @class */ (function () {
         var _this = this;
         // funcPost(nameVal, passwordVal, passwordVal)
         //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients";
+        var link = "https://ice.ecobank.com/uaa/Groups";
         var data = JSON.stringify({
-            client_id: this.client_id,
-            client_secret: this.client_secret,
-            name: this.name
+            displayName: this.displayName,
+            description: this.description
         });
         var schema = {
-            scope: ["clients.read", "clients.write"],
-            client_id: null,
-            client_secret: null,
-            resource_ids: [],
-            authorized_grant_types: ["client_credentials"],
-            redirect_uri: ["http://yahoo.com"],
-            authorities: ["clients.read", "clients.write"],
-            token_salt: "3tjE6d",
-            autoapprove: true,
-            allowedproviders: ["uaa", "ldap", "my-saml-provider"],
-            name: null
+            displayName: "null",
+            description: "null"
         };
-        schema.client_id = this.client_id;
-        schema.name = this.name;
-        schema.client_secret = this.client_secret;
-        console.log(this.client_id);
-        console.log(this.name);
+        schema.displayName = this.displayName;
+        schema.description = this.description;
+        console.log(this.displayName);
+        console.log(this.description);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  d92d088bfc634503b2fd2591813c150d",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         this.http.post(link, schema, Option).subscribe(function (res) {
             console.log(res);
             console.log(res.status);
             if (res.status == 201) {
-                _this.client_id = "";
-                _this.name = "";
-                _this.client_secret = "";
-                alert("User " + _this.client_id + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
+                _this.displayName = "";
+                _this.description = "";
+                alert("User " + _this.displayName + " Created Successfully");
             }
         }, function (error) {
-            alert("Client_id already created");
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
@@ -1733,10 +2728,10 @@ var GroupsComponent = /** @class */ (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+            var link = "https://ice.ecobank.com/uaa/Groups//{groupId}";
             link = link.replace("{client_id}", client_id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-                Authorization: "Bearer  d92d088bfc634503b2fd2591813c150d",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                 Accept: "application/json"
             });
             var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
@@ -1807,7 +2802,7 @@ var GroupsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".auth-container{\r\n     /* background: #3d3780;  */\r\n      background: skyblue;  \r\n    \r\n    \r\n}\r\n.auth-wrapper{\r\n    max-width: 450px;\r\n    width: 440px;\r\n    padding-top: 10rem;\r\n}\r\n.auth-header span{\r\n    font-size: 28px;\r\n    font-weight: 600;\r\n    color: #fff;\r\n    margin-bottom: 0.75rem;\r\n}\r\n.auth-header small{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control{\r\n    padding: 0.75rem 1.125rem;\r\n    color: #ffffff;\r\n    background-color:white;\r\n    border: 2px solid #342e73;\r\n    border-radius: 0.5rem;\r\n}\r\n.auth-wrapper form .form-control:focus{\r\n    border: 2px solid #7659ff;\r\n    background-color: #342e73;\r\n    box-shadow: none;\r\n}\r\n.auth-wrapper form .form-control::-webkit-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control:-ms-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control::-ms-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control::placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-btn{\r\n    color: #ffffff;\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.4px;\r\n    font-weight: 500;\r\n    border: 2px solid transparent;\r\n    transition: none;\r\n    cursor: default;\r\n    padding: 0.75rem 1.5rem;\r\n    font-size: 1rem;\r\n    line-height: 1.25;\r\n    border-radius: 0.5rem;\r\n}\r\n.auth-wrapper .auth-btn-green{\r\n    background-image: linear-gradient(to right, #00d9bf, #00d977);\r\n    border-radius: 0.5rem;\r\n    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);\r\n    border: none;\r\n    line-height: calc((1rem * 1.25) + 4px);\r\n}"
+module.exports = ".auth-container{\r\n     /* background: #3d3780;  */\r\n      /* background: skyblue;   */\r\n      /* background-image: url('assets/dist/img/bgPicfz.jpg');  */\r\n      /* background-repeat: no-repeat;\r\n      background-size: 230% 230%;\r\n     */\r\n     /* background-image: url(\"assets/dist/img/bgPicfz.jpg\"); */\r\n    \r\n}\r\n.auth-wrapper{\r\n    max-width: 450px;\r\n    width: 440px;\r\n    padding-top: 10rem;\r\n}\r\n.auth-header span{\r\n    font-size: 32px;\r\n    font-weight: 600;\r\n    color: #fff;\r\n    margin-bottom: 0.75rem;\r\n}\r\n.auth-header small{\r\n    /* color: #a1a1e5; */\r\n    color: #fff;\r\n}\r\n.auth-wrapper form .form-control{\r\n    padding: 0.75rem 1.125rem;\r\n    color: #ffffff;\r\n    background-color:white;\r\n    border: 2px solid #342e73;\r\n    border-radius: 0.5rem;\r\n}\r\n.auth-wrapper form .form-control:focus{\r\n    border: 2px solid #7659ff;\r\n    background-color: #342e73;\r\n    box-shadow: none;\r\n}\r\n.auth-wrapper form .form-control::-webkit-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control:-ms-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control::-ms-input-placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-wrapper form .form-control::placeholder{\r\n    color: #a1a1e5;\r\n}\r\n.auth-btn{\r\n    color: #ffffff;\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.4px;\r\n    font-weight: 500;\r\n    border: 2px solid transparent;\r\n    transition: none;\r\n    cursor: default;\r\n    padding: 0.75rem 1.5rem;\r\n    font-size: 1rem;\r\n    line-height: 1.25;\r\n    border-radius: 0.5rem;\r\n}\r\n.auth-wrapper .auth-btn-green{\r\n    background-image: linear-gradient(to right, #00d9bf, #00d977);\r\n    border-radius: 0.5rem;\r\n    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);\r\n    border: none;\r\n    line-height: calc((1rem * 1.25) + 4px);\r\n}"
 
 /***/ }),
 
@@ -1818,7 +2813,7 @@ module.exports = ".auth-container{\r\n     /* background: #3d3780;  */\r\n      
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"d-flex justify-content-center h-100 auth-container\">\n    <div class=\"auth-wrapper\">\n        <div>\n            <div class=\"d-flex flex-column text-center mb-4 auth-header\">\n                <span>User Access Management</span>\n                <small>Hello! Sign in with your username or email</small>\n            </div>\n            <form>\n                <div class=\"form-group\">\n                    <input type=\"text\" class=\"form-control\"  id=\"username\" aria-describedby=\"usernameHelp\"  placeholder=\"username\" [(ngModel)]=\"username\" name=\"username\">\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"password\" class=\"form-control\" id=\"password\"  placeholder=\"password\" [(ngModel)]=\"password\" name=\"password\">\n                </div>\n                <button class=\"btn btn-primary w-100 auth-btn auth-btn-green\" (click)=\"loadLogin()\">Sign in</button> \n                <!-- <button type=\"button\" class=\"btn btn-success\" (click)=\"loadUser()\">Sign in</button> -->\n                                \n                <!-- <a routerLink=\"/view-users\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</a> -->\n                                     \n            </form>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"d-flex justify-content-center h-100 auth-container\" style=\"background-image: url('assets/dist/img/bgPicfz.jpg'); background-repeat: no-repeat;background-size: 230% 230%;\">\n    <div class=\"auth-wrapper\">\n        <div>\n            <div class=\"d-flex flex-column text-center mb-4 auth-header\">\n                <span>User Access Management</span>\n                <small>Hello! Sign in with your username or email</small>\n            </div>\n            <form>\n                <div class=\"form-group\">\n                    <input type=\"text\" class=\"form-control\" id=\"username\" aria-describedby=\"usernameHelp\" placeholder=\"username\" [(ngModel)]=\"username\"\n                        name=\"username\">\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" name=\"password\">\n                </div>\n                <button class=\"btn btn-primary w-100 auth-btn auth-btn-green\" (click)=\"loadLogin()\">Sign in</button>\n\n                <!-- <button type=\"button\" class=\"btn btn-success\" (click)=\"loadUser()\">Sign in</button> -->\n\n                <!-- <a routerLink=\"/view-users\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</a> -->\n\n            </form>\n            <!-- <a class=\"btn btn-primary\"  href=\"http://localhost:9000/#/\">Google</a> -->\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1858,18 +2853,16 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.ngOnInit = function () {
     };
     LoginComponent.prototype.loadLogin = function () {
+        //console.log(this.username + " " + this.password)    
         var _this = this;
-        console.log(this.username + " " + this.password);
-        // funcPost(nameVal, passwordVal, passwordVal)
-        //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/token";
+        var link = "https://ice.ecobank.com/uaa/oauth/token";
         //var link = "http://localhost:8080/uaa/oauth/token"; 
         var data = { username: this.username, password: this.password };
         //var data = { userName:marissa, Password:koala};
         var schema = 'client_id=cf&client_secret=&grant_type=password&username=[username]&password=[password]&token_format=jwt&response_type=token';
         schema = schema.replace("[username]", this.username);
         schema = schema.replace("[password]", this.password);
-        console.log(this.username);
+        //console.log(this.username);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             "Content-Type": "application/x-www-form-urlencoded",
             "Accept": "application/json"
@@ -1904,6 +2897,866 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], LoginComponent);
     return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/organisation/organisation.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/organisation/organisation.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/organisation/organisation.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/organisation/organisation.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let organisation of Organisation ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/organisation', organisation.id, 'view' ]\">{{organisation.id}}</a></td>\n                                <td>{{organisation.name}}</td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/organisation', organisation.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/organisation', organisation.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'organisation/'+ organisation.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/organisation/organisation.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/organisation/organisation.component.ts ***!
+  \********************************************************/
+/*! exports provided: OrganisationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrganisationComponent", function() { return OrganisationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var OrganisationComponent = /** @class */ (function () {
+    function OrganisationComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    OrganisationComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadOrganisation()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    OrganisationComponent.prototype.loadOrganisation = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/organisations",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Organisation = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    OrganisationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-organisation",
+            template: __webpack_require__(/*! ./organisation.component.html */ "./src/app/organisation/organisation.component.html"),
+            styles: [__webpack_require__(/*! ./organisation.component.css */ "./src/app/organisation/organisation.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], OrganisationComponent);
+    return OrganisationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/permission/permission.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/permission/permission.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/permission/permission.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/permission/permission.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                <th>Description</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tr *ngFor=\"let permission of Permission ;trackBy: trackId\">\n                            <td><a [routerLink]=\"['/permission', permission.id, 'view' ]\">{{permission.id}}</a></td>\n                            <td>{{permission.name}}</td>\n                            <td>{{permission.description}}</td>\n                            <td class=\"text-right\">\n                                <div class=\"btn-group flex-btn-group-container\">\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/permission', permission.id, 'view' ]\"\n                                            class=\"btn btn-info btn-sm\">\n                                        <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                    </button>\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/permission', permission.id, 'edit']\"\n                                            class=\"btn btn-primary btn-sm\">\n                                        <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                    </button>\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/', { outlets: { popup: 'permission/'+ permission.id + '/delete'} }]\"\n                                            replaceUrl=\"true\"\n                                            queryParamsHandling=\"merge\"\n                                            class=\"btn btn-danger btn-sm\">\n                                        <fa-icon [icon]=\"'times'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                    </button>\n                                </div>\n                            </td>\n                        </tr>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/permission/permission.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/permission/permission.component.ts ***!
+  \****************************************************/
+/*! exports provided: PermissionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PermissionComponent", function() { return PermissionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var PermissionComponent = /** @class */ (function () {
+    function PermissionComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    PermissionComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadPermission()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    PermissionComponent.prototype.loadPermission = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/permissions",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Permission = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    PermissionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-permission",
+            template: __webpack_require__(/*! ./permission.component.html */ "./src/app/permission/permission.component.html"),
+            styles: [__webpack_require__(/*! ./permission.component.css */ "./src/app/permission/permission.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], PermissionComponent);
+    return PermissionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/role-permission/role-permission.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/role-permission/role-permission.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/role-permission/role-permission.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/role-permission/role-permission.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Roles</th>\n                                <th>Permission</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let rolePermission of RolePermission ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/role-permission', rolePermission.id, 'view' ]\">{{rolePermission.id}}</a></td>\n                                <td>\n                                    <div *ngIf=\"rolePermission.Role\">\n                                        <a [routerLink]=\"['../role', rolePermission.roles?.id, 'view' ]\" >{{rolePermission.roles?.name}}</a>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div *ngIf=\"rolePermission.Permission\">\n                                        <a [routerLink]=\"['../permission', rolePermission.permissions?.id, 'view' ]\" >{{rolePermission.permissions?.name}}</a>\n                                    </div>\n                                </td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/role-permission', rolePermission.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/role-permission', rolePermission.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'role-permission/'+ rolePermission.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/role-permission/role-permission.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/role-permission/role-permission.component.ts ***!
+  \**************************************************************/
+/*! exports provided: RolePermissionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RolePermissionComponent", function() { return RolePermissionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var RolePermissionComponent = /** @class */ (function () {
+    function RolePermissionComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    RolePermissionComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadRolePermission()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    RolePermissionComponent.prototype.loadRolePermission = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/role-permissions",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.RolePermission = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    RolePermissionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-role-permission",
+            template: __webpack_require__(/*! ./role-permission.component.html */ "./src/app/role-permission/role-permission.component.html"),
+            styles: [__webpack_require__(/*! ./role-permission.component.css */ "./src/app/role-permission/role-permission.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], RolePermissionComponent);
+    return RolePermissionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/role/role.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/role/role.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/role/role.component.html":
+/*!******************************************!*\
+  !*** ./src/app/role/role.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                <th>Description</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tr *ngFor=\"let role of Role ;trackBy: trackId\">\n                            <td><a [routerLink]=\"['/role', role.id, 'view' ]\">{{role.id}}</a></td>\n                            <td>{{role.name}}</td>\n                            <td>{{role.description}}</td>\n                            <td class=\"text-right\">\n                                <div class=\"btn-group flex-btn-group-container\">\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/role', role.id, 'view' ]\"\n                                            class=\"btn btn-info btn-sm\">\n                                        <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                    </button>\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/role', role.id, 'edit']\"\n                                            class=\"btn btn-primary btn-sm\">\n                                        <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                    </button>\n                                    <button type=\"submit\"\n                                            [routerLink]=\"['/', { outlets: { popup: 'role/'+ role.id + '/delete'} }]\"\n                                            replaceUrl=\"true\"\n                                            queryParamsHandling=\"merge\"\n                                            class=\"btn btn-danger btn-sm\">\n                                        <fa-icon [icon]=\"'times'\"></fa-icon>\n                                        <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                    </button>\n                                </div>\n                            </td>\n                        </tr>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/role/role.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/role/role.component.ts ***!
+  \****************************************/
+/*! exports provided: RoleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoleComponent", function() { return RoleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var RoleComponent = /** @class */ (function () {
+    function RoleComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    RoleComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadRole()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    RoleComponent.prototype.loadRole = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/roles",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Role = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    RoleComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-role",
+            template: __webpack_require__(/*! ./role.component.html */ "./src/app/role/role.component.html"),
+            styles: [__webpack_require__(/*! ./role.component.css */ "./src/app/role/role.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], RoleComponent);
+    return RoleComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/staff/staff.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/staff/staff.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/staff/staff.component.html":
+/*!********************************************!*\
+  !*** ./src/app/staff/staff.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n        <table class=\"table table-bordered table-condensed table-striped\" datatable [dtTrigger]=\"dtTrigger\">\r\n\r\n                <thead>\r\n                        <tr>\r\n                            \r\n                            <th>id</th>\r\n                            <th>First Name</th>\r\n                            <th>Last Name</th>\r\n                            <th>Email</th>\r\n                            <!-- <th>Account Status</th> -->\r\n                            <!-- <th>Password</th> -->\r\n                            <th>Verified By</th>\r\n                            <!-- <th>Login Count</th> -->\r\n                            <!-- <th>Internal User</th>\r\n                            <th>External User</th> -->\r\n                            <th>Organisation</th>\r\n                            <th>Group</th>\r\n                            <th>User Type</th>\r\n\r\n\r\n                            <th>Action</th>\r\n                        </tr>\r\n                    </thead>\r\n            \r\n                <tbody>\r\n            \r\n                        <tr *ngFor=\"let staff of Staff ;\">\r\n                                <td>{{staff.id}}</td>\r\n                                <td>{{staff.firstName}}</td>\r\n                                <td>{{staff.lastName}}</td>\r\n                                <td>{{staff.email}}</td>\r\n                                <!-- <td>{{staff.accountStatus}}</td> -->\r\n                                <!-- <td>{{staff.password}}</td> -->\r\n                                <td>{{staff.verifiedBy}}</td>\r\n                                <!-- <td>{{staff.loginCount}}</td> -->\r\n                                <!-- <td>{{staff.internalUser}}</td>\r\n                                <td>{{staff.externalUser}}</td> -->\r\n                                <td>\r\n                                    <div *ngIf=\"staff.organisation\">\r\n                                        <a [routerLink]=\"['../organisations', staff.organisation?.id, 'view' ]\">{{staff.organisation?.name}}</a>\r\n                                    </div>\r\n                                </td>\r\n                                <td>\r\n                                    <div *ngIf=\"staff.group\">\r\n                                        <a [routerLink]=\"['../groups-t', staff.group?.id, 'view' ]\">{{staff.group?.name}}</a>\r\n                                    </div>\r\n                                </td>\r\n                                <td>\r\n                                    <div *ngIf=\"staff.userType\">\r\n                                        <a [routerLink]=\"['../user-types', staff.userType?.id, 'view' ]\">{{staff.userType?.name}}</a>\r\n                                    </div>\r\n                                </td>\r\n                                <td class=\"text-right\">\r\n                                    <div class=\"btn-group flex-btn-group-container\">\r\n                                        <button type=\"submit\" [routerLink]=\"['/staff', staff.id, 'view' ]\" class=\"btn btn-info btn-sm\">\r\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\r\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\r\n                                        </button>\r\n                                        <button type=\"submit\" [routerLink]=\"['/staff', staff.id, 'edit']\" class=\"btn btn-primary btn-sm\">\r\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\r\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\r\n                                        </button>\r\n                                        <button type=\"submit\" [routerLink]=\"['/', { outlets: { popup: 'staff/'+ staff.id + '/delete'} }]\" replaceUrl=\"true\" queryParamsHandling=\"merge\"\r\n                                            class=\"btn btn-danger btn-sm\">\r\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\r\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\r\n                                        </button>\r\n                                    </div>\r\n                                </td>\r\n                            </tr>\r\n\r\n            \r\n                </tbody>\r\n            \r\n                <ng-template #content let-c=\"close\" let-d=\"dismiss\">\r\n                    <div class=\"modal-header\">\r\n                        <h4 class=\"modal-title\" id=\"modal-basic-title\">Create</h4>\r\n                        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                            <span aria-hidden=\"true\">&times;</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"modal-body\">\r\n                        <form>\r\n            \r\n                            <div class=\"form-group has-feedback\">\r\n                                <label>display Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"get.displayName\">\r\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                            </div>\r\n            \r\n                            \r\n                        </form>\r\n            \r\n                    </div>\r\n                    <!-- <div class=\"modal-footer\">\r\n                                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\r\n                            </div> -->\r\n                </ng-template>\r\n            \r\n            </table>"
+
+/***/ }),
+
+/***/ "./src/app/staff/staff.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/staff/staff.component.ts ***!
+  \******************************************/
+/*! exports provided: StaffComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StaffComponent", function() { return StaffComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var StaffComponent = /** @class */ (function () {
+    function StaffComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    StaffComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadStaff()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StaffComponent.prototype.loadStaff = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/staff",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Staff = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StaffComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-staff",
+            template: __webpack_require__(/*! ./staff.component.html */ "./src/app/staff/staff.component.html"),
+            styles: [__webpack_require__(/*! ./staff.component.css */ "./src/app/staff/staff.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], StaffComponent);
+    return StaffComponent;
 }());
 
 
@@ -2259,6 +4112,178 @@ var UserProfileComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/user-type/user-type.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/user-type/user-type.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  .section-title{\r\n    color: rgba(0,0,0,0.87);\r\n  }\r\n  #main-wrapper{\r\n    height: 100% !important;\r\n  }\r\n  .page-wrapper{\r\n    height: calc(100% - 54px)\r\n  }\r\n  .empty-ui{\r\n    margin-top: 2rem;\r\n  }\r\n  .empty-ui h1{\r\n    margin-bottom: 2rem;\r\n  }\r\n  .empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n  }\r\n  .empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n  }\r\n  .empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n  }\r\n  .empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n  }\r\n  .tb-row{\r\n    width: 100%;\r\n  }\r\n  .table{\r\n    margin-top: 10rem;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/user-type/user-type.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/user-type/user-type.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body class=\"fix-header fix-sidebar\">\n    <!-- Preloader - style you can find in spinners.css -->\n    <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n    <!-- Main wrapper  -->\n    <div id=\"main-wrapper\">\n        <!-- header header  -->\n        <div class=\"header\">\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n                <!-- Logo -->\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"index.html\">\n                        <!-- Logo icon \n                        <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n                        <!--End Logo icon -->\n                        <!-- Logo text -->\n                        <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n                    </a>\n                </div>\n                <!-- End Logo -->\n                <div class=\"navbar-collapse\">\n                    <!-- toggle and nav items -->\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\n                        <!-- This is  -->\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"mdi mdi-menu\"></i>\n                            </a>\n                        </li>\n                        <li class=\"nav-item m-l-10\">\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                                <i class=\"ti-menu\"></i>\n                            </a>\n                        </li>\n                    </ul>\n                    <!-- User profile and search -->\n                    <ul class=\"navbar-nav my-lg-0\">\n                        <!-- Profile -->\n                        <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n                            </a>\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                                <ul class=\"dropdown-user\">\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\n                                    </li>\n                                    <li>\n                                        <a href=\"#\">\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </nav>\n        </div>\n        <div>\n\n        </div>\n\n\n        <!-- End header header -->\n        <!-- Left Sidebar  -->\n        <div class=\"left-sidebar\">\n            <!-- Sidebar scroll-->\n            <div class=\"scroll-sidebar\">\n                <!-- Sidebar navigation-->\n                <nav class=\"sidebar-nav\">\n                    <ul id=\"sidebarnav\">\n                        <li class=\"nav-devider\"></li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                                <i class=\"far fa-tachometer\"></i>\n                                <span class=\"hide-menu\">Dashboard</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                                <i class=\"fa fa-envelope\"></i>\n                                <span class=\"hide-menu\">Users</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                                <i class=\"fa fa-bar-chart\"></i>\n                                <span class=\"hide-menu\">Application</span>\n                            </a>\n                        </li>\n                        <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Group</span>\n                            </a>\n                        </li>\n                        <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/add-role\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n                    </ul>\n                </nav>\n                <!-- End Sidebar navigation -->\n            </div>\n            <!-- End Sidebar scroll-->\n        </div>\n        <!-- End Left Sidebar  -->\n        <!-- Page wrapper  -->\n        <div class=\"page-wrapper\">\n            <!-- End Bread crumb -->\n            <!-- Container fluid  -->\n            <div class=\"container-fluid\">\n                <!-- Start Page Content -->\n                <div class=\"row justify-content-center tb-row\">\n                    <div class=\"col-12 d-flex justify-content-end p-0\">\n                        <div class=\"empty-ui text-center\">\n\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\n\n                            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n                                <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\">\n                                    <i class=\"fas fa-plus\"></i>Create Application</button>\n                                <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\n                                         -->\n                            </div>\n                            <!--End of  div for container class  -->\n                        </div>\n                    </div>\n                    <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n                        <thead>\n                            <tr>\n                                <!-- <th>user_id</th> -->\n                                <th>id</th>\n                                <th>Name</th>\n                                \n\n                                \n                                <th>Action</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let userType of Types ;trackBy: trackId\">\n                                <td><a [routerLink]=\"['/user-type', userType.id, 'view' ]\">{{userType.id}}</a></td>\n                                <td>{{userType.name}}</td>\n                                <td class=\"text-right\">\n                                    <div class=\"btn-group flex-btn-group-container\">\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/user-type', userType.id, 'view' ]\"\n                                                class=\"btn btn-info btn-sm\">\n                                            <fa-icon [icon]=\"'eye'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/user-type', userType.id, 'edit']\"\n                                                class=\"btn btn-primary btn-sm\">\n                                            <fa-icon [icon]=\"'pencil-alt'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                                        </button>\n                                        <button type=\"submit\"\n                                                [routerLink]=\"['/', { outlets: { popup: 'user-type/'+ userType.id + '/delete'} }]\"\n                                                replaceUrl=\"true\"\n                                                queryParamsHandling=\"merge\"\n                                                class=\"btn btn-danger btn-sm\">\n                                            <fa-icon [icon]=\"'times'\"></fa-icon>\n                                            <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                                        </button>\n                                    </div>\n                                </td>\n                            </tr>\n                            </tbody>\n                    </table>\n                </div>\n                <!-- End PAge Content -->\n            </div>\n            <!-- End Container fluid  -->\n        </div>\n        <!-- End Page wrapper  -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create App</h4>\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <form>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Id</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"client_id\" name=\"client_id\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Name</label> -->\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"name\" name=\"name\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Application Secret</label> -->\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"client_secret\" name=\"client_secret\">\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Scope</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"scope\" autocomplete=\"off\" [(ngModel)]=\"scope\" name=\"scope\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n\n                    <!-- <div class=\"form-group has-feedback\">\n                            \n                                <input type=\"text\" class=\"form-control\" placeholder=\"require_ids\" autocomplete=\"off\" [(ngModel)]=\"require_ids\" name=\"require_ids\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div> -->\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorized Grant Types</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorized_grant_types\" autocomplete=\"off\" [(ngModel)]=\"authorized_grant_types\" name=\"authorized_grant_types\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Redirect_Uri</label> -->\n                                <input type=\"text\" class=\"form-control\" placeholder=\"redirect_uri\" autocomplete=\"off\" [(ngModel)]=\"redirect_uri\" name=\"redirect_uri\">\n                                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                    </div>\n                    <div class=\"form-group has-feedback\">\n                            <!-- <label>Authorities</label> -->\n                            <input type=\"text\" class=\"form-control\" placeholder=\"authorities\" autocomplete=\"off\" [(ngModel)]=\"authorities\" name=\"authorities\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <!-- <div class=\"form-group has-feedback\">\n                        <label>Autoapprove</label>\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"autoapprove\">\n                          \n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                 </div> -->\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                            <button type=\"button\" class=\"btn btn-success\" (click)=\"loadClient()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                            &nbsp;\n                        </div>\n\n                    </div>\n                </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n        </ng-template>\n\n\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/user-type/user-type.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/user-type/user-type.component.ts ***!
+  \**************************************************/
+/*! exports provided: UserTypeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserTypeComponent", function() { return UserTypeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var UserTypeComponent = /** @class */ (function () {
+    function UserTypeComponent(http, route, router, modalService, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.modalService = modalService;
+        this.dataservice = dataservice;
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subject"]();
+    }
+    UserTypeComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadTypes()];
+                    case 1:
+                        _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UserTypeComponent.prototype.loadTypes = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTY2NzM5MH0.XQlN-pq6wme-obRmjjBItyexuHWMoZOofY0Fpbb8xEuucmDuy_FMSPBA_vTkeayF-xMQbeaU5AgFG3iqQrg1oQ",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                                method: "GET",
+                                url: "http://localhost:8083/api/user-types",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.Types = response.data;
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UserTypeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-user-type",
+            template: __webpack_require__(/*! ./user-type.component.html */ "./src/app/user-type/user-type.component.html"),
+            styles: [__webpack_require__(/*! ./user-type.component.css */ "./src/app/user-type/user-type.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_8__["DataService"]])
+    ], UserTypeComponent);
+    return UserTypeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/users/users.component.css":
 /*!*******************************************!*\
   !*** ./src/app/users/users.component.css ***!
@@ -2266,7 +4291,7 @@ var UserProfileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n.section-title{\r\n    color: rgba(0,0,0,0.87);\r\n}\r\n#main-wrapper{\r\n    height: 100% !important;\r\n}\r\n.page-wrapper{\r\n    height: calc(100% - 54px)\r\n}\r\n.empty-ui{\r\n    margin-top: 10rem;\r\n}\r\n.empty-ui h1{\r\n    margin-bottom: 2rem;\r\n}\r\n.empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n}\r\n.empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n}\r\n.empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n}\r\n.empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n}\r\n"
+module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    align-items: center;\r\n    \r\n}\r\n.section-title{\r\n    color: rgba(0,0,0,0.87);\r\n}\r\n#main-wrapper{\r\n    height: 100% !important;\r\n}\r\n.page-wrapper{\r\n    height: calc(100% - 54px)\r\n}\r\n.empty-ui{\r\n    margin-top: 10rem;\r\n}\r\n.empty-ui h1{\r\n    margin-bottom: 2rem;\r\n}\r\n.empty-ui i{\r\n    display: block;\r\n    margin-bottom: 1rem;\r\n}\r\n.empty-ui button{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n}\r\n.empty-ui button:focus{\r\n    text-transform: uppercase;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    height: 48px;\r\n    color: #fff;\r\n}\r\n.empty-ui button i{\r\n    display: inline-block;\r\n    margin: 0;\r\n    margin-right: 1rem;\r\n}\r\n"
 
 /***/ }),
 
@@ -2277,7 +4302,7 @@ module.exports = ".sidebar-nav .sidebar-nav-link{\r\n    display: flex;\r\n    a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon -->\r\n                        <!-- <b>\r\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </b> -->\r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-envelope\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-bar-chart\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/view-groups\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Group</span>\r\n                            </a>\r\n                        </li>\r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row justify-content-center\">\r\n                    <div class=\"col-6 d-flex justify-content-center\">\r\n                        <div class=\"empty-ui text-center\">\r\n                            <h1>Users</h1>\r\n                            <i class=\"far fa-user-circle fa-5x color-primary\"></i>\r\n                            <p>No users have bee added to your connections</p>\r\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\r\n                                       \r\n                                       <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\r\n                                        <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                                        <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\r\n                                         -->\r\n                                         <!-- <a routerLink=\"/view-users\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</a> -->\r\n                                        <a routerLink=\"/view-users\"> <button type = \"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\"> View Users</button></a>\r\n                                      </div>\r\n                            \r\n\r\n                                      \r\n                            \r\n                                      \r\n                                                                                \r\n                                          \r\n                                      \r\n                                    \r\n                                    <!--End of  div for container class  --> \r\n                                  \r\n                            \r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create User</h4>\r\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <form>\r\n                            \r\n                    <div class=\"form-group has-feedback\">\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"username\" name=\"client_id\" >\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                          <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"email\" name=\"name\">\r\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\r\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                        <input type=\"password\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"password\" name=\"client_secret\">\r\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\r\n                    </div>\r\n                    \r\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\r\n                            <div class=\"col-md-2\">\r\n                                &nbsp;\r\n                            </div>\r\n                           <div class=\"col-md-4\">\r\n                                <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\r\n                                <button type=\"button\" class=\"btn btn-success\" (click)=\"loadUser()\">Create</button>\r\n                                \r\n                            </div>\r\n                            <div class=\"col-md-4\">\r\n                              <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\r\n                              <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\r\n                    \r\n                          </div>\r\n                          <div class=\"col-md-2\">\r\n                                &nbsp;\r\n                            </div>\r\n                          \r\n                    </div>\r\n                </form> \r\n        \r\n            </div>\r\n            <!-- <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\r\n            </div> -->\r\n        </ng-template>\r\n\r\n    </div>\r\n\r\n    \r\n\r\n    "
+module.exports = "<body class=\"fix-header fix-sidebar\">\r\n    <!-- Preloader - style you can find in spinners.css -->\r\n    <!-- <div class=\"preloader\">\r\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n        </svg>\r\n    </div> -->\r\n    <!-- Main wrapper  -->\r\n    <div id=\"main-wrapper\">\r\n        <!-- header header  -->\r\n        <div class=\"header\">\r\n            <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                <!-- Logo -->\r\n                <div class=\"navbar-header\">\r\n                    <a class=\"navbar-brand\" href=\"index.html\">\r\n                        <!-- Logo icon -->\r\n                        <!-- <b>\r\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </b> -->\r\n                        <!--End Logo icon -->\r\n                        <!-- Logo text -->\r\n                        <!-- <span>\r\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                            </span> -->\r\n                    </a>\r\n                </div>\r\n                <!-- End Logo -->\r\n                <div class=\"navbar-collapse\">\r\n                    <!-- toggle and nav items -->\r\n                    <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                        <!-- This is  -->\r\n                        <li class=\"nav-item\">\r\n                            <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"mdi mdi-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                        <li class=\"nav-item m-l-10\">\r\n                            <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                <i class=\"ti-menu\"></i>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <!-- User profile and search -->\r\n                    <ul class=\"navbar-nav my-lg-0\">\r\n                        <!-- Profile -->\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                            </a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                <ul class=\"dropdown-user\">\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                    </li>\r\n                                    <li>\r\n                                        <a href=\"#\">\r\n                                            <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                    </li>\r\n                                </ul>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </div>\r\n        <!-- End header header -->\r\n        <!-- Left Sidebar  -->\r\n        <div class=\"left-sidebar\">\r\n            <!-- Sidebar scroll-->\r\n            <div class=\"scroll-sidebar\">\r\n                <!-- Sidebar navigation-->\r\n                <nav class=\"sidebar-nav\">\r\n                    <ul id=\"sidebarnav\">\r\n                        <li class=\"nav-devider\"></li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                <i class=\"far fa-tachometer\"></i>\r\n                                <span class=\"hide-menu\">Dashboard</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-envelope\"></i>\r\n                                <span class=\"hide-menu\">Users</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-bar-chart\"></i>\r\n                                <span class=\"hide-menu\">Application</span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Group</span>\r\n                            </a>\r\n                        </li>\r\n                        <!-- <li>\r\n                            <a class=\"sidebar-nav-link\" routerLink=\"/\" aria-expanded=\"false\">\r\n                                <i class=\"fa fa-suitcase\"></i>\r\n                                <span class=\"hide-menu\">Roles</span>\r\n                            </a>\r\n                        </li> -->\r\n                    </ul>\r\n                </nav>\r\n                <!-- End Sidebar navigation -->\r\n            </div>\r\n            <!-- End Sidebar scroll-->\r\n        </div>\r\n        <!-- End Left Sidebar  -->\r\n        <!-- Page wrapper  -->\r\n        <div class=\"page-wrapper\">\r\n            <!-- End Bread crumb -->\r\n            <!-- Container fluid  -->\r\n            <div class=\"container-fluid\">\r\n                <!-- Start Page Content -->\r\n                <div class=\"row justify-content-center\">\r\n                    <div class=\"col-6 d-flex justify-content-center\">\r\n                        <div class=\"empty-ui text-center\">\r\n                            <h1>Users</h1>\r\n                            <i class=\"far fa-user-circle fa-5x color-primary\"></i>\r\n                            <p>No users have bee added to your connections</p>\r\n                            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\" data-toggle=\"modal\" data-target=\"#add_new_user_modal\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                            <!-- <button class=\"btn btn-lg btn-outline-primary\" (click)=\"open(content)\">Create Client</button> -->\r\n                                       \r\n                                       <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\r\n                                        <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create user</button>\r\n                                        <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</button>\r\n                                         -->\r\n                                         <!-- <a routerLink=\"/view-users\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\">View users</a> -->\r\n                                        <a routerLink=\"/view-users\"> <button type = \"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\"> View Users</button></a>\r\n                                      </div>\r\n                            \r\n\r\n                                      \r\n                            \r\n                                      \r\n                                                                                \r\n                                          \r\n                                      \r\n                                    \r\n                                    <!--End of  div for container class  --> \r\n                                  \r\n                            \r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <!-- End PAge Content -->\r\n            </div>\r\n            <!-- End Container fluid  -->\r\n        </div>\r\n        <!-- End Page wrapper  -->\r\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\" id=\"modal-basic-title\">Create User</h4>\r\n                <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <form>\r\n                            \r\n                    <div class=\"form-group has-feedback\">\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"username\" autocomplete=\"off\" [(ngModel)]=\"username\" name=\"username\" >\r\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                          <input type=\"text\" class=\"form-control\" placeholder=\"email\" [(ngModel)]=\"email\" name=\"email\">\r\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\r\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                    </div>\r\n                    <div class=\"form-group has-feedback\">\r\n                        <input type=\"password\" class=\"form-control\" placeholder=\"password\" [(ngModel)]=\"password\" name=\"password\">\r\n                        <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\r\n                    </div>\r\n                    \r\n                    <div class=\"row\" style=\"margin-bottom:50px;\">\r\n                            <div class=\"col-md-2\">\r\n                                &nbsp;\r\n                            </div>\r\n                           <div class=\"col-md-4\">\r\n                                <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\r\n                                <button type=\"button\" class=\"btn btn-success\" (click)=\"loadUser()\">Create</button>\r\n                                \r\n                            </div>\r\n                            <div class=\"col-md-4\">\r\n                              <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\r\n                              <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\r\n                    \r\n                          </div>\r\n                          <div class=\"col-md-2\">\r\n                                &nbsp;\r\n                            </div>\r\n                          \r\n                    </div>\r\n                </form> \r\n        \r\n            </div>\r\n            <!-- <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\r\n            </div> -->\r\n        </ng-template>\r\n\r\n    </div>\r\n\r\n    \r\n\r\n    "
 
 /***/ }),
 
@@ -2327,21 +4352,25 @@ var UsersComponent = /** @class */ (function () {
     UsersComponent.prototype.loadUsers = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            "Authorization": "Bearer  17517284380f4766bf4fcce0a88aa3ab",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
         var head = {
-            "Authorization": "Bearer  17517284380f4766bf4fcce0a88aa3ab",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
         // myHeaders.append("Content-Type", "application/json");
         // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
-        axios__WEBPACK_IMPORTED_MODULE_1___default()({ method: "GET", url: "https://uaaserver.eu-gb.mybluemix.net/Users", headers: head })
+        axios__WEBPACK_IMPORTED_MODULE_1___default()({
+            method: "GET",
+            url: "https://ice.ecobank.com/uaa/Users",
+            headers: head
+        })
             .then(function (response) {
             //console.log(response.data)
-            return _this.Users = response.data.resources;
+            return (_this.Users = response.data.resources);
         })
             .catch(function (error) { return console.log(error); });
     };
@@ -2349,19 +4378,25 @@ var UsersComponent = /** @class */ (function () {
         var _this = this;
         // funcPost(nameVal, passwordVal, passwordVal)
         //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/uaa/Users";
-        var data = JSON.stringify({ userName: this.username, Password: this.password, emails: this.email });
+        var link = "https://ice.ecobank.com/uaa/Users";
+        var data = JSON.stringify({
+            userName: this.username,
+            Password: this.password,
+            emails: this.email
+        });
         var schema = {
-            "userName": null,
-            "emails": [{
-                    "value": null,
-                    "primary": true
-                }],
-            "active": true,
-            "verified": true,
-            "origin": "",
-            "password": null,
-            "schemas": ["urn:scim:schemas:core:1.0"]
+            userName: null,
+            emails: [
+                {
+                    value: null,
+                    primary: true
+                }
+            ],
+            active: true,
+            verified: true,
+            origin: "",
+            password: null,
+            schemas: ["urn:scim:schemas:core:1.0"]
         };
         schema.userName = this.username;
         schema.emails[0].value = this.email;
@@ -2369,7 +4404,7 @@ var UsersComponent = /** @class */ (function () {
         console.log(this.username);
         console.log(this.email);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            "Authorization": "Bearer  17517284380f4766bf4fcce0a88aa3ab",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
@@ -2387,8 +4422,13 @@ var UsersComponent = /** @class */ (function () {
             }
             // this.router.navigateByUrl("/settings/addaffiliates");
         }, function (error) {
-            alert('User already created');
-            console.log('errroroorororororor');
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
+            //alert('User already created');
+            console.log("errroroorororororor");
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
@@ -2396,10 +4436,10 @@ var UsersComponent = /** @class */ (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/Users/{id}";
+            var link = "https://ice.ecobank.com/uaa/Users/{id}";
             link = link.replace("{id}", id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-                "Authorization": "Bearer  17517284380f4766bf4fcce0a88aa3ab",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                 "Content-Type": "application/json"
             });
             var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
@@ -2454,7 +4494,10 @@ var UsersComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./users.component.html */ "./src/app/users/users.component.html"),
             styles: [__webpack_require__(/*! ./users.component.css */ "./src/app/users/users.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], UsersComponent);
     return UsersComponent;
 }());
@@ -2470,7 +4513,7 @@ var UsersComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "[nz-form] {\r\n  max-width: 100% !important;\r\n}\r\n.login-form {\r\n  max-width: 100%;\r\n}\r\n.save-settings-button {\r\n  float: right;\r\n}\r\n.dynamic-delete-button {\r\n  cursor: pointer;\r\n  position: relative;\r\n  top: 4px;\r\n  font-size: 24px;\r\n  color: #999;\r\n  transition: all 0.3s;\r\n}\r\n.dynamic-delete-button:hover {\r\n  color: #777;\r\n}\r\n[nz-form] {\r\n  max-width: 600px;\r\n}\r\n.form-element-wrapper {\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  justify-content: space-between;\r\n  margin-bottom: 2rem;\r\n}\r\n.form-element.name {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-shrink: 0;\r\n  margin-right: 24px;\r\n  max-width: 300px;\r\n  width: 250px;\r\n}\r\n.form-element label {\r\n  margin: 0;\r\n  margin-right: 16px;\r\n}\r\n.form-element input {\r\n  width: 100%;\r\n}\r\n.form-element.description {\r\n  display: flex;\r\n  margin-right: 24px;\r\n  align-items: center;\r\n  flex: 2;\r\n  max-width: 470px;\r\n}\r\n.add-button {\r\n  max-width: 350px;\r\n  width: 200px;\r\n}\r\n.create-role-btn-wrapper {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-bottom: 2rem;\r\n}\r\n.modal-guts {\r\n\r\n  /* other stuff we already covered */\r\n\r\n  /* cover the modal */\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n\r\n  /* spacing as needed */\r\n  padding: 20px 50px 20px 20px;\r\n\r\n  /* let it scroll */\r\n  overflow: auto;\r\n  \r\n}"
+module.exports = "[nz-form] {\r\n  max-width: 100% !important;\r\n}\r\n.login-form {\r\n  max-width: 100%;\r\n}\r\n.save-settings-button {\r\n  float: right;\r\n}\r\n.dynamic-delete-button {\r\n  cursor: pointer;\r\n  position: relative;\r\n  top: 4px;\r\n  font-size: 24px;\r\n  color: #999;\r\n  transition: all 0.3s;\r\n}\r\n.dynamic-delete-button:hover {\r\n  color: #777;\r\n}\r\n[nz-form] {\r\n  max-width: 600px;\r\n}\r\n.form-element-wrapper {\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  justify-content: space-between;\r\n  margin-bottom: 2rem;\r\n}\r\n.form-element.name {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-shrink: 0;\r\n  margin-right: 24px;\r\n  max-width: 300px;\r\n  width: 250px;\r\n}\r\n.form-element label {\r\n  margin: 0;\r\n  margin-right: 16px;\r\n}\r\n.form-element input {\r\n  width: 100%;\r\n}\r\n.form-element.description {\r\n  display: flex;\r\n  margin-right: 24px;\r\n  align-items: center;\r\n  flex: 2;\r\n  max-width: 470px;\r\n}\r\n.add-button {\r\n  max-width: 350px;\r\n  width: 200px;\r\n}\r\n.create-role-btn-wrapper {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  margin-bottom: 2rem;\r\n}\r\n.modal-guts {\r\n\r\n  /* other stuff we already covered */\r\n\r\n  /* cover the modal */\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n\r\n  /* spacing as needed */\r\n  padding: 20px 50px 20px 20px;\r\n\r\n  /* let it scroll */\r\n  overflow: auto;\r\n  \r\n}\r\n/* .checkbox-grid li {\r\n  display: block;\r\n  float: left;\r\n  width: 50%;\r\n}  */"
 
 /***/ }),
 
@@ -2481,7 +4524,7 @@ module.exports = "[nz-form] {\r\n  max-width: 100% !important;\r\n}\r\n.login-fo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div nz-row nzType=\"flex\" nzJustify=\"center\">\n  <div nz-col nzSpan=\"16\">\n    <div>\n      <div>\n        <h1>{{groupInfoObjects.name}} APP</h1>\n        <h2></h2>\n\n        <p>Generic application</p>\n      </div>\n      <nz-tabset>\n        <nz-tab nzTitle=\"Settings\">\n          <div nz-row nzType=\"flex\" nzJustify=\"center\">\n            <div nz-col nzSpan=\"24\">\n              <form nz-form [formGroup]=\"settingsForm\" class=\"login-form\" (ngSubmit)=\"settingsFormSubmit()\">\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"name\">Application name</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"name\" placeholder=\"name\" value=\"{{groupInfoObjects.name}}\">\n\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.name.dirty && f.name.errors\">Please input the application name</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"redirect_uri\">Redirect URI</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"redirect_uri\" placeholder=\"Redirect URI\" value=\"{{groupInfoObjects.redirect_uri}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.redirect_uri.dirty && f.redirect_uri.errors\">Please input your redirect uri</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"client_id\">Client IDs</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"client_id\" placeholder=\"Client IDs\" value=\"{{groupInfoObjects.client_id}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.client_id.dirty && f.client_id.errors\">Please input your client id</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"client_secret\">Client secret</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"client_secret\" placeholder=\"Client secret\" value=\"{{groupInfoObjects.client_secret}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.client_secret.dirty && f.client_secret.errors\">Please input your client secret</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"scope\">Scope</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"scope\" placeholder=\"Scope\" value=\"{{groupInfoObjects.scope}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.scope.dirty && f.scope.errors\">Please specify the appliation scope</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"authorities\">Authorities</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"authorities\" placeholder=\"Authorities\" value=\"{{groupInfoObjects.authorities}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.authorities.dirty && f.authorities.errors\">Please specify the appliation authorities</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"resource_ids\">Resource IDs</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"resource_ids\" placeholder=\"Resource IDs\" value=\"{{groupInfoObjects.resource_ids}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.resource_ids.dirty && f.resource_ids.errors\">Please specify the resource ids</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"authorized_grant_types\">Grant types</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"authorized_grant_types\" placeholder=\"Authorization grant types\" value=\"{{groupInfoObjects.authorized_grant_types}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.authorized_grant_types.dirty && f.authorized_grant_types.errors\">Please specify the authorization grant types</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"token_salt\">Token salt</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-input-group>\n                      <input type=\"text\" nz-input formControlName=\"token_salt\" placeholder=\"Token salt\" value=\"{{groupInfoObjects.token_salt}}\">\n                    </nz-input-group>\n                    <nz-form-explain *ngIf=\"f.token_salt.dirty && f.token_salt.errors\">Please specify the token salt</nz-form-explain>\n                  </nz-form-control>\n                </nz-form-item>\n                <nz-form-item>\n                  <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"autoapprove\">Auto approve</nz-form-label>\n                  <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                    <nz-switch [(ngModel)]=\"switchValue\" [ngModelOptions]=\"{standalone: true}\"></nz-switch>\n                  </nz-form-control>\n                </nz-form-item>\n\n                <nz-form-item>\n                  <nz-form-control>\n                    <button nz-button [nzType]=\"'primary'\" class=\"save-settings-button\">Save changes</button>\n\n                  </nz-form-control>\n                </nz-form-item>\n              </form>\n            </div>\n          </div>\n        </nz-tab>\n\n\n        <!-- Permissions tab -->\n        <nz-tab nzTitle=\"Permissions\">\n          <div nz-row nzType=\"flex\" nzJustify=\"center\">\n            <div nz-col nzSpan=\"24\">\n              <p>Define Permissions for your application.</p>\n            </div>\n          </div>\n          <div class=\"create-role-btn-wrapper\">\n            <button nz-button nzType=\"primary\" (click)=\"open(content2)\">Create Permission</button>\n            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Role</button> -->\n\n          </div>\n          <nz-table #basicTable>\n            <thead>\n              <tr>\n\n                <th>displayName</th>\n                <th>description</th>\n\n                <th>Action</th>\n              </tr>\n            </thead>\n\n            <tbody>\n\n              <tr *ngFor=\"let Groups of permissions.resources\">\n\n                <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.displayName }}</td>\n                <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.description }}</td>\n\n                <td>\n                  <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n\n                  <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(groupId)\" style=\"margin-right: 30px\"\n                  />\n\n\n                </td>\n              </tr>\n\n            </tbody>\n\n          </nz-table>\n          <ng-template #content2 let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n              <h4 class=\"modal-title\" id=\"modal-basic\">Create Permission</h4>\n              <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form>\n\n                <div class=\"form-group has-feedback\">\n                  <label>display Name</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"get.displayName\">\n                  <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n\n                <div class=\"form-group has-feedback\">\n                  <label>description</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"get.description\">\n                  <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                  <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <div class=\"row\" style=\"margin-bottom:50px;\">\n                  <div class=\"col-md-2\">\n                    &nbsp;\n                  </div>\n                  <div class=\"col-md-4\">\n                    <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                    <button type=\"button\" class=\"btn btn-success\" (click)=\"loadPermission()\">Create</button>\n\n                  </div>\n                  <div class=\"col-md-4\">\n                    <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                  </div>\n                  <div class=\"col-md-2\">\n                    &nbsp;\n                  </div>\n\n                </div>\n              </form>\n\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n          </ng-template>\n\n\n        </nz-tab>\n\n\n        <!-- Roles tab -->\n        <nz-tab nzTitle=\"Roles\">\n          <div nz-row nzType=\"flex\" nzJustify=\"center\">\n            <div nz-col nzSpan=\"24\" style=\"margin-bottom: 3rem\">\n              <p>Roles allow you to define the data that will be accessed through the applications to your API. Set a name for\n                them and its description for better understanding.</p>\n            </div>\n          </div>\n          <div class=\"create-role-btn-wrapper\">\n            <button nz-button nzType=\"primary\" (click)=\"open(content5)\">Create role</button>\n            <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Role</button> -->\n\n          </div>\n          <nz-table #basicTable>\n            <thead>\n              <tr>\n\n                <th>displayName</th>\n                <th>description</th>\n\n                <th>Action</th>\n              </tr>\n            </thead>\n\n            <tbody>\n\n              <!-- <tr *ngFor=\"let Groups of groups.resources\">  -->\n              <tr *ngFor=\"let group of Roles\">\n\n\n                <td style=\"max-width: 30px; word-wrap: break-word;\">{{group.displayName }}</td>\n                <td style=\"word-wrap: break-word;max-width:10px;\">{{ group.description }}</td>\n\n                <td>\n                  <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n\n                  <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(groupId)\" style=\"margin-right: 30px\"\n                  />\n                  <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open4(content,group.id)\">Assign</button>\n\n\n                </td>\n              </tr>\n\n            </tbody>\n\n          </nz-table>\n          <ng-template #content5 let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n              <h4 class=\"modal-title\" id=\"modal\">Create Role</h4>\n              <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n\n            <div class=\"modal-body\">\n              <form>\n                <div class=\"form-group has-feedback col-sm-12\">\n                  <label for=\"\" class=\"col-sm-3\">Display Name</label>\n                  <div class=\"col-sm-9\">\n                    <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" [(ngModel)]=\"displayName\" name=\"displayName\">\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                  </div>\n                </div>\n                <div class=\"form-group has-feedback col-sm-12\">\n                  <label for=\"\" class=\"col-sm-3\">Description</label>\n                  <div class=\"col-sm-9\">\n                    <input type=\"text\" class=\"form-control\" placeholder=\"name\" [(ngModel)]=\"description\" name=\"description\">\n                    <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                  </div>\n                </div>\n\n                <!-- <div class=\"col-sm-12\">\n                  <label for=\"\" class=\"col-sm-3\">Permissions</label>\n                  <div class=\"col-sm-9\" *ngFor=\"let Groups of permissions.resources\">\n                    <button class=\"btn btn-default\" style=\"margin:10px 10px 10px 10px; width:50%;\n                    text-align: left;\">\n                      <input type=\"checkbox\">{{Groups.displayName}}\n                    </button> &nbsp;\n                  </div>\n                </div> -->\n\n\n\n                <div class=\"row\" style=\"margin-bottom:50px;\">\n                  <div class=\"col-md-2\">\n                    &nbsp;\n                  </div>\n                  <div class=\"col-md-4\">\n                    <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                    <button type=\"button\" class=\"btn btn-success\" (click)=\"loadPermission()\">Create</button>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                  </div>\n                  <div class=\"col-md-2\">\n                    &nbsp;\n                  </div>\n                </div>\n              </form>\n\n            </div>\n            <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n          </ng-template>\n\n          <!-- members tab -->\n        </nz-tab>\n\n        <!-- Members tab -->\n        <nz-tab nzTitle=\"Members\">\n          <div nz-row nzType=\"flex\" nzJustify=\"center\">\n            <div nz-col nzSpan=\"24\" style=\"margin-bottom: 3rem\">\n              <p>Assign Users to role</p>\n            </div>\n          </div>\n\n\n          <nz-table #basicTable>\n            <thead>\n              <tr>\n                <th>Username</th>\n                <th>Email</th>\n                <th>givenName</th>\n                <th>Action</th>\n              </tr>\n            </thead>\n\n            <tbody>\n              <tr *ngFor=\"let Groups of Members\">\n                <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.entity.userName}}</td>\n                <td>{{ Groups.entity.emails[0].value}}</td>\n                <td style=\"word-wrap: break-word;max-width:10px;\">{{Groups.entity.name.givenName }}</td>\n                <td>\n                  <input type=\"text\" class=\"form-control\" value='{{Groups.entity.id}}' #userid style=\"display:none;\" />\n                  <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(groupId)\" style=\"margin-right: 30px\"\n                  />\n                  <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open7(content7, Groups.entity.id)\">Assign</button>\n\n                </td>\n              </tr>\n            </tbody>\n          </nz-table>\n\n          <ng-template #content7 let-c=\"close\" let-d=\"dismiss\">\n            <div class=\"modal-header\">\n              <h4 class=\"modal-title\" id=\"modal-basic-title\">Assign Role To User</h4>\n              <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n\n            <!-- <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n            </div> -->\n\n          </ng-template>\n\n        </nz-tab>\n      </nz-tabset>\n    </div>\n  </div>\n\n  <!-- assign permission to role -->\n  <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\" id=\"modal-basic-ti\">Assign</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    \n    <div class=\"modal-body\">\n      <form>\n\n        <div class=\"form-group has-feedback\">\n          <label>DisplayName</label>\n          <input type=\"text\" class=\"form-control\" placeholder=\"displayName\" autocomplete=\"off\" name=\"displayName\" [(ngModel)]=\"get.displayName\">\n          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n        </div>\n\n        <div class=\"col-sm-12\">\n          <label for=\"\" class=\"col-sm-3\">Permissions</label>\n          <div class=\"col-sm-9\" *ngFor=\"let Groups of permissions.resources; let i = index;\">\n            <button class=\"btn btn-default\" style=\"margin:10px 10px 10px 10px; width:50%;\n            text-align: center; padding: 3px 6px; font-size: 12px;\">\n              <input type=\"checkbox\" [id]=\"Groups.id\" (change)=\"onChange($event, i, Groups)\">{{Groups.displayName}}\n            </button> &nbsp;\n          </div>\n        </div>\n\n        <div class=\"row\" style=\"margin-bottom:50px;\">\n          <div class=\"col-md-2\">\n            &nbsp;\n          </div>\n          <div class=\"col-md-4\">\n            <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n            <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\">Done</button>\n\n          </div>\n          <div class=\"col-md-4\">\n            <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n          </div>\n          <div class=\"col-md-2\">\n            &nbsp;\n          </div>\n\n        </div>\n      </form>\n\n    </div>\n    <!-- <div class=\"modal-footer\">\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n              </div> -->\n  </ng-template>\n\n  <!-- assign role to users -->\n  \n\n  \n  <ng-template #content7 let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\" id=\"modal-basic-ti\">Assign to User</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    \n        <div class=\"modal-body\" style=\"width: 100%; height: auto;\">\n            <form>\n      \n              <div class=\"form-group has-feedback\">\n                <label>Username</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"userName\" autocomplete=\"off\" name=\"userName\" [(ngModel)]=\"get.username\">\n                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n              </div>\n      \n              <div class=\"col-sm-12\">\n                <label for=\"\" class=\"col-sm-3\">Roles</label>\n                <div class=\"col-sm-9\" *ngFor=\"let group of Roles; let i = index;\">\n                  <button class=\"btn btn-default\" style=\"margin:3px 3px 3px 3px; width:70%; height: auto;\n                              text-align: center; padding: 3px 6px; font-size: 12px; \">\n                    <input type=\"checkbox\" [id]=\"group.id\" (change)=\"change($event, i, group)\">{{group.displayName}}\n                  </button> &nbsp;\n                </div>\n              </div>\n      \n              <div class=\"row\" style=\"margin-bottom:50px;\">\n                <div class=\"col-md-2\">\n                  &nbsp;\n                </div>\n                <div class=\"col-md-4\">\n                  <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                  <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\">Done</button>\n      \n                </div>\n                <div class=\"col-md-4\">\n                  <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n      \n                </div>\n                <div class=\"col-md-2\">\n                  &nbsp;\n                </div>\n      \n              </div>\n            </form>\n      \n          </div>\n    \n    \n    <!-- <div class=\"modal-footer\">\n                      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                  </div> -->\n  </ng-template>\n\n\n\n</div>"
+module.exports = "<body class=\"fix-header fix-sidebar\">\n  <!-- Preloader - style you can find in spinners.css -->\n  <!-- <div class=\"preloader\">\n        <svg class=\"circular\" viewBox=\"25 25 50 50\">\n            <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\n        </svg>\n    </div> -->\n  <!-- Main wrapper  -->\n  <div id=\"main-wrapper\">\n    <!-- header header  -->\n    <div class=\"header\">\n      <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\n        <!-- Logo -->\n        <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"index.html\">\n            <!-- Logo icon -->\n            <!-- <b>\n                                <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </b> -->\n            <!--End Logo icon -->\n            <!-- Logo text -->\n            <!-- <span>\n                                <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\n                            </span> -->\n          </a>\n        </div>\n        <!-- End Logo -->\n        <div class=\"navbar-collapse\">\n          <!-- toggle and nav items -->\n          <ul class=\"navbar-nav mr-auto mt-md-0\">\n            <!-- This is  -->\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\n                <i class=\"mdi mdi-menu\"></i>\n              </a>\n            </li>\n            <li class=\"nav-item m-l-10\">\n              <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\n                <i class=\"ti-menu\"></i>\n              </a>\n            </li>\n          </ul>\n          <!-- User profile and search -->\n          <ul class=\"navbar-nav my-lg-0\">\n            <!-- Profile -->\n            <li class=\"nav-item dropdown\">\n              <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\n              </a>\n              <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\n                <ul class=\"dropdown-user\">\n                  <li>\n                    <a href=\"#\">\n                      <i class=\"fa fa-lock\"></i> Change email</a>\n                  </li>\n                  <li>\n                    <a href=\"#\">\n                      <i class=\"fa fa-lock\"></i> Change password</a>\n                  </li>\n                  <li>\n                    <a href=\"#\">\n                      <i class=\"fa fa-power-off\"></i> Logout</a>\n                  </li>\n                </ul>\n              </div>\n            </li>\n          </ul>\n        </div>\n      </nav>\n    </div>\n    <!-- End header header -->\n    <!-- Left Sidebar  -->\n    <div class=\"left-sidebar\">\n      <!-- Sidebar scroll-->\n      <div class=\"scroll-sidebar\">\n        <!-- Sidebar navigation-->\n        <nav class=\"sidebar-nav\">\n          <ul id=\"sidebarnav\">\n            <li class=\"nav-devider\"></li>\n            <li>\n              <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\n                <i class=\"far fa-tachometer\"></i>\n                <span class=\"hide-menu\">Dashboard</span>\n              </a>\n            </li>\n            <li>\n              <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\n                <i class=\"fa fa-envelope\"></i>\n                <span class=\"hide-menu\">Users</span>\n              </a>\n            </li>\n            <li>\n              <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\n                <i class=\"fa fa-bar-chart\"></i>\n                <span class=\"hide-menu\">Application</span>\n              </a>\n            </li>\n            <li>\n              <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\n                <i class=\"fa fa-suitcase\"></i>\n                <span class=\"hide-menu\">Group</span>\n              </a>\n            </li>\n            <!-- <li>\n                            <a class=\"sidebar-nav-link\" routerLink=\"/\" aria-expanded=\"false\">\n                                <i class=\"fa fa-suitcase\"></i>\n                                <span class=\"hide-menu\">Roles</span>\n                            </a>\n                        </li> -->\n          </ul>\n        </nav>\n        <!-- End Sidebar navigation -->\n      </div>\n      <!-- End Sidebar scroll-->\n    </div>\n    <!-- End Left Sidebar  -->\n    <!-- Page wrapper  -->\n    <div class=\"page-wrapper\">\n\n\n\n\n      <div nz-row nzType=\"flex\" nzJustify=\"center\">\n\n        <div nz-col nzSpan=\"16\">\n          <div>\n            <div>\n              <h1>{{groupInfoObjects.name}} APP</h1>\n              <h2></h2>\n\n              <p>Generic application</p>\n            </div>\n\n            <nz-tabset>\n              <nz-tab nzTitle=\"Settings\">\n                <div nz-row nzType=\"flex\" nzJustify=\"center\">\n                  <div nz-col nzSpan=\"24\">\n                    <form nz-form [formGroup]=\"settingsForm\" class=\"login-form\" (ngSubmit)=\"settingsFormSubmit()\">\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"name\">Application name</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"name\" placeholder=\"name\" [(ngModel)]=\"groupInfoObjects.name\">\n\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.name.dirty && f.name.errors\">Please input the application name</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"redirect_uri\">Redirect URI</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"redirect_uri\" placeholder=\"Redirect URI\" [(ngModel)]=\"groupInfoObjects.redirect_uri\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.redirect_uri.dirty && f.redirect_uri.errors\">Please input your redirect uri</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"client_id\">Client IDs</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"client_id\" placeholder=\"Client IDs\" [(ngModel)]=\"groupInfoObjects.client_id\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.client_id.dirty && f.client_id.errors\">Please input your client id</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"client_secret\">Client secret</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"client_secret\" disabled placeholder=\"Client secret\" [(ngModel)]=\"groupInfoObjects.client_secret\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.client_secret.dirty && f.client_secret.errors\">Please input your client secret</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"scope\">Scope</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"scope\" placeholder=\"Scope\" [(ngModel)]=\"groupInfoObjects.scope\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.scope.dirty && f.scope.errors\">Please specify the appliation scope</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"authorities\">Authorities</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"authorities\" disabled placeholder=\"Authorities\" [(ngModel)]=\"groupInfoObjects.authorities\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.authorities.dirty && f.authorities.errors\">Please specify the appliation authorities</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"resource_ids\">Resource IDs</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"resource_ids\" placeholder=\"Resource IDs\" [(ngModel)]=\"groupInfoObjects.resource_ids\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.resource_ids.dirty && f.resource_ids.errors\">Please specify the resource ids</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"authorized_grant_types\">Grant types</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"authorized_grant_types\" placeholder=\"Authorization grant types\" [(ngModel)]=\"groupInfoObjects.authorized_grant_types\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.authorized_grant_types.dirty && f.authorized_grant_types.errors\">Please specify the authorization grant types</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"token_salt\">Token salt</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-input-group>\n                            <input type=\"text\" nz-input formControlName=\"token_salt\" placeholder=\"Token salt\" [(ngModel)]=\"groupInfoObjects.token_salt\">\n                          </nz-input-group>\n                          <nz-form-explain *ngIf=\"f.token_salt.dirty && f.token_salt.errors\">Please specify the token salt</nz-form-explain>\n                        </nz-form-control>\n                      </nz-form-item>\n                      <nz-form-item>\n                        <nz-form-label [nzSm]=\"6\" [nzXs]=\"24\" nzFor=\"autoapprove\">Auto approve</nz-form-label>\n                        <nz-form-control [nzSm]=\"14\" [nzXs]=\"24\">\n                          <nz-switch [(ngModel)]=\"switchValue\" [ngModelOptions]=\"{standalone: true}\"></nz-switch>\n                        </nz-form-control>\n                      </nz-form-item>\n\n                      <nz-form-item>\n                        <nz-form-control>\n                          <button nz-button [nzType]=\"'primary'\" class=\"save-settings-button\" (click)=\"updClient(groupInfoObjects.client_id)\">Save changes</button>\n                          <!-- <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteTh(Groups.id)\" style=\"margin-right: 30px\"/> -->\n\n\n                        </nz-form-control>\n                      </nz-form-item>\n                    </form>\n                  </div>\n                </div>\n              </nz-tab>\n\n\n              <!-- Permissions tab -->\n              <nz-tab nzTitle=\"Permissions\">\n                <div nz-row nzType=\"flex\" nzJustify=\"center\">\n                  <div nz-col nzSpan=\"24\">\n                    <p>Define Permissions for your application.</p>\n                  </div>\n                </div>\n                <div class=\"create-role-btn-wrapper\">\n                  <button nz-button nzType=\"primary\" (click)=\"open(content2)\">Create Permission</button>\n                  <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Role</button> -->\n\n                </div>\n                <nz-table #basicTable>\n                  <thead>\n                    <tr>\n\n                      <th>displayName</th>\n                      <th>description</th>\n\n                      <th>Action</th>\n                    </tr>\n                  </thead>\n\n                  <tbody>\n\n                    <tr *ngFor=\"let Groups of permissions.resources\">\n\n                      <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.displayName }}</td>\n                      <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.description }}</td>\n\n                      <td>\n                        <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n\n                        <!-- <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"DeleteT(groupId)\" style=\"margin-right: 30px\"/> -->\n                        <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteTh(Groups.id)\" style=\"margin-right: 30px\"\n                        />\n\n\n\n                      </td>\n                    </tr>\n\n                  </tbody>\n\n                </nz-table>\n                <ng-template #content2 let-c=\"close\" let-d=\"dismiss\">\n                  <div class=\"modal-header\">\n                    <h4 class=\"modal-title\" id=\"modal-basic\">Create Permission</h4>\n                    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                      <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                  </div>\n                  <div class=\"modal-body\">\n                    <form>\n\n                      <div class=\"form-group has-feedback\">\n                        <label>display Name</label>\n                        <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"displayName\">\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                      </div>\n\n                      <div class=\"form-group has-feedback\">\n                        <label>description</label>\n                        <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"description\">\n                        <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                      </div>\n                      <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                          &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                          <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                          <button type=\"button\" class=\"btn btn-success\" (click)=\"loadPermission()\">Create</button>\n\n                        </div>\n                        <div class=\"col-md-4\">\n                          <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                          <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                        </div>\n                        <div class=\"col-md-2\">\n                          &nbsp;\n                        </div>\n\n                      </div>\n                    </form>\n\n\n                  </div>\n                  <!-- <div class=\"modal-footer\">\n                      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                  </div> -->\n                </ng-template>\n\n\n              </nz-tab>\n\n\n              <!-- Roles tab -->\n              <nz-tab nzTitle=\"Roles\">\n                <div nz-row nzType=\"flex\" nzJustify=\"center\">\n                  <div nz-col nzSpan=\"24\" style=\"margin-bottom: 3rem\">\n                    <p>Roles allow you to define the data that will be accessed through the applications to your API. Set a\n                      name for them and its description for better understanding.</p>\n                  </div>\n                </div>\n                <div class=\"create-role-btn-wrapper\">\n                  <button nz-button nzType=\"primary\" (click)=\"open(content5)\">Create role</button>\n                  <!-- <button type=\"button\" class=\"btn btn-primary btn-flat btn-addon btn-lg w-100\" (click)=\"open(content)\"><i class=\"fas fa-plus\"></i>Create Role</button> -->\n\n                </div>\n                <nz-table #basicTable>\n                  <thead>\n                    <tr>\n\n                      <th>displayName</th>\n                      <th>description</th>\n\n                      <th>Action</th>\n                    </tr>\n                  </thead>\n\n                  <tbody>\n\n                    <!-- <tr *ngFor=\"let Groups of groups.resources\">  -->\n                    <tr *ngFor=\"let group of Roles\">\n\n\n                      <td style=\"max-width: 30px; word-wrap: break-word;\">{{group.displayName }}</td>\n                      <td style=\"word-wrap: break-word;max-width:10px;\">{{ group.description }}</td>\n\n                      <td>\n                        <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n\n                        <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteTh(group.id)\" style=\"margin-right: 30px\"\n                        />\n\n                        <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open4(content,group.id)\">Assign</button>\n\n\n                      </td>\n                    </tr>\n\n                  </tbody>\n\n                </nz-table>\n                <ng-template #content5 let-c=\"close\" let-d=\"dismiss\">\n                  <div class=\"modal-header\">\n                    <h4 class=\"modal-title\" id=\"modal\">Create Role</h4>\n                    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                      <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                  </div>\n\n                  <div class=\"modal-body\">\n                    <form>\n                      <div class=\"form-group has-feedback col-sm-12\">\n                        <label for=\"\" class=\"col-sm-3\">Display Name</label>\n                        <div class=\"col-sm-9\">\n                          <input type=\"text\" class=\"form-control\" placeholder=\"displayName\" autocomplete=\"off\" [(ngModel)]=\"displayName\" name=\"displayName\">\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                      </div>\n                      <div class=\"form-group has-feedback col-sm-12\">\n                        <label for=\"\" class=\"col-sm-3\">Description</label>\n                        <div class=\"col-sm-9\">\n                          <input type=\"text\" class=\"form-control\" placeholder=\"description\" [(ngModel)]=\"description\" name=\"description\">\n                          <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                          <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                      </div>\n\n                      <!-- <div class=\"col-sm-12\">\n                    <label for=\"\" class=\"col-sm-3\">Permissions</label>\n                    <div class=\"col-sm-9\" *ngFor=\"let Groups of permissions.resources\">\n                      <button class=\"btn btn-default\" style=\"margin:10px 10px 10px 10px; width:50%;\n                      text-align: left;\">\n                        <input type=\"checkbox\">{{Groups.displayName}}\n                      </button> &nbsp;\n                    </div>\n                  </div> -->\n\n\n\n                      <div class=\"row\" style=\"margin-bottom:50px;\">\n                        <div class=\"col-md-2\">\n                          &nbsp;\n                        </div>\n                        <div class=\"col-md-4\">\n                          <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                          <button type=\"button\" class=\"btn btn-success\" (click)=\"loadRole()\">Create</button>\n                        </div>\n                        <div class=\"col-md-4\">\n                          <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                          <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                        </div>\n                        <div class=\"col-md-2\">\n                          &nbsp;\n                        </div>\n                      </div>\n                    </form>\n\n                  </div>\n                  <!-- <div class=\"modal-footer\">\n                      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                  </div> -->\n                </ng-template>\n\n                <!-- members tab -->\n              </nz-tab>\n\n              <!-- Members tab -->\n              <nz-tab nzTitle=\"Members\">\n                <div nz-row nzType=\"flex\" nzJustify=\"center\">\n                  <div nz-col nzSpan=\"24\" style=\"margin-bottom: 3rem\">\n                    <p>Assign Users to role</p>\n                  </div>\n                </div>\n\n\n                <nz-table #basicTable>\n                  <thead>\n                    <tr>\n                      <th>Username</th>\n                      <th>Email</th>\n                      <th>givenName</th>\n                      <th>Action</th>\n                    </tr>\n                  </thead>\n\n                  <tbody>\n                    <tr *ngFor=\"let Groups of Members\">\n                      <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.entity.userName}}</td>\n                      <td>{{ Groups.entity.emails[0].value}}</td>\n                      <td style=\"word-wrap: break-word;max-width:10px;\">{{Groups.entity.name.givenName }}</td>\n                      <td>\n                        <input type=\"text\" class=\"form-control\" value='{{Groups.entity.id}}' #userid style=\"display:none;\" />\n                        <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"DelMember(user.id)\" style=\"margin-right: 16px\"\n                        />\n                        <button nz-button nzType=\"primary\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open7(content7, Groups.entity.id)\"\n                          style=\"margin-right: 16px\">Assign</button>\n                        <button nz-button nzType=\"primary\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open8(content8, Groups.entity.id)\">Assign permission</button>\n\n                      </td>\n                    </tr>\n                  </tbody>\n                </nz-table>\n\n                <ng-template #content7 let-c=\"close\" let-d=\"dismiss\">\n                  <div class=\"modal-header\">\n                    <h4 class=\"modal-title\" id=\"modal-basic-title\">Assign Role To User</h4>\n                    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                      <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                  </div>\n\n                  <!-- <div class=\"modal-footer\">\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n              </div> -->\n\n                </ng-template>\n\n              </nz-tab>\n            </nz-tabset>\n          </div>\n        </div>\n\n        <!-- assign permission to role -->\n        <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-ti\">Assign</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n              <span aria-hidden=\"true\">&times;</span>\n            </button>\n          </div>\n\n          <div class=\"modal-body\">\n            <form>\n\n              <div class=\"form-group has-feedback\">\n                <label>DisplayName</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"displayName\" autocomplete=\"off\" name=\"displayName\" [(ngModel)]=\"get.displayName\">\n                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n              </div>\n\n              <div class=\"permission-body\">\n                <p>permissions</p>\n                <div class=\"roles-container\" style=\"margin-bottom: 16px;\">\n                  <button class=\"btn btn-default\" style=\"margin:8px; width:auto;\n                  text-align: left; padding: 3px 6px; font-size: 14px;\" *ngFor=\"let Groups of permissions.resources; let i = index;\">\n                    <input type=\"checkbox\" [id]=\"Groups.id\" (change)=\"change($event, i, Groups)\">{{Groups.displayName}}\n                  </button>\n                </div>\n                <div class=\"btn-wrapper\">\n                  <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\" style=\"margin-right: 16px\">Done</button>\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                </div>\n              </div>\n\n            </form>\n\n          </div>\n          <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n        </ng-template>\n\n        <!-- assign role to users -->\n\n\n\n        <ng-template #content7 let-c=\"close\" let-d=\"dismiss\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-ti\">Assign to User</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n              <span aria-hidden=\"true\">&times;</span>\n            </button>\n          </div>\n\n          <div class=\"modal-body\" style=\"width: 100%; height: auto;\">\n            <form>\n              <div class=\"form-group has-feedback\">\n                <label>Username</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"userName\" autocomplete=\"off\" name=\"userName\" [(ngModel)]=\"get.username\">\n                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n              </div>\n\n              <div class=\"roles-body\">\n                <p>Roles</p>\n                <div class=\"roles-container\" style=\"margin-bottom: 16px;\">\n                  <button class=\"btn btn-default\" style=\"margin:8px; width:auto;\n                text-align: left; padding: 3px 6px; font-size: 14px;\" *ngFor=\"let group of Roles; let i = index;\">\n                    <input type=\"checkbox\" [id]=\"group.id\" (change)=\"change($event, i, group)\">{{group.displayName}}\n                  </button>\n                </div>\n                <div class=\"btn-wrapper\">\n                  <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\" style=\"margin-right: 16px\">Done</button>\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                </div>\n              </div>\n            </form>\n          </div>\n\n\n          <!-- <div class=\"modal-footer\">\n                        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                    </div> -->\n        </ng-template>\n\n        <!-- assign permission to role -->\n\n        <ng-template #content8 let-c=\"close\" let-d=\"dismiss\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-ti\">Assign permission to user</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n              <span aria-hidden=\"true\">&times;</span>\n            </button>\n          </div>\n\n          <div class=\"modal-body\" style=\"width: 100%; height: auto;\">\n            <form>\n              <div class=\"form-group has-feedback\">\n                <label>Username</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"userName\" autocomplete=\"off\" name=\"userName\" [(ngModel)]=\"get.username\">\n                <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n              </div>\n\n              <div class=\"permission-body\">\n                <p>permissions</p>\n                <div class=\"roles-container\" style=\"margin-bottom: 16px;\">\n                  <button class=\"btn btn-default\" style=\"margin:8px; width:auto;\n                text-align: left; padding: 3px 6px; font-size: 14px;\" *ngFor=\"let Groups of permissions.resources; let i = index;\">\n                    <input type=\"checkbox\" [id]=\"Groups.id\" (change)=\"changer($event, i, Groups)\">{{Groups.displayName}}\n                  </button>\n                </div>\n                <div class=\"btn-wrapper\">\n                  <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\" style=\"margin-right: 16px\">Done</button>\n                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                </div>\n              </div>\n            </form>\n          </div>\n\n\n          <!-- <div class=\"modal-footer\">\n                        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                    </div> -->\n        </ng-template>\n\n      </div>\n\n    </div>\n    <!-- End Page wrapper  -->\n\n\n  </div>"
 
 /***/ }),
 
@@ -2571,6 +4614,10 @@ var ViewAppComponent = /** @class */ (function () {
         this.description = "";
         this.name = "";
         this.client_secret = "";
+        this.scope = "";
+        this.authorized_grant_types = "";
+        this.redirect_uri = "";
+        this.authorities = "";
         this.value = "";
         this.appId = {};
         this.users = {};
@@ -2672,12 +4719,12 @@ var ViewAppComponent = /** @class */ (function () {
     ViewAppComponent.prototype.loadClients = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
         var head = {
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
         // myHeaders.append("Content-Type", "application/json");
@@ -2685,7 +4732,7 @@ var ViewAppComponent = /** @class */ (function () {
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         axios__WEBPACK_IMPORTED_MODULE_1___default()({
             method: "GET",
-            url: "https://uaaserver.eu-gb.mybluemix.net/oauth/clients",
+            url: "https://ice.ecobank.com/uaa/oauth/clients",
             headers: head
         })
             .then(function (response) {
@@ -2703,39 +4750,122 @@ var ViewAppComponent = /** @class */ (function () {
         console.log(this.groupId2);
         console.log(this.groupId);
         console.log(this.permissions);
-        ///
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{groupId2}/members";
-        link = link.replace("{groupId2}", this.groupId2);
-        var data = JSON.stringify({
-            value: this.groupId
-        });
-        var schema = {
-            origin: "uaa",
-            type: "GROUP",
-            value: "null"
-        };
-        schema.value = this.groupId;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
-        this.http.post(link, schema, Option).subscribe(function (res) {
-            console.log(res);
-            console.log(res.status);
-            if (res.status == 201) {
-                //alert("User " + this.client_id + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
-            }
-        }, function (error) {
-            alert("Client_id already created");
-            console.log("error object " + JSON.stringify(error.json()));
+        if (event.target.checked) {
+            ///
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId2}/members";
+            link = link.replace("{groupId2}", this.groupId2);
+            var data = JSON.stringify({
+                value: this.groupId
+            });
+            var schema = {
+                origin: "uaa",
+                type: "GROUP",
+                value: "null"
+            };
+            schema.value = this.groupId;
+            this.http.post(link, schema, Option).subscribe(function (res) {
+                console.log(res);
+                console.log(res.status);
+                if (res.status == 201) {
+                    //alert("User " + this.client_id + " Created Successfully");
+                }
+            }, function (error) {
+                alert(error.status +
+                    " " +
+                    error.json().error +
+                    "\n" +
+                    error.json().error_description);
+                console.log("error object " + JSON.stringify(error.json()));
+            });
+        }
+        else {
+            console.log("About to remove from member from group");
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId2}/members/{groupId}";
+            link = link
+                .replace("{groupId2}", this.groupId2)
+                .replace("{groupId}", this.groupId);
+            // confirm(link);
+            this.http.delete(link, Option).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                }
+                else {
+                    console.log("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+    };
+    // assign permission to user
+    //public user__id: any;
+    //public userId: any;
+    // assigning permission to role
+    ViewAppComponent.prototype.changer = function (event, i, Groups) {
+        console.log("Changer");
+        this.groupId2 = Groups.id;
+        this.groupId = this.user__id;
+        console.log(this.groupId2);
+        console.log(this.groupId);
+        console.log(this.permissions);
+        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            "Content-Type": "application/json"
         });
+        var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+        var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+        if (event.target.checked) {
+            ///
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId2}/members";
+            link = link.replace("{groupId2}", this.groupId2);
+            var data = JSON.stringify({
+                value: this.groupId
+            });
+            var schema = {
+                origin: "uaa",
+                type: "USER",
+                value: "null"
+            };
+            schema.value = this.groupId;
+            this.http.post(link, schema, Option).subscribe(function (res) {
+                console.log(res);
+                console.log(res.status);
+                if (res.status == 201) {
+                    //alert("User " + this.client_id + " Created Successfully");
+                }
+            }, function (error) {
+                alert(error.status +
+                    " " +
+                    error.json().error +
+                    "\n" +
+                    error.json().error_description);
+                console.log("error object " + JSON.stringify(error.json()));
+            });
+        }
+        else {
+            console.log("About to remove permission from user");
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId2}/members/{groupId}";
+            link = link
+                .replace("{groupId2}", this.groupId2)
+                .replace("{groupId}", this.groupId);
+            // confirm(link);
+            this.http.delete(link, Option).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                }
+                else {
+                    console.log("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
     };
     // assigning permission to role
     ViewAppComponent.prototype.change = function (event, i, group) {
@@ -2744,42 +4874,59 @@ var ViewAppComponent = /** @class */ (function () {
         this.roleId = group.id;
         console.log("user id " + this.userId);
         console.log("role id " + this.roleId);
-        ///
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{roleId}/members";
-        link = link.replace("{roleId}", this.roleId);
-        var schema = {
-            origin: "uaa",
-            type: "USER",
-            value: "null"
-        };
-        schema.value = this.userId;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
-        this.http.post(link, schema, Option).subscribe(function (res) {
-            console.log(res);
-            console.log(res.status);
-            if (res.status == 201) {
-                // alert("User " + this.client_id + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
-            }
-        }, function (error) {
-            alert("Client_id already created");
-            console.log("error object " + JSON.stringify(error.json()));
-        });
+        if (event.target.checked) {
+            ///
+            var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members";
+            link = link.replace("{roleId}", this.roleId);
+            var schema = {
+                origin: "uaa",
+                type: "USER",
+                value: "null"
+            };
+            schema.value = this.userId;
+            this.http.post(link, schema, Option).subscribe(function (res) {
+                console.log(res);
+                console.log(res.status);
+                if (res.status == 201) {
+                    // alert("User " + this.client_id + " Created Successfully");
+                }
+            }, function (error) {
+                alert(error.status +
+                    " " +
+                    error.json().error +
+                    "\n" +
+                    error.json().error_description);
+                console.log("error object " + JSON.stringify(error.json()));
+            });
+        }
+        else {
+            console.log("About to remove from member from group");
+            var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members/{userId}";
+            link = link
+                .replace("{roleId}", this.roleId)
+                .replace("{userId}", this.userId);
+            // confirm(link);
+            this.http.delete(link, Option).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                }
+                else {
+                    console.log("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
     };
     ViewAppComponent.prototype.loadPermission = function () {
         var _this = this;
-        // funcPost(nameVal, passwordVal, passwordVal)
-        //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Groups";
+        var link = "https://ice.ecobank.com/uaa/Groups";
         var data = JSON.stringify({
             displayName: this.displayName,
             description: this.description
@@ -2793,12 +4940,10 @@ var ViewAppComponent = /** @class */ (function () {
         console.log(this.displayName);
         console.log(this.description);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         this.http.post(link, schema, Option).subscribe(function (res) {
             console.log(res);
@@ -2806,34 +4951,38 @@ var ViewAppComponent = /** @class */ (function () {
             if (res.status == 201) {
                 _this.displayName = "";
                 _this.description = "";
-                alert("User " + _this.displayName + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
+                _this.loadGroups();
+                alert("Permission Created Successfully");
             }
         }, function (error) {
-            alert("displayName already created");
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
     ViewAppComponent.prototype.loadClient = function () {
         var _this = this;
-        // funcPost(nameVal, passwordVal, passwordVal)
-        //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients";
+        var link = "https://ice.ecobank.com/uaa/oauth/clients";
         var data = JSON.stringify({
             client_id: this.client_id,
             client_secret: this.client_secret,
-            name: this.name
+            name: this.name,
+            scope: this.scope,
+            authorized_grant_types: this.authorized_grant_types,
+            redirect_uri: this.redirect_uri,
+            authorities: this.authorities
         });
         var schema = {
-            scope: ["clients.read", "clients.write"],
+            scope: [],
             client_id: null,
             client_secret: null,
             resource_ids: [],
-            authorized_grant_types: ["client_credentials"],
-            redirect_uri: ["http://yahoo.com"],
-            authorities: ["clients.read", "clients.write"],
+            authorized_grant_types: [],
+            redirect_uri: [],
+            authorities: [],
             token_salt: "3tjE6d",
             autoapprove: true,
             allowedproviders: ["uaa", "ldap", "my-saml-provider"],
@@ -2842,6 +4991,10 @@ var ViewAppComponent = /** @class */ (function () {
         schema.client_id = this.client_id;
         schema.name = this.name;
         schema.client_secret = this.client_secret;
+        schema.scope[0].value = this.scope;
+        schema.authorized_grant_types[0].value = this.authorized_grant_types;
+        schema.redirect_uri[0].value = this.redirect_uri;
+        schema.authorities[0].value = this.authorities;
         console.log(this.client_id);
         console.log(this.name);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
@@ -2849,8 +5002,6 @@ var ViewAppComponent = /** @class */ (function () {
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         this.http.post(link, schema, Option).subscribe(function (res) {
             console.log(res);
@@ -2859,21 +5010,20 @@ var ViewAppComponent = /** @class */ (function () {
                 _this.client_id = "";
                 _this.name = "";
                 _this.client_secret = "";
-                alert("User " + _this.client_id + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
+                alert("Client " + _this.client_id + " Created Successfully");
             }
         }, function (error) {
-            alert("Client_id already created");
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
     ViewAppComponent.prototype.loadRole = function () {
         var _this = this;
-        // funcPost(nameVal, passwordVal, passwordVal)
-        //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Groups";
+        var link = "https://ice.ecobank.com/uaa/Groups";
         var data = JSON.stringify({
             displayName: this.displayName,
             description: this.description
@@ -2887,12 +5037,10 @@ var ViewAppComponent = /** @class */ (function () {
         console.log(this.displayName);
         console.log(this.description);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         this.http.post(link, schema, Option).subscribe(function (res) {
             console.log(res);
@@ -2900,13 +5048,15 @@ var ViewAppComponent = /** @class */ (function () {
             if (res.status == 201) {
                 _this.displayName = "";
                 _this.description = "";
-                alert("User " + _this.displayName + " Created Successfully");
-            }
-            else {
-                alert("Failed!");
+                _this.loadGroups();
+                alert("Role Created Successfully");
             }
         }, function (error) {
-            alert("displayName already created");
+            alert(error.status +
+                " " +
+                error.json().error +
+                "\n" +
+                error.json().error_description);
             console.log("error object " + JSON.stringify(error.json()));
         });
     };
@@ -2914,20 +5064,18 @@ var ViewAppComponent = /** @class */ (function () {
     ViewAppComponent.prototype.loadGroups = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
         var head = {
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
         axios__WEBPACK_IMPORTED_MODULE_1___default()({
             method: "GET",
-            url: "https://uaaserver.eu-gb.mybluemix.net/Groups",
+            url: "https://ice.ecobank.com/uaa/Groups",
             headers: head
         })
             .then(function (response) {
@@ -2941,23 +5089,18 @@ var ViewAppComponent = /** @class */ (function () {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+            var link = "https://ice.ecobank.com/uaa/oauth/clients/{client_id}";
             link = link.replace("{client_id}", client_id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-                Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                 Accept: "application/json"
             });
             var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
-            // myHeaders.append("Content-Type", "application/json");
-            // myHeaders.append("Access-Control-Allow-Origin", "*");
             var Option_1 = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
-            // confirm(link);
             this.http.delete(link, Option_1).subscribe(function (res) {
                 console.log(res.json().responseCode);
                 if (res.json().responseCode == "201") {
                     _this.loadClients();
-                    // alert("User "+this.username+" deleted Successfully");
-                    // alert(res.json().responseMessage);
                 }
                 else {
                     _this.loadClients();
@@ -2966,6 +5109,39 @@ var ViewAppComponent = /** @class */ (function () {
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
+        }
+    };
+    //delete a permission
+    ViewAppComponent.prototype.DeleteT = function (groupId) {
+        var _this = this;
+        if (confirm("Are you sure you want to delete?")) {
+            //var string = (id);
+            var link = "https://ice.ecobank.com/uaa/Groups//{groupId}";
+            link = link.replace("{groupId}", groupId);
+            var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                "Content-Type": "application/json"
+            });
+            var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]();
+            var Option_2 = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+            // confirm(link);
+            this.http.delete(link, Option_2).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "201") {
+                    _this.loadGroups();
+                    // alert("User "+this.username+" deleted Successfully");
+                    // alert(res.json().responseMessage);
+                }
+                else {
+                    _this.loadGroups();
+                    alert("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else {
+            // alert("nooooo")
         }
     };
     // Modal logic
@@ -3002,14 +5178,14 @@ var ViewAppComponent = /** @class */ (function () {
         var _this = this;
         console.log("Data is ==> " + data);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var head = {
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Users/" + data;
+        var url = "https://ice.ecobank.com/uaa/Users/" + data;
         axios__WEBPACK_IMPORTED_MODULE_1___default()({ method: "GET", url: url, headers: head })
             .then(function (response) {
             console.log(response.data);
@@ -3019,6 +5195,37 @@ var ViewAppComponent = /** @class */ (function () {
             _this.get.username = response.data.userName;
             _this.modalService
                 .open(content7, { ariaLabelledBy: "modal-basic-title" })
+                .result.then(function (result) {
+                _this.closeResult = "Closed with: " + result;
+            }, function (reason) {
+                _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
+            });
+            // this.Users = response.data.resources
+        })
+            .catch(function (error) { return console.log(error); });
+    };
+    //assign user to permission
+    ViewAppComponent.prototype.open8 = function (content8, data) {
+        var _this = this;
+        console.log("Data is ==> " + data);
+        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
+        });
+        var head = {
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
+        };
+        var url = "https://ice.ecobank.com/uaa/Users/" + data;
+        axios__WEBPACK_IMPORTED_MODULE_1___default()({ method: "GET", url: url, headers: head })
+            .then(function (response) {
+            console.log(response.data);
+            console.log("before method call");
+            console.log("data ==> " + data);
+            _this.user__id = data;
+            _this.get.username = response.data.userName;
+            _this.modalService
+                .open(content8, { ariaLabelledBy: "modal-basic-title" })
                 .result.then(function (result) {
                 _this.closeResult = "Closed with: " + result;
             }, function (reason) {
@@ -3047,9 +5254,9 @@ var ViewAppComponent = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log(data);
-                        link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}".replace("{client_id}", data);
+                        link = "https://ice.ecobank.com/uaa/oauth/clients/{client_id}".replace("{client_id}", data);
                         head = {
-                            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                             Accept: "application/json"
                         };
                         // myHeaders.append("Content-Type", "application/json");
@@ -3084,13 +5291,11 @@ var ViewAppComponent = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log(data);
-                        link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=description+co+%22{groupid}+permission%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
+                        link = "https://ice.ecobank.com/uaa/Groups?filter=description+co+%22{groupid}+permission%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
                         head = {
-                            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                             Accept: "application/json"
                         };
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
                                 method: "GET",
                                 url: link,
@@ -3104,8 +5309,6 @@ var ViewAppComponent = /** @class */ (function () {
                             })
                                 .catch(function (error) { return console.log(error); })];
                     case 1:
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -3121,13 +5324,11 @@ var ViewAppComponent = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log(data);
-                        link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=displayName+sw+%22{groupid}%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
+                        link = "https://ice.ecobank.com/uaa/Groups?filter=displayName+sw+%22{groupid}%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
                         head = {
-                            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                             Accept: "application/json"
                         };
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
                                 method: "GET",
                                 url: link,
@@ -3141,8 +5342,6 @@ var ViewAppComponent = /** @class */ (function () {
                             })
                                 .catch(function (error) { return console.log(error); })];
                     case 1:
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -3158,13 +5357,11 @@ var ViewAppComponent = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log(data);
-                        link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=displayName+sw+%22{groupid}.user%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
+                        link = "https://ice.ecobank.com/uaa/Groups?filter=displayName+sw+%22{groupid}.user%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace("{groupid}", data);
                         head = {
-                            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                             Accept: "application/json"
                         };
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
                                 method: "GET",
                                 url: link,
@@ -3180,8 +5377,6 @@ var ViewAppComponent = /** @class */ (function () {
                             })
                                 .catch(function (error) { return console.log(error); })];
                     case 1:
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -3198,14 +5393,12 @@ var ViewAppComponent = /** @class */ (function () {
                     case 0:
                         applicationId = this.appId;
                         console.log(applicationId);
-                        link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{applicationId}/members?returnEntities=true";
+                        link = "https://ice.ecobank.com/uaa/Groups/{applicationId}/members?returnEntities=true";
                         link = link.replace("{applicationId}", applicationId);
                         head = {
-                            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                             Accept: "application/json"
                         };
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_1___default()({
                                 method: "GET",
                                 url: link,
@@ -3219,46 +5412,24 @@ var ViewAppComponent = /** @class */ (function () {
                             })
                                 .catch(function (error) { return console.log(error); })];
                     case 1:
-                        // myHeaders.append("Content-Type", "application/json");
-                        // myHeaders.append("Access-Control-Allow-Origin", "*");
                         _a.sent();
                         return [2 /*return*/];
                 }
             });
         });
     };
-    // loadGroup() {
-    //   let Header = new Headers({
-    //     "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-    //     "Accept":"application/json"
-    //   });
-    //   let myHeaders = new Headers();
-    //   const head = {
-    //     "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-    //     "Accept":"application/json"
-    //   };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
-    //   let Option = new RequestOptions({ headers: Header });
-    //   axios({ method: "GET", url:  "https://uaaserver.eu-gb.mybluemix.net/Groups", headers: head })
-    //     .then(response =>
-    //       //console.log(response.data)
-    //       this.Groups = response.data.resources
-    //     )
-    //      .catch(error => console.log(error));
-    // }
     ViewAppComponent.prototype.open4 = function (content, data) {
         var _this = this;
         console.log("am here");
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         });
         var head = {
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Groups/" + data;
+        var url = "https://ice.ecobank.com/uaa/Groups/" + data;
         console.log("before method call");
         console.log("data ==> " + data);
         this.role_id = data;
@@ -3278,6 +5449,118 @@ var ViewAppComponent = /** @class */ (function () {
             // this.Users = response.data.resources
         })
             .catch(function (error) { return console.log("fatal error occured " + error); });
+    };
+    // DELETE A ROLE OR PERMISSION
+    ViewAppComponent.prototype.funcDeleteTh = function (id) {
+        var _this = this;
+        if (confirm("Are you sure you want to delete?")) {
+            //var string = (id);
+            //id=this.role_id;
+            console.log("fffffffffffff" + id);
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId}";
+            link = link.replace("{groupId}", id);
+            var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                "Content-Type": "application/json"
+            });
+            console.log("am herrrrrrrrr");
+            //let myHeaders = new Headers();
+            var Option_3 = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+            // confirm(link);
+            this.http.delete(link, Option_3).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                    _this.loadGroups();
+                    // alert("User "+this.username+" deleted Successfully");
+                    // alert(res.json().responseMessage);
+                }
+                else {
+                    _this.loadGroups();
+                    alert("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else {
+            // alert("nooooo")
+        }
+    };
+    //DELETE A MEMBER FROM A GROUP
+    ViewAppComponent.prototype.DelMember = function (id) {
+        var _this = this;
+        if (confirm("Are you sure you want to delete?")) {
+            //var string = (id);
+            //id=this.role_id;
+            console.log("fffffffffffff" + id);
+            var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members/{id}";
+            link = link.replace("{roleId}", this.roleId);
+            link = link.replace("{id}", this.userId);
+            var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                "Content-Type": "application/json"
+            });
+            console.log("am herrrrrrrrr");
+            //let myHeaders = new Headers();
+            var Option_4 = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+            // confirm(link);
+            this.http.delete(link, Option_4).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                    _this.loadGroups();
+                    // alert("User "+this.username+" deleted Successfully");
+                    // alert(res.json().responseMessage);
+                }
+                else {
+                    _this.loadGroups();
+                    alert("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else {
+            // alert("nooooo")
+        }
+    };
+    ViewAppComponent.prototype.updClient = function (data) {
+        console.log("am heeeeeeeeee");
+        console.log(":::: " + data);
+        var link = "https://ice.ecobank.com/uaa/oauth/clients/{client_id}";
+        link = link.replace("{client_id}", data);
+        var updLoad = {
+            scope: this.groupInfoObjects.scope,
+            client_id: this.groupInfoObjects.client_id,
+            // client_secret: this.groupInfoObjects.client_secret,
+            resource_ids: this.groupInfoObjects.resource_ids,
+            authorized_grant_types: this.groupInfoObjects.authorized_grant_types,
+            redirect_uri: this.groupInfoObjects.redirect_uri,
+            // authorities: [],
+            // token_salt: "",
+            autoapprove: true,
+            allowedproviders: ["uaa", "ldap", "my-saml-provider"],
+            name: this.groupInfoObjects.name
+        };
+        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["Headers"]({
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        });
+        // myHeaders.append("Content-Type", "application/json");
+        // myHeaders.append("Access-Control-Allow-Origin", "*");
+        var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_4__["RequestOptions"]({ headers: Header });
+        this.http.put(link, updLoad, Option).subscribe(function (res) {
+            console.log(res);
+            console.log(res.status);
+            if (res.status === 200) {
+                alert(" Updated Successfully");
+            }
+            // this.router.navigateByUrl("/settings/addaffiliates");
+        }, function (error) {
+            alert("Error Updating client");
+            console.log("errroroorororororor");
+            console.log("error object " + JSON.stringify(error));
+        });
     };
     ViewAppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -3554,44 +5837,49 @@ var ViewClientComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/view-groups/view-groups.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/view-groups/view-groups.component.css ***!
-  \*******************************************************/
+/***/ "./src/app/view-group-page/view-group-page.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/view-group-page/view-group-page.component.css ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".section-title {\r\n  color: rgba(0, 0, 0, 0.87);\r\n}\r\n#main-wrapper {\r\n  height: 100% !important;\r\n}\r\n.page-wrapper {\r\n  height: calc(100% - 54px);\r\n}\r\n.empty-ui {\r\n  margin-top: 2rem;\r\n}\r\n.empty-ui h1 {\r\n  margin-bottom: 2rem;\r\n}\r\n.empty-ui i {\r\n  display: block;\r\n  margin-bottom: 1rem;\r\n}\r\n.empty-ui button {\r\n  text-transform: uppercase;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n  height: 48px;\r\n}\r\n.empty-ui button:focus {\r\n  text-transform: uppercase;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n  height: 48px;\r\n  color: #fff;\r\n}\r\n.empty-ui button i {\r\n  display: inline-block;\r\n  margin: 0;\r\n  margin-right: 1rem;\r\n}\r\n.tb-row {\r\n  width: 100%;\r\n}\r\n.table {\r\n  margin-top: 10rem;\r\n}\r\n.wrapper {\r\n  display: flex;\r\n  justify-content: center;\r\n  padding: 64px 0 0 0;\r\n}\r\n.form-wrapper {\r\n  max-width: 400px;\r\n  width: 400px;\r\n}\r\n"
 
 /***/ }),
 
-/***/ "./src/app/view-groups/view-groups.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/view-groups/view-groups.component.html ***!
-  \********************************************************/
+/***/ "./src/app/view-group-page/view-group-page.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/view-group-page/view-group-page.component.html ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n        <thead>\n            <tr>\n                <th>id</th>\n                <th>displayName</th>\n                <th>description</th>\n                <th>zoneId</th> \n                 <th>members</th>  \n                <th>Action</th>\n            </tr>\n        </thead>\n    \n        <tbody>\n    \n                <tr *ngFor=\"let Groups of Groups\">\n                                                \n                        <td style=\"word-wrap:break-word; max-width: 130px;\">{{Groups.id}}</td>\n                        <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.displayName }}</td>\n                        <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.description }}</td>\n                        <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.zoneId }}</td>  \n                         <td style=\"word-wrap: break-word;max-width:30px;\"><p *ngFor=\"let member of  Groups.members\"> \n                            {{member.origin}}, {{member.type}}, {{member.value}}\n                         </p></td> \n\n                        <td>\n                            <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n                            \n                            <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(groupId)\" style=\"margin-right: 30px\" /> \n                            \n                            <!-- <input type=\"submit\" #id class=\"btn btn-info btn-xs\" value=\"Update\" (click)=\"funcUpdateT(client.client_id)\" />  -->\n                            <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" ng-click=\"loadClientsById(client.client_id)\">Update</button>  -->\n                            <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content)\" ng-click=\"loadGroupsById(Groups.id)\">Update</button> -->\n                            <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,Groups.id)\">View</button>\n                              <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,Groups.id)\">Update</button>\n                                  -->\n                        </td>\n                    </tr>\n                    \n        </tbody>\n\n         <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n                <div class=\"modal-header\">\n                    <h4 class=\"modal-title\" id=\"modal-basic-title\">Create</h4>\n                    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <form>\n                                \n                        <div class=\"form-group has-feedback\">\n                                <label>display Name</label>\n                            <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\"  name=\"client_id\" [(ngModel)]=\"get.displayName\">\n                            <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        \n                        <!-- <div class=\"form-group has-feedback\">\n                            <label>description</label>\n                              <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"get.description\">\n                              \n                              <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                                <label>ZoneId</label>\n                                  <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"get.zoneId\">\n                                  \n                                  <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                            </div> -->\n\n                            <div class=\"col-sm-12\">\n                                    <label for=\"\" class=\"col-sm-3\">Users</label>\n                                    <div class=\"col-sm-9\" *ngFor=\"let user of Users; let i = index;\">\n                                      <button class=\"btn btn-default\" style=\"margin:10px 10px 10px 10px; width:50%;\n                                      text-align: left;\">\n                                        <input type=\"checkbox\" [id]=\"user.id\" (change)=\"onChange($event, i, user)\">{{ user.userName }}\n                                      </button> &nbsp;\n                                    </div>\n                                  </div>\n\n                                <div class=\"row\" style=\"margin-bottom:50px;\">\n                                <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                               <div class=\"col-md-4\">\n                                    <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                                     <button type=\"button\" class=\"btn btn-success\" (click)=\"c('Save click')\">Done</button> \n                                    \n                                </div>\n                                <div class=\"col-md-4\">\n                                  <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                                  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                        \n                              </div>\n                              <div class=\"col-md-2\">\n                                    &nbsp;\n                                </div>\n                              \n                        </div>\n                    </form> \n            \n                </div>\n                <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n            </ng-template>\n    \n    </table>\n    "
+module.exports = "<body class=\"fix-header fix-sidebar\">\r\n        <!-- Preloader - style you can find in spinners.css -->\r\n        <!-- <div class=\"preloader\">\r\n            <svg class=\"circular\" viewBox=\"25 25 50 50\">\r\n                <circle class=\"path\" cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\" stroke-width=\"2\" stroke-miterlimit=\"10\" />\r\n            </svg>\r\n        </div> -->\r\n        <!-- Main wrapper  -->\r\n        <div id=\"main-wrapper\">\r\n            <!-- header header  -->\r\n            <div class=\"header\">\r\n                <nav class=\"navbar top-navbar navbar-expand-md navbar-light\">\r\n                    <!-- Logo -->\r\n                    <div class=\"navbar-header\">\r\n                        <a class=\"navbar-brand\" href=\"index.html\">\r\n                            <!-- Logo icon -->\r\n                            <!-- <b>\r\n                                    <img src=\"images/logo.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                                </b> -->\r\n                            <!--End Logo icon -->\r\n                            <!-- Logo text -->\r\n                            <!-- <span>\r\n                                    <img src=\"images/logo-text.png\" alt=\"homepage\" class=\"dark-logo\" />\r\n                                </span> -->\r\n                        </a>\r\n                    </div>\r\n                    <!-- End Logo -->\r\n                    <div class=\"navbar-collapse\">\r\n                        <!-- toggle and nav items -->\r\n                        <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                            <!-- This is  -->\r\n                            <li class=\"nav-item\">\r\n                                <a class=\"nav-link nav-toggler hidden-md-up text-muted  \" href=\"javascript:void(0)\">\r\n                                    <i class=\"mdi mdi-menu\"></i>\r\n                                </a>\r\n                            </li>\r\n                            <li class=\"nav-item m-l-10\">\r\n                                <a class=\"nav-link sidebartoggler hidden-sm-down text-muted  \" href=\"javascript:void(0)\">\r\n                                    <i class=\"ti-menu\"></i>\r\n                                </a>\r\n                            </li>\r\n                        </ul>\r\n                        <!-- User profile and search -->\r\n                        <ul class=\"navbar-nav my-lg-0\">\r\n                            <!-- Profile -->\r\n                            <li class=\"nav-item dropdown\">\r\n                                <a class=\"nav-link dropdown-toggle text-muted  \" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                    <img src=\"http://robohash.org/503483?set=set2&bgset=bg2&size=70x70\" alt=\"user\" class=\"profile-pic\" />\r\n                                </a>\r\n                                <div class=\"dropdown-menu dropdown-menu-right animated zoomIn\">\r\n                                    <ul class=\"dropdown-user\">\r\n                                        <li>\r\n                                            <a href=\"#\">\r\n                                                <i class=\"fa fa-lock\"></i> Change email</a>\r\n                                        </li>\r\n                                        <li>\r\n                                            <a href=\"#\">\r\n                                                <i class=\"fa fa-lock\"></i> Change password</a>\r\n                                        </li>\r\n                                        <li>\r\n                                            <a href=\"#\">\r\n                                                <i class=\"fa fa-power-off\"></i> Logout</a>\r\n                                        </li>\r\n                                    </ul>\r\n                                </div>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </nav>\r\n            </div>\r\n            <!-- End header header -->\r\n            <!-- Left Sidebar  -->\r\n            <div class=\"left-sidebar\">\r\n                <!-- Sidebar scroll-->\r\n                <div class=\"scroll-sidebar\">\r\n                    <!-- Sidebar navigation-->\r\n                    <nav class=\"sidebar-nav\">\r\n                        <ul id=\"sidebarnav\">\r\n                            <li class=\"nav-devider\"></li>\r\n                            <li>\r\n                                <a class=\"sidebar-nav-link\" routerLink=\"/dashboard\" aria-expanded=\"false\">\r\n                                    <i class=\"far fa-tachometer\"></i>\r\n                                    <span class=\"hide-menu\">Dashboard</span>\r\n                                </a>\r\n                            </li>\r\n                            <li>\r\n                                <a class=\"sidebar-nav-link\" routerLink=\"/users\" aria-expanded=\"false\">\r\n                                    <i class=\"fa fa-envelope\"></i>\r\n                                    <span class=\"hide-menu\">Users</span>\r\n                                </a>\r\n                            </li>\r\n                            <li>\r\n                                <a class=\"sidebar-nav-link\" routerLink=\"/application\" aria-expanded=\"false\">\r\n                                    <i class=\"fa fa-bar-chart\"></i>\r\n                                    <span class=\"hide-menu\">Application</span>\r\n                                </a>\r\n                            </li>\r\n                            <li>\r\n                                <a class=\"sidebar-nav-link\" routerLink=\"/groups\" aria-expanded=\"false\">\r\n                                    <i class=\"fa fa-suitcase\"></i>\r\n                                    <span class=\"hide-menu\">Group</span>\r\n                                </a>\r\n                            </li>\r\n                            <!-- <li>\r\n                                <a class=\"sidebar-nav-link\" routerLink=\"/\" aria-expanded=\"false\">\r\n                                    <i class=\"fa fa-suitcase\"></i>\r\n                                    <span class=\"hide-menu\">Roles</span>\r\n                                </a>\r\n                            </li> -->\r\n                        </ul>\r\n                    </nav>\r\n                    <!-- End Sidebar navigation -->\r\n                </div>\r\n                <!-- End Sidebar scroll-->\r\n            </div>\r\n            <!-- End Left Sidebar  -->\r\n            <!-- Page wrapper  -->\r\n            <div class=\"page-wrapper\">\r\n                \r\n                    <div class=\"wrapper\">\r\n                            <div clas=\"form-wrapper\">\r\n                                <form>\r\n                                    <div class=\"form-group has-feedback\">\r\n                                        <label>DISPLAY NAME</label>\r\n                                        <input type=\"text\" class=\"form-control\" placeholder=\"displayName\" autocomplete=\"off\" name=\"displayName\" value=\"{{groupInfoObjects.displayName}}\">\r\n                                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                                    </div>\r\n                        \r\n                                    <div class=\"form-group has-feedback\">\r\n                                        <label>DESCRIPTION</label>\r\n                                        <input type=\"text\" class=\"form-control\" placeholder=\"description\" autocomplete=\"off\" name=\"description\" value=\"{{groupInfoObjects.description}}\">\r\n                                        <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\r\n                                    </div>\r\n                                    <div class=\"users-body\">\r\n                                        <p>Users</p>\r\n                                        <div class=\"user-container\" style=\"margin-bottom: 16px;\">\r\n                                            <button class=\"btn btn-pr\" style=\"margin:8px; width:auto;\r\n                                            text-align: left; padding: 3px 6px; font-size: 14px;\" *ngFor=\"let user of Users; let i = index;\">\r\n                                                <input type=\"checkbox\" [id]=\"user.id\" (change)=\"change($event, i, user)\">{{user.userName }}\r\n                                            </button>\r\n                                        </div>\r\n                                        <div class=\"btn-wrapper\">\r\n                                            <button type=\"button\" class=\"btn btn-success\" (onclick)=\"myFunction()\" style=\"margin-right: 16px\">Done</button>\r\n                                            \r\n                                            <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\r\n                                        </div>\r\n                                    </div>\r\n                                </form>\r\n                        \r\n                            </div>\r\n                        </div>\r\n                        \r\n            </div>\r\n            <!-- End Page wrapper  -->\r\n            \r\n    \r\n        </div>\r\n    \r\n        \r\n    \r\n        "
 
 /***/ }),
 
-/***/ "./src/app/view-groups/view-groups.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/view-groups/view-groups.component.ts ***!
-  \******************************************************/
-/*! exports provided: ViewGroupsComponent */
+/***/ "./src/app/view-group-page/view-group-page.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/view-group-page/view-group-page.component.ts ***!
+  \**************************************************************/
+/*! exports provided: ViewGroupPageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewGroupsComponent", function() { return ViewGroupsComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewGroupPageComponent", function() { return ViewGroupPageComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3601,74 +5889,139 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
 
 
-var ViewGroupsComponent = /** @class */ (function () {
-    function ViewGroupsComponent(http, modalService, route, router) {
+
+
+
+var ViewGroupPageComponent = /** @class */ (function () {
+    function ViewGroupPageComponent(http, route, router, dataservice) {
         this.http = http;
-        this.modalService = modalService;
         this.route = route;
         this.router = router;
+        this.dataservice = dataservice;
         this.client_id = "";
         this.value = "";
-        // public Users : any;
-        this.get = { 'displayName': null, 'description': null, 'zoneId': null, 'origin': null, 'type': null, 'value': null };
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+        this.get = {
+            displayName: null,
+            description: null,
+            zoneId: null,
+            origin: null,
+            type: null,
+            value: null
+        };
     }
-    ViewGroupsComponent.prototype.ngOnInit = function () {
-        this.loadGroups();
-        this.loadUsers();
+    ViewGroupPageComponent.prototype.myFunction = function () {
+        throw new Error("Method not implemented.");
     };
-    ViewGroupsComponent.prototype.loadGroups = function () {
+    ViewGroupPageComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.groupId3 = this.dataservice.getGroupId();
+                        return [4 /*yield*/, this.fetchGroupInfo(this.dataservice.getGroupId())];
+                    case 1:
+                        _a.sent();
+                        console.log(this.groupId3);
+                        console.log('i am here to help');
+                        this.loadGroups();
+                        this.loadUsers();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ViewGroupPageComponent.prototype.loadGroups = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
         // myHeaders.append("Content-Type", "application/json");
         // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
-        axios__WEBPACK_IMPORTED_MODULE_3___default()({ method: "GET", url: "https://uaaserver.eu-gb.mybluemix.net/Groups", headers: head })
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({
+            method: "GET",
+            url: "https://ice.ecobank.com/uaa/Groups",
+            headers: head
+        })
             .then(function (response) {
             //console.log(response.data)
-            return _this.Groups = response.data.resources;
+            return (_this.Groups = response.data.resources);
         })
             .catch(function (error) { return console.log(error); });
     };
-    ViewGroupsComponent.prototype.loadGroupsById = function (data) {
+    ViewGroupPageComponent.prototype.loadGroupsById = function (data) {
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Groups" + data;
+        var url = "https://ice.ecobank.com/uaa/Groups" + data;
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
-        axios__WEBPACK_IMPORTED_MODULE_3___default()({ method: "GET", url: url, headers: head })
-            .then(function (response) {
-            return console.log(response.data);
-        }
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({ method: "GET", url: url, headers: head })
+            .then(function (response) { return console.log(response.data); }
         // this.Users = response.data.resources
         )
             .catch(function (error) { return console.log(error); });
     };
-    ViewGroupsComponent.prototype.funcDeleteT = function (id) {
+    ViewGroupPageComponent.prototype.funcDeleteT = function (id) {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/Groups//{groupId}";
+            var link = "https://ice.ecobank.com/uaa/Groups//{groupId}";
             link = link.replace("{id}", id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-                "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b"
+                // "Content-Type":"application/json"
             });
             var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
             var Option_1 = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
@@ -3692,120 +6045,382 @@ var ViewGroupsComponent = /** @class */ (function () {
             // alert("nooooo")
         }
     };
-    // Modal logic
-    ViewGroupsComponent.prototype.open = function (content, data) {
+    ViewGroupPageComponent.prototype.loadUsers = function () {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Groups/" + data;
-        var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
-        axios__WEBPACK_IMPORTED_MODULE_3___default()({ method: "GET", url: url, headers: head })
-            .then(function (response) {
-            console.log(response.data);
-            //eden
-            console.log("data==> " + data);
-            _this.role_id = data;
-            _this.get.displayName = response.data.displayName;
-            _this.get.description = response.data.description;
-            _this.get.zoneId = response.data.zoneId;
-            _this.get.origin = response.data.origin;
-            _this.get.type = response.data.type;
-            _this.get.value = response.data.value;
-            _this.modalService
-                .open(content, { ariaLabelledBy: "modal-basic-title" })
-                .result.then(function (result) {
-                _this.closeResult = "Closed with: " + result;
-            }, function (reason) {
-                _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
-            });
-            // this.Users = response.data.resources
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({
+            method: "GET",
+            url: "https://ice.ecobank.com/uaa/Users",
+            headers: head
         })
-            .catch(function (error) { return console.log(error); });
-    };
-    ViewGroupsComponent.prototype.getDismissReason = function (reason) {
-        if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].ESC) {
-            return "by pressing ESC";
-        }
-        else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].BACKDROP_CLICK) {
-            return "by clicking on a backdrop";
-        }
-        else {
-            return "with: " + reason;
-        }
-    };
-    ViewGroupsComponent.prototype.loadUsers = function () {
-        var _this = this;
-        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
-        });
-        var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
-        };
-        axios__WEBPACK_IMPORTED_MODULE_3___default()({ method: "GET", url: "https://uaaserver.eu-gb.mybluemix.net/Users", headers: head })
             .then(function (response) {
             //console.log(response.data)
-            return _this.Users = response.data.resources;
+            return (_this.Users = response.data.resources);
         })
             .catch(function (error) { return console.log(error); });
     };
-    // assigning permission to role
-    ViewGroupsComponent.prototype.onChange = function (event, i, user) {
-        var _this = this;
-        console.log("i am here");
-        this.userId2 = this.role_id;
-        this.userId = user.id;
-        console.log(this.userId2);
-        console.log(this.userId);
-        console.log(this.user);
-        ///
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{userId2}/members";
-        link = link.replace("{userId2}", this.userId2);
-        var data = JSON.stringify({
-            value: this.userId
+    ViewGroupPageComponent.prototype.fetchGroupInfo = function (data) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var link, head;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = this.groupId3;
+                        console.log("Inside the place==>" + data);
+                        link = "https://ice.ecobank.com/uaa/Groups/{groupId3}".replace("{groupId3}", data);
+                        console.log(link);
+                        head = {
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                            Accept: "application/json"
+                        };
+                        // myHeaders.append("Content-Type", "application/json");
+                        // myHeaders.append("Access-Control-Allow-Origin", "*");
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default()({
+                                method: "GET",
+                                url: link,
+                                headers: head
+                            })
+                                .then(function (response) {
+                                console.log(response);
+                                _this.groupInfoObjects = response.data;
+                                console.log("group");
+                                console.log(_this.groupInfoObjects);
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        // myHeaders.append("Content-Type", "application/json");
+                        // myHeaders.append("Access-Control-Allow-Origin", "*");
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
         });
-        var schema = {
-            "origin": "uaa",
-            "type": "USER",
-            "value": "null"
-        };
-        schema.value = this.userId;
+    };
+    // assigning permission to role
+    ViewGroupPageComponent.prototype.change = function (event, i, group) {
+        var _this = this;
+        console.log("Assigning a user a role");
+        this.roleId = this.groupId3;
+        this.userId = group.id;
+        console.log("user id  new guy" + this.userId);
+        console.log("role id " + this.roleId);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         var myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
-        this.http.post(link, schema, Option).subscribe(function (res) {
-            console.log(res);
-            console.log(res.status);
-            if (res.status == 201) {
-                alert("User " + _this.client_id + " Created Successfully");
+        if (event.target.checked) {
+            ///
+            var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members";
+            link = link.replace("{roleId}", this.roleId);
+            var schema = {
+                origin: "uaa",
+                type: "USER",
+                value: "null"
+            };
+            schema.value = this.userId;
+            // let Header = new Headers({
+            //   Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            //   "Content-Type": "application/json"
+            // });
+            // let myHeaders = new Headers();
+            // let Option = new RequestOptions({ headers: Header });
+            this.http.post(link, schema, Option).subscribe(function (res) {
+                console.log(res);
+                console.log(res.status);
+                if (res.status == 201) {
+                    alert("User " + _this.client_id + " Created Successfully");
+                }
+                else {
+                    alert("Failed!");
+                }
+            }, function (error) {
+                console.log("Client_id already created");
+                console.log("error object " + JSON.stringify(error.json()));
+            });
+        }
+        else {
+            console.log("About to remove from member from group");
+            var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members/{userId}";
+            link = link.replace("{roleId}", this.roleId)
+                .replace("{userId}", this.userId);
+            // confirm(link);
+            this.http.delete(link, Option).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                }
+                else {
+                    console.log("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+    };
+    ViewGroupPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-view-group-page",
+            template: __webpack_require__(/*! ./view-group-page.component.html */ "./src/app/view-group-page/view-group-page.component.html"),
+            styles: [__webpack_require__(/*! ./view-group-page.component.css */ "./src/app/view-group-page/view-group-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_6__["DataService"]])
+    ], ViewGroupPageComponent);
+    return ViewGroupPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/view-groups/view-groups.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/view-groups/view-groups.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/view-groups/view-groups.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/view-groups/view-groups.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\" datatable> -->\n        <table class=\"table table-bordered table-condensed table-striped\" datatable [dtTrigger]=\"dtTrigger\">\n\n    <thead>\n        <tr>\n            <th>id</th>\n            <th>displayName</th>\n            <th>description</th>\n            <th>zoneId</th>\n            <!-- <th>members</th>    -->\n            <th>Action</th>\n        </tr>\n    </thead>\n\n    <tbody>\n\n        <tr *ngFor=\"let Groups of Groups\">\n\n            <td style=\"word-wrap:break-word; max-width: 130px;\">{{Groups.id}}</td>\n            <td style=\"max-width: 30px; word-wrap: break-word;\">{{Groups.displayName }}</td>\n            <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.description }}</td>\n            <td style=\"word-wrap: break-word;max-width:10px;\">{{ Groups.zoneId }}</td>\n            <!-- <td style=\"word-wrap: break-word;max-width:30px;\"><p *ngFor=\"let member of  Groups.members\"> \n                            {{member.origin}}, {{member.type}}, {{member.value}}\n                         </p></td>   -->\n\n            <td>\n                <input type=\"text\" class=\"form-control\" value=\"{{id}}\" #client_id style=\"display:none;\">\n\n                <!-- <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,Groups.id)\"\n                    style=\"margin-right: 16px\">Add Users</button> -->\n                    <button class=\"btn btn-success\" (click)=\"goToGroup(Groups.id)\" style=\"margin-right: 16px;\">View</button>\n\n                <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(Groups.id)\" />\n\n                <!-- <input type=\"submit\" #id class=\"btn btn-info btn-xs\" value=\"Update\" (click)=\"funcUpdateT(client.client_id)\" />  -->\n                <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" ng-click=\"loadClientsById(client.client_id)\">Update</button>  -->\n                <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content)\" ng-click=\"loadGroupsById(Groups.id)\">Update</button> -->\n\n                <!-- <button class=\"btn btn-info btn-sm\"  type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,Groups.id)\">Update</button>\n                                  -->\n            </td>\n        </tr>\n\n    </tbody>\n\n    <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n        <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-title\">Create</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <form>\n\n                <div class=\"form-group has-feedback\">\n                    <label>display Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"get.displayName\">\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n\n                <!-- <div class=\"form-group has-feedback\">\n                            <label>description</label>\n                              <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"get.description\">\n                              \n                              <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                        </div>\n                        <div class=\"form-group has-feedback\">\n                                <label>ZoneId</label>\n                                  <input type=\"text\" class=\"form-control\" placeholder=\"name\"  name=\"name\" [(ngModel)]=\"get.zoneId\">\n                                  \n                                  <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                            </div> -->\n\n                <!-- <div class=\"users-body\">\n                    <p>Users</p>\n                    <div class=\"user-container\" style=\"margin-bottom: 16px;\">\n                        <button class=\"btn btn-default\" style=\"margin:8px; width:auto;\n                                        text-align: left; padding: 3px 6px; font-size: 14px;\" *ngFor=\"let user of Users; let i = index;\">\n                            <input type=\"checkbox\" [id]=\"user.id\" (change)=\"change($event, i, user)\">{{user.userName }}\n                        </button>\n                    </div>\n                    <div class=\"btn-wrapper\">\n                        <button type=\"button\" class=\"btn btn-success\" (click)=\"d('Cross click')\" style=\"margin-right: 16px\">Done</button>\n                        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n                    </div>\n                </div> -->\n\n            </form>\n\n        </div>\n        <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n    </ng-template>\n\n</table>"
+
+/***/ }),
+
+/***/ "./src/app/view-groups/view-groups.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/view-groups/view-groups.component.ts ***!
+  \******************************************************/
+/*! exports provided: ViewGroupsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewGroupsComponent", function() { return ViewGroupsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dataservice/dataservice */ "./src/app/dataservice/dataservice.ts");
+// import { Component, OnInit } from "@angular/core";
+// import { Http, Headers, RequestOptions } from "@angular/http";
+// import axios from "axios";
+// import "datatables.net";
+// import "datatables.net-bs4";
+// import { Subject } from "rxjs";
+// import { RouterModule, Routes, Router, ActivatedRoute } from "@angular/router";
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
             }
-            else {
-                alert("Failed!");
-            }
-        }, function (error) {
-            alert("Client_id already created");
-            console.log("error object " + JSON.stringify(error.json()));
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+var ViewGroupsComponent = /** @class */ (function () {
+    function ViewGroupsComponent(http, route, router, dataservice) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.dataservice = dataservice;
+        this.client_id = "";
+        this.value = "";
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+        this.get = {
+            displayName: null,
+            description: null,
+            zoneId: null,
+            origin: null,
+            type: null,
+            value: null
+        };
+    }
+    // ngOnInit() {
+    //   this.loadGroups();
+    // }
+    ViewGroupsComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadGroups()];
+                    case 1:
+                        data = _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
         });
+    };
+    ViewGroupsComponent.prototype.loadGroups = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, myHeaders, head, Option;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                            Accept: "application/json"
+                        });
+                        myHeaders = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+                        head = {
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                            Accept: "application/json"
+                        };
+                        Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default()({
+                                method: "GET",
+                                url: "https://ice.ecobank.com/uaa/Groups",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                //console.log(response.data)
+                                return (_this.Groups = response.data.resources);
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ViewGroupsComponent.prototype.loadGroupsById = function (data) {
+        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
+        });
+        var head = {
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
+        };
+        var url = "https://ice.ecobank.com/uaa/Groups" + data;
+        var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({ method: "GET", url: url, headers: head })
+            .then(function (response) { return console.log(response.data); }
+        // this.Users = response.data.resources
+        )
+            .catch(function (error) { return console.log(error); });
+    };
+    ViewGroupsComponent.prototype.funcDeleteT = function (id) {
+        var _this = this;
+        if (confirm("Are you sure you want to delete?")) {
+            //var string = (id);
+            var link = "https://ice.ecobank.com/uaa/Groups/{groupId}";
+            link = link.replace("{groupId}", id);
+            var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                "Content-Type": "application/json"
+            });
+            console.log('am herrrrrrrrr');
+            //let myHeaders = new Headers();
+            var Option_1 = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
+            // confirm(link);
+            this.http.delete(link, Option_1).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                    _this.loadGroups();
+                    // alert("User "+this.username+" deleted Successfully");
+                    // alert(res.json().responseMessage);
+                }
+                else {
+                    _this.loadGroups();
+                    alert("Deleted Successfully!");
+                }
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else {
+            // alert("nooooo")
+        }
+    };
+    ViewGroupsComponent.prototype.goToGroup = function (data) {
+        // routerLink ='/view-app'
+        console.log("here");
+        this.dataservice.setGroupId(data);
+        this.router.navigate(["view-group-page"]);
     };
     ViewGroupsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-view-groups',
+            selector: "app-view-groups",
             template: __webpack_require__(/*! ./view-groups.component.html */ "./src/app/view-groups/view-groups.component.html"),
             styles: [__webpack_require__(/*! ./view-groups.component.css */ "./src/app/view-groups/view-groups.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"],
+            _dataservice_dataservice__WEBPACK_IMPORTED_MODULE_7__["DataService"]])
     ], ViewGroupsComponent);
     return ViewGroupsComponent;
 }());
@@ -3832,7 +6447,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for names..\" title=\"Type in a name\">\n\n<table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\">\n    <thead>\n        <tr>\n            <!-- <th>user_id</th> -->\n\n            <th>username</th>\n            <th>emails</th>\n            <th>origin</th>\n\n            <th>zoneId</th>\n            <th>groups</th>\n\n            <!-- <th>Password</th> -->\n            <th>Action</th>\n        </tr>\n    </thead>\n\n    <tbody>\n\n        <tr *ngFor=\"let user of Users\">\n\n            <!-- <td>{{user.id}}</td> -->\n\n            <!-- <td>{{user.groups[0].value}}</td> -->\n            <td style=\"word-wrap: break-word;max-width:30px;\">{{ user.userName }}</td>\n            <td>{{ user.emails[0].value }}</td>\n            <td>{{user.origin}}</td>\n            <td>{{user.zoneId}}</td>\n            <td>\n                <p *ngFor=\"let groups of  user.groups\">\n                    <!--I want to list the colors of the person here-->\n                    {{groups.value}}, {{groups.display}}, {{groups.type}}\n                </p>\n            </td>\n\n            <!-- <td>{{user.password}}</td> -->\n            <td>\n                <input type=\"text\" class=\"form-control\" value=\"{{ user_id}}\" #user_id style=\"display:none;\">\n                <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(user.id)\" style=\"margin-right: 10px\"\n                />\n                <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,user.id)\">Update</button>\n\n\n            </td>\n        </tr>\n\n    </tbody>\n\n    <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n        <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-title\">Create</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <form>\n\n                <div class=\"form-group has-feedback\">\n                    <label>User Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"get.username\">\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n\n                <div class=\"form-group has-feedback\">\n                    <label>Family Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"get.familyName\">\n                    <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <div class=\"form-group has-feedback\">\n                    <label>Given Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"get.givenName\">\n                    <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <div class=\"form-group has-feedback\">\n                    <label>Email</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"client_secret\" [(ngModel)]=\"get.emails[0].value\" name=\"client_secret\">\n                    <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                </div>\n\n                <div class=\"row\" style=\"margin-bottom:50px;\">\n                    <div class=\"col-md-2\">\n                        &nbsp;\n                    </div>\n                    <div class=\"col-md-4\">\n                        <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                        <button type=\"button\" class=\"btn btn-success\" (click)=\"updClient(get.user_id)\">Update</button>\n\n                    </div>\n                    <div class=\"col-md-4\">\n                        <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                    </div>\n                    <div class=\"col-md-2\">\n                        &nbsp;\n                    </div>\n\n                </div>\n            </form>\n\n        </div>\n        <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n    </ng-template>\n\n</table>"
+module.exports = "<!-- <table id=\"example\" class=\"table table-striped table-bordered nowrap\" style=\"width:100%\"> -->\n\n<table class=\"table table-bordered table-condensed table-striped\" datatable [dtTrigger]=\"dtTrigger\">\n    <thead>\n        <tr>\n            <!-- <th>user_id</th> -->\n\n            <th>username</th>\n            <th>emails</th>\n            \n            <th>origin</th>\n\n            <!-- <th>zoneId</th> -->\n            \n            <th>groups</th>\n            \n\n            <!-- <th>Password</th> -->\n            <th>Action</th>\n        </tr>\n    </thead>\n\n    <tbody>\n\n        <tr *ngFor=\"let user of Users\">\n\n            <!-- <td>{{user.id}}</td> -->\n\n            <!-- <td>{{user.groups[0].value}}</td> -->\n            <td style=\"word-wrap: break-word;max-width:30px;\">{{ user.userName }}</td>\n            <td  style=\"margin-right: 15px\">{{ user.emails[0].value }} <input type=\"submit\" #id class=\"btn btn-success btn-xl\" value=\"Verify\" (click)=\"verify(user.id)\"/></td>\n            \n            <td>{{user.origin}}</td>\n            \n            <!-- <td>{{user.zoneId}}</td> -->\n\n            \n            <td>\n                <p *ngFor=\"let groups of  user.groups\">\n                    \n                    <!-- {{groups.value}}, {{groups.display}}, {{groups.type}} -->\n                    {{groups.display}} \n                </p>\n            </td>\n\n            <!-- <td>{{user.password}}</td> -->\n            <td>\n                <input type=\"text\" class=\"form-control\" value=\"{{ user_id}}\" #user_id style=\"display:none;\">\n\n                <button class=\"btn btn-info btn-sm\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModalEdit\" (click)=\"open(content,user.id)\"\n                    style=\"margin-right: 10px\">Update</button>\n                <input type=\"submit\" #id class=\"btn btn-danger btn-xs\" value=\"Delete\" (click)=\"funcDeleteT(user.id)\"  style=\"margin-right: 10px\"/>\n                <!-- <input type=\"submit\" #id class=\"btn btn-success btn-xs\" value=\"Verify\" (click)=\"verify(user.id)\" style=\"margin-right: 10px\"/> -->\n                <input type=\"submit\" #id class=\"btn btn-success btn-xs\" value=\"Unlock\" (click)=\"unlockUser(user.id)\" />\n\n\n            </td>\n        </tr>\n\n    </tbody>\n\n    <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n        <div class=\"modal-header\">\n            <h4 class=\"modal-title\" id=\"modal-basic-title\">Create</h4>\n            <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div class=\"modal-body\">\n            <form>\n\n                <div class=\"form-group has-feedback\">\n                    <label>User Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"client_id\" autocomplete=\"off\" name=\"client_id\" [(ngModel)]=\"get.username\">\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n\n                <div class=\"form-group has-feedback\">\n                    <label>Family Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"get.familyName\">\n                    <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <div class=\"form-group has-feedback\">\n                    <label>Given Name</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"name\" name=\"name\" [(ngModel)]=\"get.givenName\">\n                    <!-- <input type=\"hidden\" class=\"form-control\" placeholder=\"Primary\" #emails value=\"true\"> -->\n                    <span class=\"glyphicon glyphicon-user form-control-feedback\"></span>\n                </div>\n                <div class=\"form-group has-feedback\">\n                    <label>Email</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"emails\" [(ngModel)]=\"get.emails[0].value\" name=\"client_secret\">\n                    <span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n                </div>\n\n                <div class=\"row\" style=\"margin-bottom:50px;\">\n                    <div class=\"col-md-2\">\n                        &nbsp;\n                    </div>\n                    <div class=\"col-md-4\">\n                        <!-- <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\" (click)=\"funcPostT(userName.value, emails.value, password.value)\" /> -->\n                        <!-- <button type=\"button\" class=\"btn btn-success\" (click)=\"updClient(get.user_id)\">Update</button> -->\n                        <button type=\"button\" class=\"btn btn-success\" (click)=\"updClient(get.user_id)\">Update</button>\n\n                    </div>\n                    <div class=\"col-md-4\">\n                        <!-- <a routerLink=\"/user\" class=\"btn btn-default btn-block btn-flat\">Cancel</a> -->\n                        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Cancel</button>\n\n                    </div>\n                    <div class=\"col-md-2\">\n                        &nbsp;\n                    </div>\n\n                </div>\n            </form>\n\n        </div>\n        <!-- <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Save click')\">Save</button>\n                </div> -->\n    </ng-template>\n\n</table>\n\n\n"
 
 /***/ }),
 
@@ -3851,6 +6466,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+/* harmony import */ var datatables_net_bs4__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(datatables_net_bs4__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3860,6 +6480,44 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
 
 
 
@@ -3871,37 +6529,62 @@ var ViewUsersComponent = /** @class */ (function () {
         this.username = "";
         this.email = "";
         this.password = "";
-        this.get = { 'user_id': null, 'username': null, 'familyName': null, 'givenName': null, 'emails': [], 'groups': [] };
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
+        this.get = {
+            user_id: null,
+            username: null,
+            familyName: null,
+            givenName: null,
+            origin: null,
+            emails: [],
+            groups: []
+        };
     }
     ViewUsersComponent.prototype.ngOnInit = function () {
-        this.loadUsers();
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadUsers()];
+                    case 1:
+                        data = _a.sent();
+                        this.dtTrigger.next();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     ViewUsersComponent.prototype.updClient = function (data) {
         var _this = this;
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Users/{user_id}";
+        var link = "https://ice.ecobank.com/uaa/Users/{user_id}";
         link = link.replace("{user_id}", data);
         var updLoad = {
-            "userName": this.get.username,
-            "name": {
-                "familyName": this.get.familyName,
-                "givenName": this.get.givenName
+            userName: this.get.username,
+            name: {
+                familyName: this.get.familyName,
+                givenName: this.get.givenName
             },
-            "emails": [{
-                    "value": this.get.emails[0],
-                    "primary": false
-                }],
-            "active": true,
-            "verified": true,
-            "origin": "",
-            "password": null
+            emails: [
+                {
+                    value: this.get.emails[0].value,
+                    primary: false
+                }
+            ],
+            active: true,
+            verified: false,
+            origin: "uaa",
+            password: null,
+            schemas: ["urn:scim:schemas:core:1.0"]
         };
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Content-Type": "application/json",
-            "If-Match": "*"
+            // Authorization: "Bearer b0738afb0b244dd5b5db862fa540aa2b",
+            // "Content-Type": "application/json",
+            // Accept: "application/json",
+            "If-Match": "",
+            "Authorization": "Bearer b0738afb0b244dd5b5db862fa540aa2b"
         });
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Access-Control-Allow-Origin", "*");
+        //Header.append("If-Match", "*");
+        //Header.append("Access-Control-Allow-Origin", "*");
         var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
         this.http.put(link, updLoad, Option).subscribe(function (res) {
             console.log(res);
@@ -3909,64 +6592,79 @@ var ViewUsersComponent = /** @class */ (function () {
             if (res.status === 200) {
                 alert("User " + _this.get.username + " Updated Successfully");
             }
-            // this.router.navigateByUrl("/settings/addaffiliates");
         }, function (error) {
-            alert('Error Updating User');
-            console.log('errroroorororororor');
+            alert("Error Updating User");
             console.log("error object " + JSON.stringify(error));
         });
     };
     ViewUsersComponent.prototype.loadUsers = function () {
-        var _this = this;
-        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var Header, head;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                            Accept: "application/json"
+                        });
+                        head = {
+                            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                            Accept: "application/json"
+                        };
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default()({
+                                method: "GET",
+                                url: "https://ice.ecobank.com/uaa/Users",
+                                headers: head
+                            })
+                                .then(function (response) {
+                                //console.log(response.data)
+                                return (_this.Users = response.data.resources);
+                            })
+                                .catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
         });
-        var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
-        };
-        axios__WEBPACK_IMPORTED_MODULE_2___default()({ method: "GET", url: "https://uaaserver.eu-gb.mybluemix.net/Users", headers: head })
-            .then(function (response) {
-            //console.log(response.data)
-            return _this.Users = response.data.resources;
-        })
-            .catch(function (error) { return console.log(error); });
     };
     ViewUsersComponent.prototype.loadClientsById = function (data) {
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Users" + data;
+        var url = "https://ice.ecobank.com/uaa/Users" + data;
+        //const url = "http://localhost:8080/uaa/Users" + data;
         axios__WEBPACK_IMPORTED_MODULE_2___default()({ method: "GET", url: url, headers: head })
-            .then(function (response) {
-            return console.log(response.data);
-        }
+            .then(function (response) { return console.log(response.data); }
         // this.Users = response.data.resources
         )
             .catch(function (error) { return console.log(error); });
     };
     ViewUsersComponent.prototype.loadUser = function () {
-        var _this = this;
         // funcPost(nameVal, passwordVal, passwordVal)
         //funcPostT(userNameVal, passwordVal, emailsVal) {
-        var link = "https://uaaserver.eu-gb.mybluemix.net/Users";
+        var _this = this;
+        var link = "https://ice.ecobank.com/uaa/Users";
+        //var link = "http://localhost:8080/uaa/Users";
         var schema = {
-            "userName": null,
-            "emails": [{
-                    "value": null,
-                    "primary": true
-                }],
-            "active": true,
-            "verified": true,
-            "origin": "",
-            "password": null,
-            "schemas": ["urn:scim:schemas:core:1.0"]
+            userName: null,
+            emails: [
+                {
+                    value: null,
+                    primary: true
+                }
+            ],
+            active: true,
+            verified: true,
+            origin: "",
+            password: null,
+            schemas: ["urn:scim:schemas:core:1.0"]
         };
         schema.userName = this.username;
         schema.emails[0].value = this.email;
@@ -3974,7 +6672,7 @@ var ViewUsersComponent = /** @class */ (function () {
         console.log(this.username);
         console.log(this.email);
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
             "Content-Type": "application/json"
         });
         // myHeaders.append("Content-Type", "application/json");
@@ -3991,19 +6689,48 @@ var ViewUsersComponent = /** @class */ (function () {
             }
             // this.router.navigateByUrl("/settings/addaffiliates");
         }, function (error) {
-            alert('User already created');
-            console.log('errroroorororororor');
+            alert("User already created");
+            console.log("errroroorororororor");
             console.log("error object " + JSON.stringify(error.json()));
+        });
+    };
+    // UNLOCK A USER
+    ViewUsersComponent.prototype.unlockUser = function (data) {
+        var link = "https://ice.ecobank.com/uaa/Users/{user_id}/status";
+        //let link = "http://localhost:8080/uaa/Users/{user_id}/status";
+        link = link.replace("{user_id}", data);
+        var updLoad = {
+            locked: false
+        };
+        var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        });
+        // myHeaders.append("Content-Type", "application/json");
+        // myHeaders.append("Access-Control-Allow-Origin", "*");
+        var Option = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
+        this.http.patch(link, updLoad, Option).subscribe(function (res) {
+            console.log(res);
+            console.log(res.status);
+            if (res.status === 200) {
+                alert("User unlocked Successfully");
+            }
+            // this.router.navigateByUrl("/settings/addaffiliates");
+        }, function (error) {
+            alert("Error Unlocking User");
+            console.log("error object " + JSON.stringify(error));
         });
     };
     ViewUsersComponent.prototype.funcDeleteT = function (id) {
         var _this = this;
         if (confirm("Are you sure you want to delete?")) {
             //var string = (id);
-            var link = "https://uaaserver.eu-gb.mybluemix.net/Users/{id}";
+            var link = "https://ice.ecobank.com/uaa/Users/{id}";
+            // var link = "http://localhost:8080/uaa/Users/{id}";
             link = link.replace("{id}", id);
             var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-                "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
                 "Content-Type": "application/json"
             });
             // myHeaders.append("Content-Type", "application/json");
@@ -4029,18 +6756,54 @@ var ViewUsersComponent = /** @class */ (function () {
             // alert("nooooo")
         }
     };
+    // VERIFICATION METHOD
+    ViewUsersComponent.prototype.verify = function (id) {
+        var _this = this;
+        if (confirm("Are you sure you want to verify user?")) {
+            var link = "https://ice.ecobank.com/uaa/Users/{id}/verify";
+            //var link = "http://localhost:8080/uaa/Users/{id}/verify";
+            link = link.replace("{id}", id);
+            var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+                Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+                Accept: "application/json"
+                //  "if-match" : "0",
+                // "Access-Control-Access-Origin" :"*"
+            });
+            //  myHeaders.append("Content-Type", "application/json");
+            //  myHeaders.append("Access-Control-Allow-Origin", "*");
+            var Option_2 = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: Header });
+            // confirm(link);
+            this.http.get(link, Option_2).subscribe(function (res) {
+                console.log(res.json().responseCode);
+                if (res.json().responseCode == "200") {
+                    _this.loadUsers();
+                }
+                else {
+                    _this.loadUsers();
+                    alert("Verified Successfully!");
+                }
+            }
+            // error => {
+            //   console.log(JSON.stringify(error.json()));
+            // }
+            );
+        }
+        // else {
+        // }
+    };
     // Modal logic
     ViewUsersComponent.prototype.open = function (content, data) {
         var _this = this;
         var Header = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         });
         var head = {
-            "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-            "Accept": "application/json"
+            Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+            Accept: "application/json"
         };
-        var url = "https://uaaserver.eu-gb.mybluemix.net/Users/" + data;
+        var url = "https://ice.ecobank.com/uaa/Users/" + data;
+        //const url = "http://localhost:8080/uaa/Users/" + data;
         axios__WEBPACK_IMPORTED_MODULE_2___default()({ method: "GET", url: url, headers: head })
             .then(function (response) {
             console.log(response.data);
@@ -4074,7 +6837,7 @@ var ViewUsersComponent = /** @class */ (function () {
     };
     ViewUsersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-view-users',
+            selector: "app-view-users",
             template: __webpack_require__(/*! ./view-users.component.html */ "./src/app/view-users/view-users.component.html"),
             styles: [__webpack_require__(/*! ./view-users.component.css */ "./src/app/view-users/view-users.component.css")]
         }),

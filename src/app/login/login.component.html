@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center h-100 auth-container">
+<div class="d-flex justify-content-center h-100 auth-container" style="background-image: url('assets/dist/img/bgPicfz.jpg'); background-repeat: no-repeat;background-size: 230% 230%;">
     <div class="auth-wrapper">
         <div>
             <div class="d-flex flex-column text-center mb-4 auth-header">
@@ -7,17 +7,20 @@
             </div>
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control"  id="username" aria-describedby="usernameHelp"  placeholder="username" [(ngModel)]="username" name="username">
+                    <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="username" [(ngModel)]="username"
+                        name="username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password"  placeholder="password" [(ngModel)]="password" name="password">
+                    <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="password" name="password">
                 </div>
-                <button class="btn btn-primary w-100 auth-btn auth-btn-green" (click)="loadLogin()">Sign in</button> 
+                <button class="btn btn-primary w-100 auth-btn auth-btn-green" (click)="loadLogin()">Sign in</button>
+
                 <!-- <button type="button" class="btn btn-success" (click)="loadUser()">Sign in</button> -->
-                                
+
                 <!-- <a routerLink="/view-users" class="btn btn-primary btn-flat btn-addon btn-lg w-100">View users</a> -->
-                                     
+
             </form>
+            <!-- <a class="btn btn-primary"  href="http://localhost:9000/#/">Google</a> -->
         </div>
     </div>
 </div>

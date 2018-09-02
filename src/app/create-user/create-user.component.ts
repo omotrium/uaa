@@ -25,7 +25,7 @@ export class CreateUserComponent implements OnInit {
  
 // funcPost(nameVal, passwordVal, passwordVal)
   //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "http://localhost:8080/uaa/Users";
+    var link = "https://ice.ecobank.com/uaa/Users";
     var data = JSON.stringify({ userName: this.username, Password: this.password, emails:this.email});
 
 const schema = {

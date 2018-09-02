@@ -31,6 +31,10 @@ export class ViewAppComponent {
   description = "";
   name = "";
   client_secret = "";
+  scope = "";
+  authorized_grant_types = "";
+  redirect_uri = "";
+  authorities = "";
   value = "";
   public clients: any;
   public Groups: any;
@@ -129,12 +133,12 @@ export class ViewAppComponent {
 
   loadClients() {
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     });
     let myHeaders = new Headers();
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
     // myHeaders.append("Content-Type", "application/json");
@@ -143,7 +147,7 @@ export class ViewAppComponent {
     let Option = new RequestOptions({ headers: Header });
     axios({
       method: "GET",
-      url: "https://uaaserver.eu-gb.mybluemix.net/oauth/clients",
+      url: "https://ice.ecobank.com/uaa/oauth/clients",
       headers: head
     })
       .then(response => {
@@ -153,52 +157,6 @@ export class ViewAppComponent {
       })
       .catch(error => console.log(error));
   }
-
-  // assign funtion
-  // load() {
-  //   // funcPost(nameVal, passwordVal, passwordVal)
-  //   //funcPostT(userNameVal, passwordVal, emailsVal) {
-  //   var link = "https://uaaserver.eu-gb.mybluemix.net/Groups/{groupId2}/members";
-  //   var data = JSON.stringify({
-
-  //   value: this.value
-  //   });
-
-  //   const schema = {
-  //     "origin":"uaa",
-  //     "type":"GROUP",
-  //     "value":"{groupId}"
-  //   };
-  //   schema.value = this.value
-
-  //   let Header = new Headers({
-  //     Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
-  //     "Content-Type": "application/json"
-  //   });
-  //   let myHeaders = new Headers();
-
-  //   // myHeaders.append("Content-Type", "application/json");
-  //   // myHeaders.append("Access-Control-Allow-Origin", "*");
-
-  //   let Option = new RequestOptions({ headers: Header });
-
-  //   this.http.post(link, schema, Option).subscribe(
-  //     res => {
-  //       console.log(res);
-  //       console.log(res.status);
-  //       if (res.status == 201) {
-
-  //         alert("User " + this.client_id + " Created Successfully");
-  //       } else {
-  //         alert("Failed!");
-  //       }
-  //     },
-  //     error => {
-  //       alert("Client_id already created");
-  //       console.log("error object " + JSON.stringify(error.json()));
-  //     }
-  //   );
-  // }
 
   // id for role in assign modal
   public groupId: any;
@@ -212,50 +170,153 @@ export class ViewAppComponent {
     console.log(this.groupId);
     console.log(this.permissions);
 
-    ///
-    var link =
-      "https://uaaserver.eu-gb.mybluemix.net/Groups/{groupId2}/members";
-    link = link.replace("{groupId2}", this.groupId2);
-    var data = JSON.stringify({
-      value: this.groupId
-    });
-
-    const schema = {
-      origin: "uaa",
-      type: "GROUP",
-      value: "null"
-    };
-    schema.value = this.groupId;
-
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
-
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
-
     let Option = new RequestOptions({ headers: Header });
 
-    this.http.post(link, schema, Option).subscribe(
-      res => {
-        console.log(res);
-        console.log(res.status);
-        if (res.status == 201) {
-          //alert("User " + this.client_id + " Created Successfully");
-        } else {
-          alert("Failed!");
+    if (event.target.checked) {
+      ///
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{groupId2}/members";
+      link = link.replace("{groupId2}", this.groupId2);
+      var data = JSON.stringify({
+        value: this.groupId
+      });
+
+      const schema = {
+        origin: "uaa",
+        type: "GROUP",
+        value: "null"
+      };
+      schema.value = this.groupId;
+
+      this.http.post(link, schema, Option).subscribe(
+        res => {
+          console.log(res);
+          console.log(res.status);
+          if (res.status == 201) {
+            //alert("User " + this.client_id + " Created Successfully");
+          } 
+        },
+        error => {
+          alert(
+            error.status +
+              " " +
+              error.json().error +
+              "\n" +
+              error.json().error_description
+          );
+          console.log("error object " + JSON.stringify(error.json()));
         }
-      },
-      error => {
-        alert("Client_id already created");
-        console.log("error object " + JSON.stringify(error.json()));
-      }
-    );
+      );
+    } else {
+      console.log("About to remove from member from group");
+
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{groupId2}/members/{groupId}";
+      link = link
+        .replace("{groupId2}", this.groupId2)
+        .replace("{groupId}", this.groupId);
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "200") {
+          } else {
+            console.log("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    }
   }
 
-  // assigning users to role
+  // assign permission to user
+  //public user__id: any;
+  //public userId: any;
+  // assigning permission to role
+  changer(event, i, Groups) {
+    console.log("Changer");
+    this.groupId2 = Groups.id;
+    this.groupId = this.user__id;
+    console.log(this.groupId2);
+    console.log(this.groupId);
+    console.log(this.permissions);
+
+    let Header = new Headers({
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+      "Content-Type": "application/json"
+    });
+    let myHeaders = new Headers();
+    let Option = new RequestOptions({ headers: Header });
+
+    if (event.target.checked) {
+      ///
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{groupId2}/members";
+      link = link.replace("{groupId2}", this.groupId2);
+      var data = JSON.stringify({
+        value: this.groupId
+      });
+
+      const schema = {
+        origin: "uaa",
+        type: "USER",
+        value: "null"
+      };
+      schema.value = this.groupId;
+
+      this.http.post(link, schema, Option).subscribe(
+        res => {
+          console.log(res);
+          console.log(res.status);
+          if (res.status == 201) {
+            //alert("User " + this.client_id + " Created Successfully");
+          } 
+        },
+        error => {
+          alert(
+            error.status +
+              " " +
+              error.json().error +
+              "\n" +
+              error.json().error_description
+          );
+          console.log("error object " + JSON.stringify(error.json()));
+        }
+      );
+    } else {
+      console.log("About to remove permission from user");
+
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{groupId2}/members/{groupId}";
+      link = link
+        .replace("{groupId2}", this.groupId2)
+        .replace("{groupId}", this.groupId);
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "200") {
+          } else {
+            console.log("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    }
+  }
 
   // id for role in assign modal
   public user__id: any;
@@ -269,51 +330,74 @@ export class ViewAppComponent {
     console.log("user id " + this.userId);
     console.log("role id " + this.roleId);
 
-    ///
-    var link =
-      "https://uaaserver.eu-gb.mybluemix.net/Groups/{roleId}/members";
-    link = link.replace("{roleId}", this.roleId);
-
-
-    const schema = {
-      origin: "uaa",
-      type: "USER",
-      value: "null"
-    };
-    schema.value = this.userId;
-
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
 
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
-
     let Option = new RequestOptions({ headers: Header });
 
-    this.http.post(link, schema, Option).subscribe(
-      res => {
-        console.log(res);
-        console.log(res.status);
-        if (res.status == 201) {
-         // alert("User " + this.client_id + " Created Successfully");
-        } else {
-          alert("Failed!");
+    if (event.target.checked) {
+      ///
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{roleId}/members";
+      link = link.replace("{roleId}", this.roleId);
+
+      const schema = {
+        origin: "uaa",
+        type: "USER",
+        value: "null"
+      };
+      schema.value = this.userId;
+
+      this.http.post(link, schema, Option).subscribe(
+        res => {
+          console.log(res);
+          console.log(res.status);
+          if (res.status == 201) {
+            // alert("User " + this.client_id + " Created Successfully");
+          } 
+        },
+        error => {
+          alert(
+            error.status +
+              " " +
+              error.json().error +
+              "\n" +
+              error.json().error_description
+          );
+          console.log("error object " + JSON.stringify(error.json()));
         }
-      },
-      error => {
-        alert("Client_id already created");
-        console.log("error object " + JSON.stringify(error.json()));
-      }
-    );
+      );
+    } else {
+      console.log("About to remove from member from group");
+
+      var link =
+        "https://ice.ecobank.com/uaa/Groups/{roleId}/members/{userId}";
+      link = link
+        .replace("{roleId}", this.roleId)
+        .replace("{userId}", this.userId);
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "200") {
+          } else {
+            console.log("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    }
   }
 
   loadPermission() {
-    // funcPost(nameVal, passwordVal, passwordVal)
-    //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "https://uaaserver.eu-gb.mybluemix.net/Groups";
+    var link = "https://ice.ecobank.com/uaa/Groups";
     var data = JSON.stringify({
       displayName: this.displayName,
       description: this.description
@@ -330,13 +414,10 @@ export class ViewAppComponent {
     console.log(this.description);
 
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
-
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
 
     let Option = new RequestOptions({ headers: Header });
 
@@ -348,36 +429,45 @@ export class ViewAppComponent {
           this.displayName = "";
           this.description = "";
 
-          alert("User " + this.displayName + " Created Successfully");
-        } else {
-          alert("Failed!");
-        }
+          this.loadGroups();
+        
+          alert("Permission Created Successfully");
+        } 
       },
       error => {
-        alert("displayName already created");
+        alert(
+          error.status +
+            " " +
+            error.json().error +
+            "\n" +
+            error.json().error_description
+        );
+        
         console.log("error object " + JSON.stringify(error.json()));
       }
     );
   }
 
   loadClient() {
-    // funcPost(nameVal, passwordVal, passwordVal)
-    //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients";
+    var link = "https://ice.ecobank.com/uaa/oauth/clients";
     var data = JSON.stringify({
       client_id: this.client_id,
       client_secret: this.client_secret,
-      name: this.name
+      name: this.name,
+      scope: this.scope,
+      authorized_grant_types: this.authorized_grant_types,
+      redirect_uri: this.redirect_uri,
+      authorities: this.authorities
     });
 
     const schema = {
-      scope: ["clients.read", "clients.write"],
+      scope: [],
       client_id: null,
       client_secret: null,
       resource_ids: [],
-      authorized_grant_types: ["client_credentials"],
-      redirect_uri: ["http://yahoo.com"],
-      authorities: ["clients.read", "clients.write"],
+      authorized_grant_types: [],
+      redirect_uri: [],
+      authorities: [],
       token_salt: "3tjE6d",
       autoapprove: true,
       allowedproviders: ["uaa", "ldap", "my-saml-provider"],
@@ -386,6 +476,10 @@ export class ViewAppComponent {
     schema.client_id = this.client_id;
     schema.name = this.name;
     schema.client_secret = this.client_secret;
+    schema.scope[0].value = this.scope;
+    schema.authorized_grant_types[0].value = this.authorized_grant_types;
+    schema.redirect_uri[0].value = this.redirect_uri;
+    schema.authorities[0].value = this.authorities;
     console.log(this.client_id);
     console.log(this.name);
 
@@ -394,9 +488,6 @@ export class ViewAppComponent {
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
-
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
 
     let Option = new RequestOptions({ headers: Header });
 
@@ -408,22 +499,25 @@ export class ViewAppComponent {
           this.client_id = "";
           this.name = "";
           this.client_secret = "";
-          alert("User " + this.client_id + " Created Successfully");
-        } else {
-          alert("Failed!");
-        }
+          alert("Client " + this.client_id + " Created Successfully");
+        } 
       },
       error => {
-        alert("Client_id already created");
+        alert(
+          error.status +
+            " " +
+            error.json().error +
+            "\n" +
+            error.json().error_description
+        );
+        
         console.log("error object " + JSON.stringify(error.json()));
       }
     );
   }
 
   loadRole() {
-    // funcPost(nameVal, passwordVal, passwordVal)
-    //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "https://uaaserver.eu-gb.mybluemix.net/Groups";
+    var link = "https://ice.ecobank.com/uaa/Groups";
     var data = JSON.stringify({
       displayName: this.displayName,
       description: this.description
@@ -440,13 +534,10 @@ export class ViewAppComponent {
     console.log(this.description);
 
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
-
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
 
     let Option = new RequestOptions({ headers: Header });
 
@@ -458,13 +549,20 @@ export class ViewAppComponent {
           this.displayName = "";
           this.description = "";
 
-          alert("User " + this.displayName + " Created Successfully");
-        } else {
-          alert("Failed!");
-        }
+          this.loadGroups();
+
+          alert("Role Created Successfully");
+        } 
       },
       error => {
-        alert("displayName already created");
+        alert(
+          error.status +
+            " " +
+            error.json().error +
+            "\n" +
+            error.json().error_description
+        );
+        
         console.log("error object " + JSON.stringify(error.json()));
       }
     );
@@ -473,21 +571,19 @@ export class ViewAppComponent {
   //get all groups
   loadGroups() {
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     });
     let myHeaders = new Headers();
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
 
     let Option = new RequestOptions({ headers: Header });
     axios({
       method: "GET",
-      url: "https://uaaserver.eu-gb.mybluemix.net/Groups",
+      url: "https://ice.ecobank.com/uaa/Groups",
       headers: head
     })
       .then(response => {
@@ -502,25 +598,22 @@ export class ViewAppComponent {
     if (confirm("Are you sure you want to delete?")) {
       //var string = (id);
       var link =
-        "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+        "https://ice.ecobank.com/uaa/oauth/clients/{client_id}";
       link = link.replace("{client_id}", client_id);
       let Header = new Headers({
-        Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+        Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
         Accept: "application/json"
       });
       let myHeaders = new Headers();
-      // myHeaders.append("Content-Type", "application/json");
-      // myHeaders.append("Access-Control-Allow-Origin", "*");
+
       let Option = new RequestOptions({ headers: Header });
-      // confirm(link);
+
       this.http.delete(link, Option).subscribe(
         res => {
           console.log(res.json().responseCode);
 
           if (res.json().responseCode == "201") {
             this.loadClients();
-            // alert("User "+this.username+" deleted Successfully");
-            // alert(res.json().responseMessage);
           } else {
             this.loadClients();
             alert("Deleted Successfully!");
@@ -530,6 +623,44 @@ export class ViewAppComponent {
           console.log(JSON.stringify(error.json()));
         }
       );
+    }
+  }
+
+  //delete a permission
+
+  DeleteT(groupId) {
+    if (confirm("Are you sure you want to delete?")) {
+      //var string = (id);
+      var link = "https://ice.ecobank.com/uaa/Groups//{groupId}";
+      link = link.replace("{groupId}", groupId);
+      let Header = new Headers({
+        Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+        "Content-Type": "application/json"
+      });
+      let myHeaders = new Headers();
+
+      let Option = new RequestOptions({ headers: Header });
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "201") {
+            this.loadGroups();
+            // alert("User "+this.username+" deleted Successfully");
+            // alert(res.json().responseMessage);
+          } else {
+            this.loadGroups();
+            alert("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    } else {
+      // alert("nooooo")
     }
   }
 
@@ -573,19 +704,17 @@ export class ViewAppComponent {
 
   //get user by id before assigning role
   open7(content7, data) {
-    
     console.log("Data is ==> " + data);
 
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     });
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    const url =
-      "https://uaaserver.eu-gb.mybluemix.net/Users/" + data;
+    const url = "https://ice.ecobank.com/uaa/Users/" + data;
 
     axios({ method: "GET", url: url, headers: head })
       .then(response => {
@@ -597,6 +726,44 @@ export class ViewAppComponent {
 
         this.modalService
           .open(content7, { ariaLabelledBy: "modal-basic-title" })
+          .result.then(
+            result => {
+              this.closeResult = `Closed with: ${result}`;
+            },
+            reason => {
+              this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            }
+          );
+        // this.Users = response.data.resources
+      })
+      .catch(error => console.log(error));
+  }
+
+  //assign user to permission
+
+  open8(content8, data) {
+    console.log("Data is ==> " + data);
+
+    let Header = new Headers({
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+      Accept: "application/json"
+    });
+    const head = {
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+      Accept: "application/json"
+    };
+    const url = "https://ice.ecobank.com/uaa/Users/" + data;
+
+    axios({ method: "GET", url: url, headers: head })
+      .then(response => {
+        console.log(response.data);
+        console.log("before method call");
+        console.log("data ==> " + data);
+        this.user__id = data;
+        this.get.username = response.data.userName;
+
+        this.modalService
+          .open(content8, { ariaLabelledBy: "modal-basic-title" })
           .result.then(
             result => {
               this.closeResult = `Closed with: ${result}`;
@@ -622,13 +789,13 @@ export class ViewAppComponent {
 
   async fetchGroupInfo(data: any) {
     console.log(data);
-    var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}".replace(
+    var link = "https://ice.ecobank.com/uaa/oauth/clients/{client_id}".replace(
       "{client_id}",
       data
     );
 
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
     // myHeaders.append("Content-Type", "application/json");
@@ -651,17 +818,16 @@ export class ViewAppComponent {
   async loadGroupInfo(data: any) {
     console.log(data);
 
-    var link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=description+co+%22{groupid}+permission%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
+    var link = "https://ice.ecobank.com/uaa/Groups?filter=description+co+%22{groupid}+permission%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
       "{groupid}",
-      data
+      data  
     );
 
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
+
     await axios({
       method: "GET",
       url: link,
@@ -680,17 +846,16 @@ export class ViewAppComponent {
   async loadGroup(data: any) {
     console.log(data);
 
-    var link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=displayName+sw+%22{groupid}%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
+    var link = "https://ice.ecobank.com/uaa/Groups?filter=displayName+sw+%22{groupid}%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
       "{groupid}",
       data
     );
 
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
+
     await axios({
       method: "GET",
       url: link,
@@ -709,17 +874,16 @@ export class ViewAppComponent {
   async loadMember(data: any) {
     console.log(data);
 
-    var link = "https://uaaserver.eu-gb.mybluemix.net/Groups?filter=displayName+sw+%22{groupid}.user%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
+    var link = "https://ice.ecobank.com/uaa/Groups?filter=displayName+sw+%22{groupid}.user%22&sortBy=lastModified&count=50&sortOrder=descending&startIndex=1".replace(
       "{groupid}",
       data
     );
 
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
+
     await axios({
       method: "GET",
       url: link,
@@ -742,16 +906,15 @@ export class ViewAppComponent {
     console.log(applicationId);
 
     var link =
-      "https://uaaserver.eu-gb.mybluemix.net/Groups/{applicationId}/members?returnEntities=true";
+      "https://ice.ecobank.com/uaa/Groups/{applicationId}/members?returnEntities=true";
 
     link = link.replace("{applicationId}", applicationId);
 
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
+
     await axios({
       method: "GET",
       url: link,
@@ -766,41 +929,18 @@ export class ViewAppComponent {
       .catch(error => console.log(error));
   }
 
-  // loadGroup() {
-  //   let Header = new Headers({
-  //     "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-  //     "Accept":"application/json"
-  //   });
-  //   let myHeaders = new Headers();
-  //   const head = {
-  //     "Authorization": "Bearer  c1fc2798d8634be183e611d6fb952c39",
-  //     "Accept":"application/json"
-  //   };
-  // myHeaders.append("Content-Type", "application/json");
-  // myHeaders.append("Access-Control-Allow-Origin", "*");
-
-  //   let Option = new RequestOptions({ headers: Header });
-  //   axios({ method: "GET", url:  "https://uaaserver.eu-gb.mybluemix.net/Groups", headers: head })
-  //     .then(response =>
-  //       //console.log(response.data)
-  //       this.Groups = response.data.resources
-  //     )
-  //      .catch(error => console.log(error));
-
-  // }
-
   open4(content, data) {
     console.log("am here");
 
     let Header = new Headers({
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     });
     const head = {
-      Authorization: "Bearer  c1fc2798d8634be183e611d6fb952c39",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
-    const url = "https://uaaserver.eu-gb.mybluemix.net/Groups/" + data;
+    const url = "https://ice.ecobank.com/uaa/Groups/" + data;
 
     console.log("before method call");
     console.log("data ==> " + data);
@@ -826,5 +966,135 @@ export class ViewAppComponent {
       .catch(error => console.log("fatal error occured " + error));
   }
 
-  // modal open for assign users
+
+  // DELETE A ROLE OR PERMISSION
+  funcDeleteTh(id) {
+    if (confirm("Are you sure you want to delete?")) {
+      //var string = (id);
+      //id=this.role_id;
+      console.log("fffffffffffff" + id);
+      var link = "https://ice.ecobank.com/uaa/Groups/{groupId}";
+      link = link.replace("{groupId}", id);
+      let Header = new Headers({
+        Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+        "Content-Type": "application/json"
+      });
+      console.log("am herrrrrrrrr");
+      //let myHeaders = new Headers();
+
+      let Option = new RequestOptions({ headers: Header });
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "200") {
+            this.loadGroups();
+            // alert("User "+this.username+" deleted Successfully");
+            // alert(res.json().responseMessage);
+          } else {
+            this.loadGroups();
+            alert("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    } else {
+      // alert("nooooo")
+    }
+  }
+
+  //DELETE A MEMBER FROM A GROUP
+
+  DelMember(id) {
+    if (confirm("Are you sure you want to delete?")) {
+      //var string = (id);
+      //id=this.role_id;
+      console.log("fffffffffffff" + id);
+      var link = "https://ice.ecobank.com/uaa/Groups/{roleId}/members/{id}";
+      link = link.replace("{roleId}", this.roleId);
+      link = link.replace("{id}", this.userId);
+      let Header = new Headers({
+        Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+        "Content-Type": "application/json"
+      });
+      console.log("am herrrrrrrrr");
+      //let myHeaders = new Headers();
+
+      let Option = new RequestOptions({ headers: Header });
+
+      // confirm(link);
+      this.http.delete(link, Option).subscribe(
+        res => {
+          console.log(res.json().responseCode);
+
+          if (res.json().responseCode == "200") {
+            this.loadGroups();
+            // alert("User "+this.username+" deleted Successfully");
+            // alert(res.json().responseMessage);
+          } else {
+            this.loadGroups();
+            alert("Deleted Successfully!");
+          }
+        },
+        error => {
+          console.log(JSON.stringify(error.json()));
+        }
+      );
+    } else {
+      // alert("nooooo")
+    }
+  }
+
+  
+
+  updClient(data: string) {
+    console.log("am heeeeeeeeee");
+    console.log(":::: " + data);
+    let link =
+      "https://ice.ecobank.com/uaa/oauth/clients/{client_id}";
+    link = link.replace("{client_id}", data);
+    const updLoad = {
+      scope: this.groupInfoObjects.scope,
+      client_id: this.groupInfoObjects.client_id,
+      // client_secret: this.groupInfoObjects.client_secret,
+      resource_ids: this.groupInfoObjects.resource_ids,
+      authorized_grant_types: this.groupInfoObjects.authorized_grant_types,
+      redirect_uri: this.groupInfoObjects.redirect_uri,
+      // authorities: [],
+      // token_salt: "",
+      autoapprove: true,
+      allowedproviders: ["uaa", "ldap", "my-saml-provider"],
+      name: this.groupInfoObjects.name
+    };
+    let Header = new Headers({
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    });
+
+    // myHeaders.append("Content-Type", "application/json");
+    // myHeaders.append("Access-Control-Allow-Origin", "*");
+
+    let Option = new RequestOptions({ headers: Header });
+
+    this.http.put(link, updLoad, Option).subscribe(
+      res => {
+        console.log(res);
+        console.log(res.status);
+        if (res.status === 200) {
+          alert(" Updated Successfully");
+        }
+        // this.router.navigateByUrl("/settings/addaffiliates");
+      },
+      error => {
+        alert("Error Updating client");
+        console.log("errroroorororororor");
+        console.log("error object " + JSON.stringify(error));
+      }
+    );
+  }
 }

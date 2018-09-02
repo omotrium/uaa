@@ -12,10 +12,11 @@ import { Http, Headers, RequestOptions } from "@angular/http";
 export class GroupsComponent {
   closeResult: string;
   public data: any;
-  client_id = "";
-  name = "";
-  client_secret = "";
+  displayName = "";
+  description = "";
+
   public clients: any;
+  public Groups: any;
   constructor(
     public http: Http,
     private route: ActivatedRoute,
@@ -25,19 +26,16 @@ export class GroupsComponent {
 
   ngOnInit() {
     this.loadClients();
-    
   }
 
   loadClients() {
     let Header = new Headers({
-      Authorization:
-        "Bearer  d92d088bfc634503b2fd2591813c150d",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     });
     let myHeaders = new Headers();
     const head = {
-      Authorization:
-        "Bearer  d92d088bfc634503b2fd2591813c150d",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       Accept: "application/json"
     };
     // myHeaders.append("Content-Type", "application/json");
@@ -46,7 +44,7 @@ export class GroupsComponent {
     let Option = new RequestOptions({ headers: Header });
     axios({
       method: "GET",
-      url: "https://uaaserver.eu-gb.mybluemix.net/oauth/clients",
+      url: "https://ice.ecobank.com/uaa/oauth/clients",
       headers: head
     })
       .then(
@@ -60,41 +58,29 @@ export class GroupsComponent {
   loadClient() {
     // funcPost(nameVal, passwordVal, passwordVal)
     //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients";
+    var link = "https://ice.ecobank.com/uaa/Groups";
     var data = JSON.stringify({
-      client_id: this.client_id,
-      client_secret: this.client_secret,
-      name: this.name
+      displayName: this.displayName,
+      description: this.description
     });
 
     const schema = {
-      scope: ["clients.read", "clients.write"],
-      client_id: null,
-      client_secret: null,
-      resource_ids: [],
-      authorized_grant_types: ["client_credentials"],
-      redirect_uri: ["http://yahoo.com"],
-      authorities: ["clients.read", "clients.write"],
-      token_salt: "3tjE6d",
-      autoapprove: true,
-      allowedproviders: ["uaa", "ldap", "my-saml-provider"],
-      name: null
+      displayName: "null",
+      description: "null"
     };
-    schema.client_id = this.client_id;
-    schema.name = this.name;
-    schema.client_secret = this.client_secret;
-    console.log(this.client_id);
-    console.log(this.name);
+    schema.displayName = this.displayName;
+    schema.description = this.description;
+
+    console.log(this.displayName);
+    console.log(this.description);
 
     let Header = new Headers({
-      Authorization:
-        "Bearer  d92d088bfc634503b2fd2591813c150d",
+      Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
       "Content-Type": "application/json"
     });
     let myHeaders = new Headers();
 
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Access-Control-Allow-Origin", "*");
+    
 
     let Option = new RequestOptions({ headers: Header });
 
@@ -103,16 +89,24 @@ export class GroupsComponent {
         console.log(res);
         console.log(res.status);
         if (res.status == 201) {
-          this.client_id = "";
-          this.name = "";
-          this.client_secret = "";
-          alert("User " + this.client_id + " Created Successfully");
-        } else {
-          alert("Failed!");
+          this.displayName = "";
+          this.description = "";
+
+          alert("User " + this.displayName + " Created Successfully");
         }
       },
+      
       error => {
-        alert("Client_id already created");
+        alert(
+          error.status +
+            " " +
+            error.json().error +
+            "\n" +
+            error.json().error_description
+        );
+        
+        
+
         console.log("error object " + JSON.stringify(error.json()));
       }
     );
@@ -121,10 +115,10 @@ export class GroupsComponent {
   funcDeleteT(client_id) {
     if (confirm("Are you sure you want to delete?")) {
       //var string = (id);
-      var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/clients/{client_id}";
+      var link = "https://ice.ecobank.com/uaa/Groups//{groupId}";
       link = link.replace("{client_id}", client_id);
       let Header = new Headers({
-        Authorization: "Bearer  d92d088bfc634503b2fd2591813c150d",
+        Authorization: "Bearer  b0738afb0b244dd5b5db862fa540aa2b",
         Accept: "application/json"
       });
       let myHeaders = new Headers();

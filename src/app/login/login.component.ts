@@ -21,10 +21,9 @@ export class LoginComponent implements OnInit {
   }
 
   loadLogin() {
-    console.log(this.username + " " + this.password)    
-// funcPost(nameVal, passwordVal, passwordVal)
-  //funcPostT(userNameVal, passwordVal, emailsVal) {
-    var link = "https://uaaserver.eu-gb.mybluemix.net/oauth/token";
+    //console.log(this.username + " " + this.password)    
+
+    var link = "https://ice.ecobank.com/uaa/oauth/token";
     //var link = "http://localhost:8080/uaa/oauth/token"; 
     var data = { username: this.username, password: this.password};
     //var data = { userName:marissa, Password:koala};
@@ -34,7 +33,7 @@ var schema = 'client_id=cf&client_secret=&grant_type=password&username=[username
     
         schema=schema.replace("[username]",this.username);
         schema=schema.replace("[password]",this.password);  
-        console.log(this.username);
+        //console.log(this.username);
        
     let Header = new Headers({
       "Content-Type":"application/x-www-form-urlencoded",
